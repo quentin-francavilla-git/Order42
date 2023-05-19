@@ -73,6 +73,12 @@ public partial class XOrderBookForm : DevExpress.XtraEditors.XtraForm
             HeaderText = "Price"
         });
 
+        dataGridView.Columns.Add(new DataGridViewTextBoxColumn
+        {
+            DataPropertyName = nameof(OrderModel.ProductType),
+            HeaderText = "Product"
+        });
+
         dataGridView.DataSource = sourceList;
     }
 

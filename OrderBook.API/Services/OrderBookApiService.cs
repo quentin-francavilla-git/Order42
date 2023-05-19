@@ -66,8 +66,7 @@ public class OrderBookApiService : IOrderBookApiService
         {
             Ticker = new TickerModel
             {
-                Symbol = "No Data",
-                ProductType = "No Data"
+                Symbol = "No Data"
             },
             Bids = new List<OrderModel>
                 {

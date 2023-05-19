@@ -36,7 +36,7 @@
             // 
             // btnOpenOrderBookForm
             // 
-            btnOpenOrderBookForm.Location = new Point(326, 155);
+            btnOpenOrderBookForm.Location = new Point(92, 95);
             btnOpenOrderBookForm.Name = "btnOpenOrderBookForm";
             btnOpenOrderBookForm.Size = new Size(189, 34);
             btnOpenOrderBookForm.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(805, 359);
+            ClientSize = new Size(374, 303);
             Controls.Add(btnOpenOrderBookForm);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "XMainForm";
