@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OrderBook.Data.DataProvider;
 using OrderBook.Data.Models;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace OrderBook.API.Controllers;
@@ -9,23 +9,16 @@ namespace OrderBook.API.Controllers;
 [ApiController]
 public class TickerController : ControllerBase
 {
+    private readonly IDataProvider _dataProvider;
+
+    public TickerController(IDataProvider dataProvider)
+    {
+        _dataProvider = dataProvider;
+    }
+
     [HttpGet]
     public ActionResult<IEnumerable<TickerModel>> Get()
     {
-        List<TickerModel> listTickers = new List<TickerModel>
-        {
-            new TickerModel
-            {
-                Symbol = "GOOGL",
-                ProductType = "Futures"
-            },
-            new TickerModel
-            { 
-                Symbol = "APPL",
-                ProductType = "Options"
-            },
-        };
-
-        return listTickers;
+        return _dataProvider.Tickers;
     }
 }

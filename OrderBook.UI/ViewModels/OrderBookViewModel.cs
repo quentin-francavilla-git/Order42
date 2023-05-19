@@ -1,6 +1,6 @@
 ﻿using DevExpress.Data.Browsing;
-using OrderBook.Data;
 using OrderBook.Data.Models;
+using OrderBook.Data.Services;
 
 namespace OrderBook.UI.ViewModels;
 

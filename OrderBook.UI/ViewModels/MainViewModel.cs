@@ -1,5 +1,6 @@
-﻿using OrderBook.Data;
+﻿using OrderBook.Data.DataProvider;
 using OrderBook.Data.Models;
+using OrderBook.Data.Services;
 using System.Collections.ObjectModel;
 
 namespace OrderBook.UI.ViewModels;

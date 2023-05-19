@@ -13,7 +13,6 @@ public partial class XOrderBookForm : DevExpress.XtraEditors.XtraForm
 {
     private readonly OrderBookViewModel _orderBookViewModel;
     private readonly ObservableCollection<TickerModel> _listOfTicker;
-    private readonly ObservableCollection<OrderBookModel> _listOfOrderBook;
 
     public XOrderBookForm(OrderBookViewModel viewModel, ObservableCollection<TickerModel> listOfTicker)
     {

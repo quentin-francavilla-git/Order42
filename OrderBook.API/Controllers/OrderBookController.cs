@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using OrderBook.Data;
+using OrderBook.Data.DataProvider;
 using OrderBook.Data.Models;
 using System.Collections.Generic;
 using System.Linq;

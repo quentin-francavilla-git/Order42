@@ -49,6 +49,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(805, 359);
             Controls.Add(btnOpenOrderBookForm);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "XMainForm";
             Text = "XMainForm";
             Load += XMainForm_Load;

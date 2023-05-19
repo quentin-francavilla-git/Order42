@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             orderBookBindingSource = new BindingSource(components);
             dataGridBids = new DataGridView();
             dataGridAsks = new DataGridView();
@@ -51,22 +52,23 @@
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
             dataGridViewCellStyle1.Font = new Font("Tahoma", 8.139131F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(95, 197, 73);
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(102, 181, 85);
-            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = Color.DimGray;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridBids.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridBids.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(26, 26, 24);
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(103, 227, 77);
             dataGridViewCellStyle2.Font = new Font("Tahoma", 8.139131F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(70, 205, 51);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(46, 46, 46);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(70, 205, 51);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(40, 40, 40);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(127, 236, 104);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(40, 40, 40);
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridBids.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridBids.Location = new Point(457, 80);
             dataGridBids.Name = "dataGridBids";
+            dataGridBids.ReadOnly = true;
             dataGridBids.RowHeadersWidth = 49;
             dataGridBids.RowTemplate.Height = 28;
             dataGridBids.Size = new Size(407, 252);
@@ -75,8 +77,17 @@
             // dataGridAsks
             // 
             dataGridAsks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(230, 71, 71);
+            dataGridViewCellStyle3.Font = new Font("Tahoma", 8.139131F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(40, 40, 40);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(236, 104, 104);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(40, 40, 40);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridAsks.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridAsks.Location = new Point(26, 80);
             dataGridAsks.Name = "dataGridAsks";
+            dataGridAsks.ReadOnly = true;
             dataGridAsks.RowHeadersWidth = 49;
             dataGridAsks.RowTemplate.Height = 28;
             dataGridAsks.Size = new Size(381, 252);
@@ -118,6 +129,7 @@
             Controls.Add(asksLabel);
             Controls.Add(dataGridAsks);
             Controls.Add(dataGridBids);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "XOrderBookForm";
             Text = "XOrderBookForm";
             Load += XOrderBookForm_Load;
