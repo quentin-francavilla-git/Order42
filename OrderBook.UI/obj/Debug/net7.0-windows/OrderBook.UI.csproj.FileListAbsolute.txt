@@ -70,6 +70,7 @@ C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\bin
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\bin\Debug\net7.0-windows\DevExpress.XtraTreeMap.v22.2.UI.dll
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\bin\Debug\net7.0-windows\DevExpress.XtraVerticalGrid.v22.2.dll
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\bin\Debug\net7.0-windows\DevExpress.Xpo.v22.2.dll
+C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\bin\Debug\net7.0-windows\Newtonsoft.Json.dll
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\bin\Debug\net7.0-windows\System.ComponentModel.Composition.dll
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\bin\Debug\net7.0-windows\System.Data.Odbc.dll
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\bin\Debug\net7.0-windows\System.Data.OleDb.dll
@@ -113,3 +114,5 @@ C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\obj
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\obj\Debug\net7.0-windows\OrderBook.UI.pdb
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\obj\Debug\net7.0-windows\OrderBook.UI.genruntimeconfig.cache
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\obj\Debug\net7.0-windows\ref\OrderBook.UI.dll
+C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\bin\Debug\net7.0-windows\orderbooks.json
+C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\obj\Debug\net7.0-windows\OrderBook.UI.XEntryForm.resources

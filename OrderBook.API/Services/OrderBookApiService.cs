@@ -1,9 +1,11 @@
-﻿using OrderBook.Data.Models;
+﻿using Newtonsoft.Json;
+using OrderBook.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -20,6 +22,18 @@ public class OrderBookApiService : IOrderBookApiService
         _httpClient.BaseAddress = new Uri(BaseUrl);
     }
 
+    public async Task PlaceOrder(OrderModel order, string symbol)
+    {
+        // Convert the order to JSON
+        var jsonOrder = JsonConvert.SerializeObject(order);
+        var content = new StringContent(jsonOrder, Encoding.UTF8, "application/json");
+        var url = $"api/order/placeOrder?symbol={symbol}";
+
+        // Send the HTTP POST request to the controller endpoint
+        var response = await _httpClient.PostAsync(url, content);
+        response.EnsureSuccessStatusCode();
+    }
+
     public async Task<ObservableCollection<OrderBookModel>> GetOrderBook()
     {
         var response = await _httpClient.GetAsync("api/orderbook");
@@ -30,12 +44,12 @@ public class OrderBookApiService : IOrderBookApiService
         return orderBooks;
     }
 
-    public async Task<IEnumerable<TickerModel>> GetTicker()
+    public async Task<ObservableCollection<TickerModel>> GetTicker()
     {
         var response = await _httpClient.GetAsync("api/ticker");
         response.EnsureSuccessStatusCode();
 
-        var tickers = await response.Content.ReadFromJsonAsync<IEnumerable<TickerModel>>();
+        var tickers = await response.Content.ReadFromJsonAsync<ObservableCollection<TickerModel>>();
 
         return tickers;
     }
@@ -53,7 +67,7 @@ public class OrderBookApiService : IOrderBookApiService
         {
             Console.WriteLine("An error occurred while making the HTTP request: " + ex.Message);
         }
-        catch (JsonException ex)
+        catch (Newtonsoft.Json.JsonException ex)
         {
             Console.WriteLine("An error occurred while parsing the JSON response: " + ex.Message);
         }

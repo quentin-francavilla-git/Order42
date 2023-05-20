@@ -22,8 +22,9 @@ public class MainViewModel : ViewModelBase
     }
 
     // Handle button click events and open the corresponding windows
-    public void OpenOrderBookWindow()
+    public async Task OpenOrderBookWindow()
     {
+        await Load();
         var orderBookViewModel = new OrderBookViewModel(new OrderBookModel(), _orderBookApiService);
 
         var orderBookform = new XOrderBookForm(orderBookViewModel, Tickers);
@@ -45,15 +46,6 @@ public class MainViewModel : ViewModelBase
 
     public async Task Load()
     {
-        OrderBooksModel = await _orderBookApiService.GetOrderBook();
-
-        OrderBooks.Clear();
-
-        foreach (var orderBook in OrderBooksModel)
-        {
-            OrderBooks.Add(new OrderBookViewModel(orderBook, _orderBookApiService));
-        }
-
         var tickers = await _orderBookApiService.GetTicker();
 
         Tickers.Clear();

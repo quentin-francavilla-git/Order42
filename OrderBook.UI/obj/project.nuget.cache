@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZWUzrzb8fSUTV33z4IFtS28eatLbtuEd73Pt9klhf+rrXsYtovI4DgTRXyI+oZFiqSI+Qnyt6OPcGm3UUgTyhw==",
+  "dgSpecHash": "iT2a4bK3SDtj9ZRBjI9cf9n6I6HRptiagN/BgmW47nDBcaGiEXyz+CTbBK0XhqeCVYwHMi0/t7XUXBN2Ezi9qw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Quentin\\Documents\\Projets\\.NET\\WinForms\\MiraeOrderBook\\OrderBook.UI\\OrderBook.UI.csproj",
   "expectedPackageFiles": [
@@ -67,6 +67,7 @@
     "C:\\Users\\Quentin\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Quentin\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Quentin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Quentin\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Quentin\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\Quentin\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Quentin\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

@@ -1,0 +1,518 @@
+[
+  {
+    "Ticker": {
+      "Symbol": "GOOGL"
+    },
+    "Bids": [
+      {
+        "Type": null,
+        "Price": 5400.0,
+        "Quantity": 1,
+        "ProductType": "Options"
+      },
+      {
+        "Type": null,
+        "Price": 5300.0,
+        "Quantity": 65,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": null,
+        "Price": 4200.0,
+        "Quantity": 14,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": null,
+        "Price": 3940.0,
+        "Quantity": 991,
+        "ProductType": "Options"
+      },
+      {
+        "Type": null,
+        "Price": 3440.0,
+        "Quantity": 3333,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": null,
+        "Price": 3100.0,
+        "Quantity": 8967,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": null,
+        "Price": 2980.0,
+        "Quantity": 991,
+        "ProductType": "Options"
+      },
+      {
+        "Type": null,
+        "Price": 2900.0,
+        "Quantity": 12,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": null,
+        "Price": 2387.0,
+        "Quantity": 198,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": null,
+        "Price": 1943.0,
+        "Quantity": 687,
+        "ProductType": "Options"
+      }
+    ],
+    "Asks": [
+      {
+        "Type": null,
+        "Price": 6121.0,
+        "Quantity": 5346,
+        "ProductType": "Options"
+      },
+      {
+        "Type": null,
+        "Price": 5820.0,
+        "Quantity": 9275,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": null,
+        "Price": 5521.0,
+        "Quantity": 6748,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": null,
+        "Price": 5222.0,
+        "Quantity": 1204,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": null,
+        "Price": 4876.0,
+        "Quantity": 6527,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": null,
+        "Price": 4647.0,
+        "Quantity": 4197,
+        "ProductType": "Options"
+      },
+      {
+        "Type": null,
+        "Price": 4345.0,
+        "Quantity": 2672,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": null,
+        "Price": 3947.0,
+        "Quantity": 8487,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": null,
+        "Price": 3662.0,
+        "Quantity": 2753,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": null,
+        "Price": 3352.0,
+        "Quantity": 7957,
+        "ProductType": "Options"
+      }
+    ]
+  },
+  {
+    "Ticker": {
+      "Symbol": "AAPL"
+    },
+    "Bids": [
+      {
+        "Type": null,
+        "Price": 6195.0,
+        "Quantity": 7819,
+        "ProductType": "Options"
+      },
+      {
+        "Type": null,
+        "Price": 5866.0,
+        "Quantity": 3840,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": null,
+        "Price": 5544.0,
+        "Quantity": 9836,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": null,
+        "Price": 5269.0,
+        "Quantity": 1456,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": null,
+        "Price": 4977.0,
+        "Quantity": 6357,
+        "ProductType": "Options"
+      },
+      {
+        "Type": null,
+        "Price": 4723.0,
+        "Quantity": 5550,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": null,
+        "Price": 4402.0,
+        "Quantity": 2874,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": null,
+        "Price": 4077.0,
+        "Quantity": 9276,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": null,
+        "Price": 3843.0,
+        "Quantity": 3771,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": null,
+        "Price": 3521.0,
+        "Quantity": 6955,
+        "ProductType": "Futures"
+      }
+    ],
+    "Asks": [
+      {
+        "Type": null,
+        "Price": 6632.0,
+        "Quantity": 2345,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": null,
+        "Price": 6305.0,
+        "Quantity": 4035,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": null,
+        "Price": 5998.0,
+        "Quantity": 9801,
+        "ProductType": "Options"
+      },
+      {
+        "Type": null,
+        "Price": 5672.0,
+        "Quantity": 543,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": null,
+        "Price": 5379.0,
+        "Quantity": 7027,
+        "ProductType": "Options"
+      },
+      {
+        "Type": null,
+        "Price": 5075.0,
+        "Quantity": 2512,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": null,
+        "Price": 4752.0,
+        "Quantity": 1597,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": null,
+        "Price": 4453.0,
+        "Quantity": 6818,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": null,
+        "Price": 4176.0,
+        "Quantity": 1987,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": null,
+        "Price": 3834.0,
+        "Quantity": 4766,
+        "ProductType": "Equities"
+      }
+    ]
+  },
+  {
+    "Ticker": {
+      "Symbol": "AMZN"
+    },
+    "Bids": [
+      {
+        "Type": null,
+        "Price": 6723.0,
+        "Quantity": 3176,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": null,
+        "Price": 6361.0,
+        "Quantity": 4589,
+        "ProductType": "Options"
+      },
+      {
+        "Type": null,
+        "Price": 6062.0,
+        "Quantity": 1843,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": null,
+        "Price": 5719.0,
+        "Quantity": 7852,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": null,
+        "Price": 5432.0,
+        "Quantity": 2359,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": null,
+        "Price": 5150.0,
+        "Quantity": 6452,
+        "ProductType": "Options"
+      },
+      {
+        "Type": null,
+        "Price": 4843.0,
+        "Quantity": 3721,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": null,
+        "Price": 4535.0,
+        "Quantity": 2790,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": null,
+        "Price": 4206.0,
+        "Quantity": 9165,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": null,
+        "Price": 3932.0,
+        "Quantity": 5481,
+        "ProductType": "Options"
+      }
+    ],
+    "Asks": [
+      {
+        "Type": null,
+        "Price": 6687.0,
+        "Quantity": 872,
+        "ProductType": "Options"
+      },
+      {
+        "Type": null,
+        "Price": 6332.0,
+        "Quantity": 5061,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": null,
+        "Price": 6031.0,
+        "Quantity": 1833,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": null,
+        "Price": 5735.0,
+        "Quantity": 7091,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": null,
+        "Price": 5477.0,
+        "Quantity": 2254,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": null,
+        "Price": 5201.0,
+        "Quantity": 3655,
+        "ProductType": "Options"
+      },
+      {
+        "Type": null,
+        "Price": 4883.0,
+        "Quantity": 2847,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": null,
+        "Price": 4592.0,
+        "Quantity": 9615,
+        "ProductType": "Options"
+      },
+      {
+        "Type": null,
+        "Price": 4261.0,
+        "Quantity": 1563,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": null,
+        "Price": 3976.0,
+        "Quantity": 4452,
+        "ProductType": "Bonds"
+      }
+    ]
+  },
+  {
+    "Ticker": {
+      "Symbol": "MSFT"
+    },
+    "Bids": [
+      {
+        "Type": null,
+        "Price": 6798.0,
+        "Quantity": 2165,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": null,
+        "Price": 6442.0,
+        "Quantity": 3689,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": null,
+        "Price": 6119.0,
+        "Quantity": 9132,
+        "ProductType": "Options"
+      },
+      {
+        "Type": null,
+        "Price": 5812.0,
+        "Quantity": 481,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": null,
+        "Price": 5549.0,
+        "Quantity": 6218,
+        "ProductType": "Options"
+      },
+      {
+        "Type": null,
+        "Price": 5245.0,
+        "Quantity": 2521,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": null,
+        "Price": 4918.0,
+        "Quantity": 1518,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": null,
+        "Price": 4589.0,
+        "Quantity": 7857,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": null,
+        "Price": 4291.0,
+        "Quantity": 2053,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": null,
+        "Price": 3974.0,
+        "Quantity": 4201,
+        "ProductType": "Equities"
+      }
+    ],
+    "Asks": [
+      {
+        "Type": null,
+        "Price": 6992.0,
+        "Quantity": 2487,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": null,
+        "Price": 6621.0,
+        "Quantity": 4132,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": null,
+        "Price": 6309.0,
+        "Quantity": 1911,
+        "ProductType": "Options"
+      },
+      {
+        "Type": null,
+        "Price": 5986.0,
+        "Quantity": 5598,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": null,
+        "Price": 5674.0,
+        "Quantity": 2564,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": null,
+        "Price": 5345.0,
+        "Quantity": 3221,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": null,
+        "Price": 5011.0,
+        "Quantity": 1797,
+        "ProductType": "Options"
+      },
+      {
+        "Type": null,
+        "Price": 4715.0,
+        "Quantity": 7452,
+        "ProductType": "Options"
+      },
+      {
+        "Type": null,
+        "Price": 4378.0,
+        "Quantity": 2936,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": null,
+        "Price": 4057.0,
+        "Quantity": 4921,
+        "ProductType": "Futures"
+      }
+    ]
+  }
+]

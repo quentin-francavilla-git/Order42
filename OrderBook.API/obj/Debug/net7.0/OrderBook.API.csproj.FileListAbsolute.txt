@@ -5,6 +5,7 @@ C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.API\bi
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.API\bin\Debug\net7.0\OrderBook.API.runtimeconfig.json
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.API\bin\Debug\net7.0\OrderBook.API.dll
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.API\bin\Debug\net7.0\OrderBook.API.pdb
+C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.API\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.API\bin\Debug\net7.0\OrderBook.Data.dll
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.API\bin\Debug\net7.0\OrderBook.Data.pdb
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.API\obj\Debug\net7.0\OrderBook.API.csproj.AssemblyReference.cache
@@ -27,3 +28,4 @@ C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.API\ob
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.API\obj\Debug\net7.0\OrderBook.API.pdb
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.API\obj\Debug\net7.0\OrderBook.API.genruntimeconfig.cache
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.API\obj\Debug\net7.0\ref\OrderBook.API.dll
+C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.API\bin\Debug\net7.0\orderbooks.json

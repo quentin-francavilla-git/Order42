@@ -1,11 +1,7 @@
-﻿using DevExpress.DataProcessing;
-using DevExpress.Utils.Extensions;
-using OrderBook.Data;
-using OrderBook.Data.Models;
+﻿using OrderBook.Data.Models;
 using OrderBook.UI.ViewModels;
 using System.Collections.ObjectModel;
-using System.Windows.Controls;
-using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace OrderBook.UI;
 
@@ -13,6 +9,7 @@ public partial class XOrderBookForm : DevExpress.XtraEditors.XtraForm
 {
     private readonly OrderBookViewModel _orderBookViewModel;
     private readonly ObservableCollection<TickerModel> _listOfTicker;
+    private System.Windows.Forms.Timer timer;
 
     public XOrderBookForm(OrderBookViewModel viewModel, ObservableCollection<TickerModel> listOfTicker)
     {
@@ -20,41 +17,52 @@ public partial class XOrderBookForm : DevExpress.XtraEditors.XtraForm
         _orderBookViewModel = viewModel;
         DataContext = _orderBookViewModel;
         _listOfTicker = listOfTicker;
+
+        timer = new System.Windows.Forms.Timer();
+        timer.Interval = 2000;
+        timer.Tick += RefreshData;
+        timer.Start();
     }
 
-    private void XOrderBookForm_Load(object sender, EventArgs e)
+    private async void XOrderBookForm_Load(object sender, EventArgs e)
     {
         BindingGridToViewModel(dataGridAsks, nameof(DataGridView.DataSource), "Asks");
         BindingGridToViewModel(dataGridBids, nameof(DataGridView.DataSource), "Bids");
         BindingDropDownToViewModel(tickerDropDown, nameof(System.Windows.Forms.ComboBox.SelectedItem), "Ticker");
+
+        if (_listOfTicker.Any())
+        {
+            await _orderBookViewModel.LoadOrderBookByTicker(_listOfTicker.First().Symbol);
+        }
 
         InitGridView(dataGridAsks, _orderBookViewModel.Asks);
         InitGridView(dataGridBids, _orderBookViewModel.Bids);
         InitDropDownMenu(tickerDropDown, _listOfTicker);
     }
 
-    private void InitDropDownMenu(System.Windows.Forms.ComboBox dropDownButton, ObservableCollection<TickerModel> listOfTicker)
+    // Binding data
+    private void BindingGridToViewModel(DataGridView gridView, string property, string dataMember)
+    {
+        gridView.DataBindings.Add(property, _orderBookViewModel, dataMember);
+    }
+
+    private void BindingDropDownToViewModel(ComboBox comboBox, string property, string dataMember)
+    {
+        comboBox.DataBindings.Add(property, _orderBookViewModel, dataMember);
+    }
+
+    // Init controls
+    private void InitDropDownMenu(ComboBox dropDownButton, ObservableCollection<TickerModel> listOfTicker)
     {
         dropDownButton.DataSource = listOfTicker;
         dropDownButton.DisplayMember = nameof(TickerModel.Symbol);
         dropDownButton.ValueMember = nameof(TickerModel.Symbol);
     }
 
-    private void BindingGridToViewModel(DataGridView gridView, string property, string dataMember)
-    {
-        gridView.DataBindings.Add(property, _orderBookViewModel, dataMember);
-    }
-
-    private void BindingDropDownToViewModel(System.Windows.Forms.ComboBox comboBox, string property, string dataMember)
-    {
-        comboBox.DataBindings.Add(property, _orderBookViewModel, dataMember);
-    }
-
     private void InitGridView(DataGridView dataGridView, List<OrderModel> listOfOrder)
     {
-        var sourceList = new List<OrderModel>();
-
-        sourceList.AddRange(listOfOrder);
+        var bindingList = new BindingList<OrderModel>(listOfOrder);
+        var bindingSource = new BindingSource(bindingList, null);
 
         dataGridView.AutoGenerateColumns = false;
         dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -63,30 +71,52 @@ public partial class XOrderBookForm : DevExpress.XtraEditors.XtraForm
 
         dataGridView.Columns.Add(new DataGridViewTextBoxColumn
         {
-            DataPropertyName = nameof(OrderModel.Quantity),
-            HeaderText = "Quantity"
+            DataPropertyName = nameof(OrderModel.Price),
+            HeaderText = "Price",
+            Name = "Price"
         });
 
         dataGridView.Columns.Add(new DataGridViewTextBoxColumn
         {
-            DataPropertyName = nameof(OrderModel.Price),
-            HeaderText = "Price"
+            DataPropertyName = nameof(OrderModel.Quantity),
+            HeaderText = "Quantity",
+            Name = "Quantity"
+        });
+
+        dataGridView.Columns.Add(new DataGridViewTextBoxColumn
+        {
+            DataPropertyName = nameof(OrderModel.Total),
+            HeaderText = "Total",
+            Name = "Total"
         });
 
         dataGridView.Columns.Add(new DataGridViewTextBoxColumn
         {
             DataPropertyName = nameof(OrderModel.ProductType),
-            HeaderText = "Product"
+            HeaderText = "Product",
+            Name = "Product"
         });
 
-        dataGridView.DataSource = sourceList;
+        dataGridView.DataSource = bindingSource;
     }
 
+    // Other methods
+    private async void RefreshData(object sender, EventArgs e)
+    {
+        await _orderBookViewModel.LoadOrderBookByTicker(_orderBookViewModel.OrderBook.Ticker.Symbol);
+    }
+
+    // Events
     private async void tickerDropDown_SelectedIndexChanged(object sender, EventArgs e)
     {
         if (tickerDropDown.SelectedItem is TickerModel selectedTicker)
         {
             await _orderBookViewModel.LoadOrderBookByTicker(selectedTicker.Symbol);
         }
+    }
+
+    private void entryOrderbtn_Click(object sender, EventArgs e)
+    {
+        _orderBookViewModel.OpenEntryForm();
     }
 }

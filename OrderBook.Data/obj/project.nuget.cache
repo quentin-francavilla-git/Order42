@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "vxDUAChH9XHV3bOmg2F4EfhAqZUkNdVFV/Kxg4c0vggf2enh1yfQj5HCyOMW052F7xPwRcSMYKJ1deCefaBtUg==",
+  "dgSpecHash": "GeP5iEPuB7zzh6wTpGYA7t9N1CDz+Jj202YsYYVvBYqKLEmXdXdwTkNL/86YiglIdSVSUGK6IwoK2Cw1uOIDCA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Quentin\\Documents\\Projets\\.NET\\WinForms\\MiraeOrderBook\\OrderBook.Data\\OrderBook.Data.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Quentin\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

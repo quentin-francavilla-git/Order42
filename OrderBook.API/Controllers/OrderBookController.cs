@@ -13,6 +13,7 @@ namespace OrderBook.API.Controllers;
 public class OrderBookController : ControllerBase
 {
     private readonly IDataProvider _dataProvider;
+
     public OrderBookController(IDataProvider dataProvider)
     {
         _dataProvider = dataProvider;

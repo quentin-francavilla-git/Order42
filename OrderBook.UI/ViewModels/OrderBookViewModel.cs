@@ -1,6 +1,8 @@
 ﻿using DevExpress.Data.Browsing;
 using OrderBook.Data.Models;
 using OrderBook.Data.Services;
+using System.Collections.ObjectModel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace OrderBook.UI.ViewModels;
 
@@ -10,6 +12,8 @@ public class OrderBookViewModel : ViewModelBase
     private List<OrderModel> _bids;
     private List<OrderModel> _asks;
     public OrderBookModel OrderBook { get; set; }
+    private List<(XEntryForm Form, EntryViewModel ViewModel)> formViewModelPairs = new List<(XEntryForm, EntryViewModel)>();
+
 
     public OrderBookViewModel(OrderBookModel orderBook, IOrderBookApiService orderBookApiService)
     {
@@ -58,6 +62,11 @@ public class OrderBookViewModel : ViewModelBase
         }
     }
 
+    public async Task<ObservableCollection<TickerModel>> LoadTickers()
+    {
+        return await _orderBookApiService.GetTicker();
+    }
+
     public async Task LoadOrderBookByTicker(string tickerSymbol)
     {
         var orderBook = await _orderBookApiService.GetOrderBookByTicker(tickerSymbol);
@@ -68,5 +77,26 @@ public class OrderBookViewModel : ViewModelBase
             Bids = new List<OrderModel>(orderBook.Bids); // Create a new list to trigger property change
             Asks = new List<OrderModel>(orderBook.Asks); // Create a new list to trigger property change
         }
+    }
+
+    public async Task OpenEntryForm()
+    {
+        var entryViewModel = new EntryViewModel(_orderBookApiService);
+
+        var entryForm = new XEntryForm(entryViewModel, this, Ticker.Symbol);
+
+        formViewModelPairs.Add((entryForm, entryViewModel));
+
+        entryForm.FormClosed += (sender, e) =>
+        {
+            var closedForm = (XEntryForm)sender;
+            var pair = formViewModelPairs.FirstOrDefault(x => x.Form == closedForm);
+            if (pair != default)
+            {
+                formViewModelPairs.Remove(pair);
+            }
+        };
+
+        entryForm.Show();
     }
 }

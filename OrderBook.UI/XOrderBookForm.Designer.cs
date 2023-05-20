@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             orderBookBindingSource = new BindingSource(components);
             dataGridBids = new DataGridView();
             dataGridAsks = new DataGridView();
@@ -41,6 +41,7 @@
             bidsLabel = new DevExpress.XtraEditors.LabelControl();
             tickerDropDown = new ComboBox();
             tickerLabel = new DevExpress.XtraEditors.LabelControl();
+            entryOrderbtn = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)orderBookBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridBids).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridAsks).BeginInit();
@@ -52,28 +53,28 @@
             // 
             // dataGridBids
             // 
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(95, 206, 72);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(40, 40, 40);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(127, 236, 104);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(40, 40, 40);
-            dataGridBids.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Tahoma", 8.139131F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(95, 197, 73);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(102, 181, 85);
-            dataGridViewCellStyle2.SelectionForeColor = Color.DimGray;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridBids.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(95, 206, 72);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(40, 40, 40);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(127, 236, 104);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(40, 40, 40);
+            dataGridBids.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = SystemColors.Control;
+            dataGridViewCellStyle7.Font = new Font("Tahoma", 8.139131F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.FromArgb(95, 197, 73);
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(102, 181, 85);
+            dataGridViewCellStyle7.SelectionForeColor = Color.DimGray;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dataGridBids.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dataGridBids.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(103, 227, 77);
-            dataGridViewCellStyle3.Font = new Font("Tahoma", 8.139131F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(40, 40, 40);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(127, 236, 104);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(40, 40, 40);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dataGridBids.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(103, 227, 77);
+            dataGridViewCellStyle8.Font = new Font("Tahoma", 8.139131F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.FromArgb(40, 40, 40);
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(127, 236, 104);
+            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(40, 40, 40);
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dataGridBids.DefaultCellStyle = dataGridViewCellStyle8;
             dataGridBids.Location = new Point(457, 109);
             dataGridBids.Name = "dataGridBids";
             dataGridBids.ReadOnly = true;
@@ -84,17 +85,17 @@
             // 
             // dataGridAsks
             // 
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(218, 51, 51);
-            dataGridAsks.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.BackColor = Color.FromArgb(218, 51, 51);
+            dataGridAsks.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             dataGridAsks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(233, 54, 54);
-            dataGridViewCellStyle5.Font = new Font("Tahoma", 8.139131F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(40, 40, 40);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(248, 87, 87);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(40, 40, 40);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dataGridAsks.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = Color.FromArgb(233, 54, 54);
+            dataGridViewCellStyle10.Font = new Font("Tahoma", 8.139131F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = Color.FromArgb(40, 40, 40);
+            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(248, 87, 87);
+            dataGridViewCellStyle10.SelectionForeColor = Color.FromArgb(40, 40, 40);
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
+            dataGridAsks.DefaultCellStyle = dataGridViewCellStyle10;
             dataGridAsks.Location = new Point(26, 109);
             dataGridAsks.Name = "dataGridAsks";
             dataGridAsks.ReadOnly = true;
@@ -137,11 +138,21 @@
             tickerLabel.TabIndex = 6;
             tickerLabel.Text = "Ticker";
             // 
+            // entryOrderbtn
+            // 
+            entryOrderbtn.Location = new Point(756, 28);
+            entryOrderbtn.Name = "entryOrderbtn";
+            entryOrderbtn.Size = new Size(108, 34);
+            entryOrderbtn.TabIndex = 7;
+            entryOrderbtn.Text = "Order Entry";
+            entryOrderbtn.Click += entryOrderbtn_Click;
+            // 
             // XOrderBookForm
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(893, 508);
+            Controls.Add(entryOrderbtn);
             Controls.Add(tickerLabel);
             Controls.Add(tickerDropDown);
             Controls.Add(bidsLabel);
@@ -151,7 +162,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "XOrderBookForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "XOrderBookForm";
+            Text = "Order Book";
             Load += XOrderBookForm_Load;
             ((System.ComponentModel.ISupportInitialize)orderBookBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridBids).EndInit();
@@ -169,5 +180,6 @@
         private DevExpress.XtraEditors.LabelControl bidsLabel;
         private ComboBox tickerDropDown;
         private DevExpress.XtraEditors.LabelControl tickerLabel;
+        private DevExpress.XtraEditors.SimpleButton entryOrderbtn;
     }
 }

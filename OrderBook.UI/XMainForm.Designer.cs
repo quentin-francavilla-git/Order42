@@ -51,7 +51,7 @@
             Controls.Add(btnOpenOrderBookForm);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "XMainForm";
-            Text = "XMainForm";
+            Text = "Order book manager";
             Load += XMainForm_Load;
             ((System.ComponentModel.ISupportInitialize)orderBookBindingSource).EndInit();
             ResumeLayout(false);
