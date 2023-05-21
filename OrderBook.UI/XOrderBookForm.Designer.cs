@@ -34,6 +34,7 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XOrderBookForm));
             orderBookBindingSource = new BindingSource(components);
             dataGridBids = new DataGridView();
             dataGridAsks = new DataGridView();
@@ -58,6 +59,7 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(127, 236, 104);
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(40, 40, 40);
             dataGridBids.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridBids.BackgroundColor = Color.FromArgb(10, 13, 19);
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
             dataGridViewCellStyle2.Font = new Font("Tahoma", 8.139131F, FontStyle.Regular, GraphicsUnit.Point);
@@ -87,6 +89,7 @@
             // 
             dataGridViewCellStyle4.BackColor = Color.FromArgb(218, 51, 51);
             dataGridAsks.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridAsks.BackgroundColor = Color.FromArgb(10, 13, 19);
             dataGridAsks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = Color.FromArgb(233, 54, 54);
@@ -106,6 +109,8 @@
             // 
             // asksLabel
             // 
+            asksLabel.Appearance.ForeColor = Color.White;
+            asksLabel.Appearance.Options.UseForeColor = true;
             asksLabel.Location = new Point(26, 87);
             asksLabel.Name = "asksLabel";
             asksLabel.Size = new Size(26, 16);
@@ -114,6 +119,8 @@
             // 
             // bidsLabel
             // 
+            bidsLabel.Appearance.ForeColor = Color.White;
+            bidsLabel.Appearance.Options.UseForeColor = true;
             bidsLabel.Location = new Point(554, 87);
             bidsLabel.Name = "bidsLabel";
             bidsLabel.Size = new Size(23, 16);
@@ -132,6 +139,8 @@
             // 
             // tickerLabel
             // 
+            tickerLabel.Appearance.ForeColor = Color.White;
+            tickerLabel.Appearance.Options.UseForeColor = true;
             tickerLabel.Location = new Point(26, 12);
             tickerLabel.Name = "tickerLabel";
             tickerLabel.Size = new Size(35, 16);
@@ -149,6 +158,8 @@
             // 
             // XOrderBookForm
             // 
+            Appearance.BackColor = Color.FromArgb(18, 23, 35);
+            Appearance.Options.UseBackColor = true;
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1044, 585);
@@ -160,6 +171,7 @@
             Controls.Add(dataGridAsks);
             Controls.Add(dataGridBids);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            IconOptions.Image = (Image)resources.GetObject("XOrderBookForm.IconOptions.Image");
             Name = "XOrderBookForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Order Book";

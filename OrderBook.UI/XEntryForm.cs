@@ -31,6 +31,7 @@ public partial class XEntryForm : DevExpress.XtraEditors.XtraForm
         BindingTextBoxToViewModel(priceTextBox, nameof(TextBox.Text), nameof(_viewModel.Price));
 
         InitDropDownMenu(actionDropDown, new List<string>() { "Ask", "Bid" });
+        InitDropDownMenu(productTypeDropDown, new List<string>() { "Options", "Futures", "Equities", "Bonds" });
         InitLabel(tickerLabel, _currentTicker);
     }
 
@@ -87,6 +88,7 @@ public partial class XEntryForm : DevExpress.XtraEditors.XtraForm
     public async Task EntryOrderBtnAction(string selectedEntryType)
     {
         string selectedAction = actionDropDown.SelectedItem?.ToString() ?? string.Empty;
+        string selectedProductType = productTypeDropDown.SelectedItem?.ToString() ?? string.Empty;
 
         string price = priceTextBox.Text;
 
@@ -126,7 +128,7 @@ public partial class XEntryForm : DevExpress.XtraEditors.XtraForm
                 Type = selectedAction,
                 Price = decimal.Parse(price),
                 Quantity = int.Parse(quantity),
-                ProductType = "Options"
+                ProductType = selectedProductType
             },
             _currentTicker,
             selectedEntryType);

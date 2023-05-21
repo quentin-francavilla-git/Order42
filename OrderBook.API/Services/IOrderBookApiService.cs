@@ -10,8 +10,5 @@ public interface IOrderBookApiService
     public Task<ObservableCollection<OrderBookModel>?> GetOrderBook();
     public Task<ObservableCollection<TickerModel>> GetTicker();
     public Task<OrderBookModel> GetOrderBookByTicker(string tickerSymbol);
-    //public Task<int> PlaceOrder(OrderModel order, string symbol);
-    //public Task<int> AmendOrder(OrderModel order, string symbol);
-    //public Task<int> CancelOrder(OrderModel order, string symbol);
     public Task<int> EntryOrder(OrderModel order, string symbol, string entryType);
 }

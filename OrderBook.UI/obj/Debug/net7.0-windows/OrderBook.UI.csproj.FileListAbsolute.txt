@@ -102,6 +102,7 @@ C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\bin
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\bin\Debug\net7.0-windows\OrderBook.API.pdb
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\bin\Debug\net7.0-windows\OrderBook.Data.pdb
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\obj\Debug\net7.0-windows\OrderBook.UI.csproj.AssemblyReference.cache
+C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\obj\Debug\net7.0-windows\OrderBook.UI.Properties.Resources.resources
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\obj\Debug\net7.0-windows\OrderBook.UI.XEntryForm.resources
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\obj\Debug\net7.0-windows\OrderBook.UI.XMainForm.resources
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\obj\Debug\net7.0-windows\OrderBook.UI.XOrderBookForm.resources

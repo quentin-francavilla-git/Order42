@@ -57,52 +57,24 @@ public class EntryViewModel : ViewModelBase
         }
     }
 
-    //// Place Order
+    // Place Order
     protected virtual void OnOrderPlaced(EventArgs e)
     {
         OrderPlaced?.Invoke(this, e);
     }
 
-    //public async Task<int> PlaceOrder(OrderModel order, string symbol)
-    //{
-    //    int resultCode = await _orderBookApiService.PlaceOrder(order, symbol);
-
-    //    OnOrderPlaced(EventArgs.Empty);
-
-    //    return resultCode;
-    //}
-
-    //// Amend order
+    // Amend order
 
     protected virtual void OnOrderAmended(EventArgs e)
     {
         OrderAmended?.Invoke(this, e);
     }
 
-    //public async Task<int> AmendOrder(OrderModel order, string symbol)
-    //{
-    //    int resultCode = await _orderBookApiService.AmendOrder(order, symbol);
-
-    //    OnOrderAmended(EventArgs.Empty);
-
-    //    return resultCode;
-    //}
-
-    //// Cancel Order
+    // Cancel Order
     protected virtual void OnOrderCanceled(EventArgs e)
     {
         OrderCanceled?.Invoke(this, e);
     }
-
-    //public async Task<int> CancelOrder(OrderModel order, string symbol)
-    //{
-    //    int resultCode = await _orderBookApiService.CancelOrder(order, symbol);
-
-    //    OnOrderCanceled(EventArgs.Empty);
-
-    //    return resultCode;
-    //}
-
 
     public async Task<int> EntryOrder(OrderModel order, string symbol, string entryType)
     {

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XEntryForm));
             actionLabel = new DevExpress.XtraEditors.LabelControl();
             quantityLabel = new DevExpress.XtraEditors.LabelControl();
             priceLabel = new DevExpress.XtraEditors.LabelControl();
@@ -39,19 +40,25 @@
             actionDropDown = new ComboBox();
             entryOrderLabel = new DevExpress.XtraEditors.LabelControl();
             tickerLabel = new DevExpress.XtraEditors.LabelControl();
+            productTypeDropDown = new ComboBox();
+            labelControl1 = new DevExpress.XtraEditors.LabelControl();
             SuspendLayout();
             // 
             // actionLabel
             // 
-            actionLabel.Location = new Point(154, 87);
+            actionLabel.Appearance.ForeColor = Color.White;
+            actionLabel.Appearance.Options.UseForeColor = true;
+            actionLabel.Location = new Point(98, 89);
             actionLabel.Name = "actionLabel";
-            actionLabel.Size = new Size(35, 16);
+            actionLabel.Size = new Size(75, 16);
             actionLabel.TabIndex = 0;
-            actionLabel.Text = "Action";
+            actionLabel.Text = "Product Type";
             // 
             // quantityLabel
             // 
-            quantityLabel.Location = new Point(142, 173);
+            quantityLabel.Appearance.ForeColor = Color.White;
+            quantityLabel.Appearance.Options.UseForeColor = true;
+            quantityLabel.Location = new Point(117, 219);
             quantityLabel.Name = "quantityLabel";
             quantityLabel.Size = new Size(47, 16);
             quantityLabel.TabIndex = 1;
@@ -59,7 +66,9 @@
             // 
             // priceLabel
             // 
-            priceLabel.Location = new Point(161, 132);
+            priceLabel.Appearance.ForeColor = Color.White;
+            priceLabel.Appearance.Options.UseForeColor = true;
+            priceLabel.Location = new Point(136, 178);
             priceLabel.Name = "priceLabel";
             priceLabel.Size = new Size(28, 16);
             priceLabel.TabIndex = 2;
@@ -67,7 +76,9 @@
             // 
             // cancelOrderBtn
             // 
-            cancelOrderBtn.Location = new Point(420, 236);
+            cancelOrderBtn.Appearance.BackColor = Color.FromArgb(243, 55, 57);
+            cancelOrderBtn.Appearance.Options.UseBackColor = true;
+            cancelOrderBtn.Location = new Point(348, 282);
             cancelOrderBtn.Name = "cancelOrderBtn";
             cancelOrderBtn.Size = new Size(108, 34);
             cancelOrderBtn.TabIndex = 6;
@@ -76,7 +87,9 @@
             // 
             // amendOrderBtn
             // 
-            amendOrderBtn.Location = new Point(245, 236);
+            amendOrderBtn.Appearance.BackColor = Color.FromArgb(243, 214, 55);
+            amendOrderBtn.Appearance.Options.UseBackColor = true;
+            amendOrderBtn.Location = new Point(215, 282);
             amendOrderBtn.Name = "amendOrderBtn";
             amendOrderBtn.Size = new Size(108, 34);
             amendOrderBtn.TabIndex = 5;
@@ -85,7 +98,9 @@
             // 
             // placeBtn
             // 
-            placeBtn.Location = new Point(72, 236);
+            placeBtn.Appearance.BackColor = Color.FromArgb(59, 231, 64);
+            placeBtn.Appearance.Options.UseBackColor = true;
+            placeBtn.Location = new Point(76, 282);
             placeBtn.Name = "placeBtn";
             placeBtn.Size = new Size(108, 34);
             placeBtn.TabIndex = 4;
@@ -94,14 +109,14 @@
             // 
             // quantityTextBox
             // 
-            quantityTextBox.Location = new Point(233, 166);
+            quantityTextBox.Location = new Point(208, 212);
             quantityTextBox.Name = "quantityTextBox";
             quantityTextBox.Size = new Size(120, 23);
             quantityTextBox.TabIndex = 3;
             // 
             // priceTextBox
             // 
-            priceTextBox.Location = new Point(233, 125);
+            priceTextBox.Location = new Point(208, 171);
             priceTextBox.Name = "priceTextBox";
             priceTextBox.Size = new Size(120, 23);
             priceTextBox.TabIndex = 2;
@@ -110,7 +125,7 @@
             // 
             actionDropDown.DropDownStyle = ComboBoxStyle.DropDownList;
             actionDropDown.FormattingEnabled = true;
-            actionDropDown.Location = new Point(233, 84);
+            actionDropDown.Location = new Point(208, 129);
             actionDropDown.Name = "actionDropDown";
             actionDropDown.Size = new Size(120, 24);
             actionDropDown.TabIndex = 1;
@@ -118,8 +133,10 @@
             // entryOrderLabel
             // 
             entryOrderLabel.Appearance.Font = new Font("Tahoma", 11.2695656F, FontStyle.Regular, GraphicsUnit.Point);
+            entryOrderLabel.Appearance.ForeColor = Color.White;
             entryOrderLabel.Appearance.Options.UseFont = true;
-            entryOrderLabel.Location = new Point(161, 12);
+            entryOrderLabel.Appearance.Options.UseForeColor = true;
+            entryOrderLabel.Location = new Point(154, 27);
             entryOrderLabel.Name = "entryOrderLabel";
             entryOrderLabel.Size = new Size(144, 22);
             entryOrderLabel.TabIndex = 9;
@@ -128,18 +145,43 @@
             // tickerLabel
             // 
             tickerLabel.Appearance.Font = new Font("Tahoma", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point);
+            tickerLabel.Appearance.ForeColor = Color.Orange;
             tickerLabel.Appearance.Options.UseFont = true;
-            tickerLabel.Location = new Point(311, 12);
+            tickerLabel.Appearance.Options.UseForeColor = true;
+            tickerLabel.Location = new Point(304, 27);
             tickerLabel.Name = "tickerLabel";
             tickerLabel.Size = new Size(78, 22);
             tickerLabel.TabIndex = 10;
             tickerLabel.Text = "{Ticker}";
             // 
+            // productTypeDropDown
+            // 
+            productTypeDropDown.DropDownStyle = ComboBoxStyle.DropDownList;
+            productTypeDropDown.FormattingEnabled = true;
+            productTypeDropDown.Location = new Point(208, 86);
+            productTypeDropDown.Name = "productTypeDropDown";
+            productTypeDropDown.Size = new Size(120, 24);
+            productTypeDropDown.TabIndex = 12;
+            // 
+            // labelControl1
+            // 
+            labelControl1.Appearance.ForeColor = Color.White;
+            labelControl1.Appearance.Options.UseForeColor = true;
+            labelControl1.Location = new Point(129, 132);
+            labelControl1.Name = "labelControl1";
+            labelControl1.Size = new Size(35, 16);
+            labelControl1.TabIndex = 11;
+            labelControl1.Text = "Action";
+            // 
             // XEntryForm
             // 
+            Appearance.BackColor = Color.FromArgb(18, 23, 35);
+            Appearance.Options.UseBackColor = true;
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(611, 370);
+            ClientSize = new Size(531, 355);
+            Controls.Add(productTypeDropDown);
+            Controls.Add(labelControl1);
             Controls.Add(tickerLabel);
             Controls.Add(entryOrderLabel);
             Controls.Add(actionDropDown);
@@ -151,6 +193,7 @@
             Controls.Add(priceLabel);
             Controls.Add(quantityLabel);
             Controls.Add(actionLabel);
+            IconOptions.Image = (Image)resources.GetObject("XEntryForm.IconOptions.Image");
             Name = "XEntryForm";
             Text = "Entry Order";
             Load += XEntryForm_Load;
@@ -171,5 +214,7 @@
         private ComboBox actionDropDown;
         private DevExpress.XtraEditors.LabelControl entryOrderLabel;
         private DevExpress.XtraEditors.LabelControl tickerLabel;
+        private ComboBox productTypeDropDown;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }
