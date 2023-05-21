@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraDiagram.Base;
 using OrderBook.Data.Models;
+using OrderBook.Data.Services;
 using OrderBook.UI.ViewModels;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -10,7 +11,6 @@ public partial class XOrderBookForm : DevExpress.XtraEditors.XtraForm
 {
     private readonly OrderBookViewModel _orderBookViewModel;
     private readonly ObservableCollection<TickerModel> _listOfTicker;
-    private System.Windows.Forms.Timer timer;
 
     public XOrderBookForm(OrderBookViewModel viewModel, ObservableCollection<TickerModel> listOfTicker)
     {
@@ -18,11 +18,6 @@ public partial class XOrderBookForm : DevExpress.XtraEditors.XtraForm
         _orderBookViewModel = viewModel;
         DataContext = _orderBookViewModel;
         _listOfTicker = listOfTicker;
-
-        timer = new System.Windows.Forms.Timer();
-        timer.Interval = 2000;
-        timer.Tick += RefreshData;
-        timer.Start();
     }
 
     private async void XOrderBookForm_Load(object sender, EventArgs e)
@@ -104,7 +99,13 @@ public partial class XOrderBookForm : DevExpress.XtraEditors.XtraForm
     // Other methods
     private async void RefreshData(object sender, EventArgs e)
     {
-        await _orderBookViewModel.LoadOrderBookByTicker(_orderBookViewModel.OrderBook.Ticker.Symbol);
+        // trigger when there is a change in the observable collection of orderbooks
+        var updatedOrderBooks = await _orderBookViewModel.RefreshData(); 
+
+        if (updatedOrderBooks != null)
+        {
+            await _orderBookViewModel.LoadOrderBookByTicker(_orderBookViewModel.OrderBook.Ticker.Symbol);
+        }
     }
 
     // Events

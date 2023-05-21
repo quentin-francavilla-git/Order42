@@ -62,6 +62,11 @@ public class OrderBookViewModel : ViewModelBase
         }
     }
 
+    public async Task<ObservableCollection<OrderBookModel>?> RefreshData()
+    {
+       return await _orderBookApiService.GetOrderBook();
+    }
+
     public async Task<ObservableCollection<TickerModel>> LoadTickers()
     {
         return await _orderBookApiService.GetTicker();

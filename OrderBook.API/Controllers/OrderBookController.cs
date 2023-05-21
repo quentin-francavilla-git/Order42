@@ -22,7 +22,8 @@ public class OrderBookController : ControllerBase
     [HttpGet]
     public ActionResult<IEnumerable<OrderBookModel>> Get()
     {
-        return _dataProvider.OrderBooks;
+        var tt = _dataProvider.OrderBooks;
+        return tt;
     }
 
     [HttpGet("byTicker/{tickerSymbol}")]

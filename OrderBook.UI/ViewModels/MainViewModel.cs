@@ -43,12 +43,12 @@ public class MainViewModel : ViewModelBase
                 }
             }
         };
-
         orderBookform.Show();
     }
 
     public async Task Load()
     {
+        await _orderBookApiService.GetInitialOrderBooks();
         var tickers = await _orderBookApiService.GetTicker();
 
         Tickers.Clear();
