@@ -1,852 +1,866 @@
 [
-    {
-        "Ticker": {
-            "Symbol": "GOOGL"
-        },
-        "Bids": [
-            {
-                "Type": "Bid",
-                "Price": 5301.7,
-                "Quantity": 5,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Bid",
-                "Price": 5300.0,
-                "Quantity": 40,
-                "Total": 0,
-                "ProductType": "Futures"
-            },
-            {
-                "Type": "Bid",
-                "Price": 4444.0,
-                "Quantity": 3434,
-                "Total": 0.0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Bid",
-                "Price": 4200.0,
-                "Quantity": 14,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Bid",
-                "Price": 3940.0,
-                "Quantity": 991,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Bid",
-                "Price": 3440.0,
-                "Quantity": 3333,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Bid",
-                "Price": 3332.0,
-                "Quantity": 11,
-                "Total": 0.0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Bid",
-                "Price": 3100.0,
-                "Quantity": 5555,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Bid",
-                "Price": 2900.0,
-                "Quantity": 12,
-                "Total": 0,
-                "ProductType": "Futures"
-            },
-            {
-                "Type": "Bid",
-                "Price": 2387.0,
-                "Quantity": 198,
-                "Total": 0,
-                "ProductType": "Futures"
-            }
-        ],
-        "Asks": [
-            {
-                "Type": "Ask",
-                "Price": 61212.0,
-                "Quantity": 222,
-                "Total": 0.0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Ask",
-                "Price": 5820.0,
-                "Quantity": 2222,
-                "Total": 0,
-                "ProductType": "Futures"
-            },
-            {
-                "Type": "Ask",
-                "Price": 5521.0,
-                "Quantity": 300,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Ask",
-                "Price": 5300.0,
-                "Quantity": 400,
-                "Total": 0.0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Ask",
-                "Price": 5222.0,
-                "Quantity": 5555,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Ask",
-                "Price": 4876.0,
-                "Quantity": 6527,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Ask",
-                "Price": 4647.0,
-                "Quantity": 4197,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Ask",
-                "Price": 4444.0,
-                "Quantity": 4444,
-                "Total": 0.0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Ask",
-                "Price": 4345.0,
-                "Quantity": 2672,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Ask",
-                "Price": 3947.0,
-                "Quantity": 8487,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Ask",
-                "Price": 3662.0,
-                "Quantity": 2753,
-                "Total": 0,
-                "ProductType": "Bonds"
-            }
-        ]
+  {
+    "Ticker": {
+      "Symbol": "GOOGL"
     },
-    {
-        "Ticker": {
-            "Symbol": "AAPL"
-        },
-        "Bids": [
-            {
-                "Type": "Bid",
-                "Price": 7000.0,
-                "Quantity": 500,
-                "Total": 0.0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Bid",
-                "Price": 6195.0,
-                "Quantity": 5555,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Bid",
-                "Price": 5866.0,
-                "Quantity": 3840,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Bid",
-                "Price": 5544.0,
-                "Quantity": 9836,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Bid",
-                "Price": 5269.0,
-                "Quantity": 1456,
-                "Total": 0,
-                "ProductType": "Futures"
-            },
-            {
-                "Type": "Bid",
-                "Price": 4977.0,
-                "Quantity": 6357,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Bid",
-                "Price": 4723.0,
-                "Quantity": 5550,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Bid",
-                "Price": 4402.0,
-                "Quantity": 2874,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Bid",
-                "Price": 4077.0,
-                "Quantity": 9276,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Bid",
-                "Price": 3843.0,
-                "Quantity": 3771,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Bid",
-                "Price": 3521.0,
-                "Quantity": 6955,
-                "Total": 0,
-                "ProductType": "Futures"
-            }
-        ],
-        "Asks": [
-            {
-                "Type": "Ask",
-                "Price": 43321.0,
-                "Quantity": 43,
-                "Total": 0.0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Ask",
-                "Price": 6632.0,
-                "Quantity": 2345,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Ask",
-                "Price": 6305.0,
-                "Quantity": 4035,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Ask",
-                "Price": 5998.0,
-                "Quantity": 9801,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Ask",
-                "Price": 5672.0,
-                "Quantity": 543,
-                "Total": 0,
-                "ProductType": "Futures"
-            },
-            {
-                "Type": "Ask",
-                "Price": 5379.0,
-                "Quantity": 7027,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Ask",
-                "Price": 5075.0,
-                "Quantity": 2512,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Ask",
-                "Price": 4752.0,
-                "Quantity": 1597,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Ask",
-                "Price": 4453.0,
-                "Quantity": 6818,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Ask",
-                "Price": 4322.0,
-                "Quantity": 43,
-                "Total": 0.0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Ask",
-                "Price": 4176.0,
-                "Quantity": 1987,
-                "Total": 0,
-                "ProductType": "Futures"
-            },
-            {
-                "Type": "Ask",
-                "Price": 3834.0,
-                "Quantity": 4766,
-                "Total": 0,
-                "ProductType": "Equities"
-            }
-        ]
+    "Bids": [
+      {
+        "Type": "Bid",
+        "Price": 5301.7,
+        "Quantity": 5,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Bid",
+        "Price": 5300.0,
+        "Quantity": 40,
+        "Total": 0,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": "Bid",
+        "Price": 4444.0,
+        "Quantity": 3434,
+        "Total": 0.0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Bid",
+        "Price": 4200.0,
+        "Quantity": 14,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Bid",
+        "Price": 3940.0,
+        "Quantity": 991,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Bid",
+        "Price": 3440.0,
+        "Quantity": 3333,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Bid",
+        "Price": 3332.0,
+        "Quantity": 11,
+        "Total": 0.0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Bid",
+        "Price": 3100.0,
+        "Quantity": 5555,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Bid",
+        "Price": 2900.0,
+        "Quantity": 12,
+        "Total": 0,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": "Bid",
+        "Price": 2387.0,
+        "Quantity": 198,
+        "Total": 0,
+        "ProductType": "Futures"
+      }
+    ],
+    "Asks": [
+      {
+        "Type": "Ask",
+        "Price": 61212.0,
+        "Quantity": 222,
+        "Total": 0.0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 5820.0,
+        "Quantity": 2222,
+        "Total": 0,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": "Ask",
+        "Price": 5521.0,
+        "Quantity": 300,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Ask",
+        "Price": 5300.0,
+        "Quantity": 400,
+        "Total": 0.0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 5222.0,
+        "Quantity": 5555,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Ask",
+        "Price": 4876.0,
+        "Quantity": 6527,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Ask",
+        "Price": 4647.0,
+        "Quantity": 4197,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 4444.0,
+        "Quantity": 4444,
+        "Total": 0.0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 4345.0,
+        "Quantity": 2672,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Ask",
+        "Price": 3947.0,
+        "Quantity": 8487,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Ask",
+        "Price": 3662.0,
+        "Quantity": 2753,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Ask",
+        "Price": 2222.0,
+        "Quantity": 222,
+        "Total": 0.0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 2222.0,
+        "Quantity": 222,
+        "Total": 0.0,
+        "ProductType": "Equities"
+      }
+    ]
+  },
+  {
+    "Ticker": {
+      "Symbol": "AAPL"
     },
-    {
-        "Ticker": {
-            "Symbol": "AMZN"
-        },
-        "Bids": [
-            {
-                "Type": "Bid",
-                "Price": 12367232.0,
-                "Quantity": 33,
-                "Total": 0.0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Bid",
-                "Price": 123672.0,
-                "Quantity": 33,
-                "Total": 0.0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Bid",
-                "Price": 12367.0,
-                "Quantity": 33,
-                "Total": 0.0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Bid",
-                "Price": 12333.0,
-                "Quantity": 33,
-                "Total": 0.0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Bid",
-                "Price": 6723.0,
-                "Quantity": 3176,
-                "Total": 0,
-                "ProductType": "Futures"
-            },
-            {
-                "Type": "Bid",
-                "Price": 6361.0,
-                "Quantity": 4589,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Bid",
-                "Price": 6062.0,
-                "Quantity": 1843,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Bid",
-                "Price": 5719.0,
-                "Quantity": 7852,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Bid",
-                "Price": 5432.0,
-                "Quantity": 2359,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Bid",
-                "Price": 5150.0,
-                "Quantity": 6452,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Bid",
-                "Price": 4843.0,
-                "Quantity": 3721,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Bid",
-                "Price": 4535.0,
-                "Quantity": 2790,
-                "Total": 0,
-                "ProductType": "Futures"
-            },
-            {
-                "Type": "Bid",
-                "Price": 4206.0,
-                "Quantity": 9165,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Bid",
-                "Price": 3932.0,
-                "Quantity": 5481,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Bid",
-                "Price": 3434.0,
-                "Quantity": 11,
-                "Total": 0.0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Bid",
-                "Price": 1233.0,
-                "Quantity": 33,
-                "Total": 0.0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Bid",
-                "Price": 123.0,
-                "Quantity": 33,
-                "Total": 0.0,
-                "ProductType": "Options"
-            }
-        ],
-        "Asks": [
-            {
-                "Type": "Ask",
-                "Price": 6687.0,
-                "Quantity": 44,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Ask",
-                "Price": 6565.0,
-                "Quantity": 1111,
-                "Total": 0.0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Ask",
-                "Price": 6332.0,
-                "Quantity": 5061,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Ask",
-                "Price": 6031.0,
-                "Quantity": 1833,
-                "Total": 0,
-                "ProductType": "Futures"
-            },
-            {
-                "Type": "Ask",
-                "Price": 5735.0,
-                "Quantity": 7091,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Ask",
-                "Price": 5477.0,
-                "Quantity": 2254,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Ask",
-                "Price": 5201.0,
-                "Quantity": 3655,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Ask",
-                "Price": 4883.0,
-                "Quantity": 2847,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Ask",
-                "Price": 4592.0,
-                "Quantity": 9615,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Ask",
-                "Price": 4261.0,
-                "Quantity": 1563,
-                "Total": 0,
-                "ProductType": "Futures"
-            },
-            {
-                "Type": "Ask",
-                "Price": 3976.0,
-                "Quantity": 4452,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Ask",
-                "Price": 3434.0,
-                "Quantity": 11,
-                "Total": 0.0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Ask",
-                "Price": 332.0,
-                "Quantity": 332,
-                "Total": 0.0,
-                "ProductType": "Options"
-            }
-        ]
+    "Bids": [
+      {
+        "Type": "Bid",
+        "Price": 7000.0,
+        "Quantity": 500,
+        "Total": 0.0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Bid",
+        "Price": 6195.0,
+        "Quantity": 5555,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Bid",
+        "Price": 5866.0,
+        "Quantity": 3840,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Bid",
+        "Price": 5544.0,
+        "Quantity": 9836,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Bid",
+        "Price": 5269.0,
+        "Quantity": 1456,
+        "Total": 0,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": "Bid",
+        "Price": 4977.0,
+        "Quantity": 6357,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Bid",
+        "Price": 4723.0,
+        "Quantity": 5550,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Bid",
+        "Price": 4402.0,
+        "Quantity": 2874,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Bid",
+        "Price": 4077.0,
+        "Quantity": 9276,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Bid",
+        "Price": 3843.0,
+        "Quantity": 3771,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Bid",
+        "Price": 3521.0,
+        "Quantity": 6955,
+        "Total": 0,
+        "ProductType": "Futures"
+      }
+    ],
+    "Asks": [
+      {
+        "Type": "Ask",
+        "Price": 43321.0,
+        "Quantity": 43,
+        "Total": 0.0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 6632.0,
+        "Quantity": 2345,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Ask",
+        "Price": 6305.0,
+        "Quantity": 4035,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Ask",
+        "Price": 5998.0,
+        "Quantity": 9801,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 5672.0,
+        "Quantity": 543,
+        "Total": 0,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": "Ask",
+        "Price": 5379.0,
+        "Quantity": 7027,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 5075.0,
+        "Quantity": 2512,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Ask",
+        "Price": 4752.0,
+        "Quantity": 1597,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Ask",
+        "Price": 4453.0,
+        "Quantity": 6818,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Ask",
+        "Price": 4322.0,
+        "Quantity": 43,
+        "Total": 0.0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 4176.0,
+        "Quantity": 1987,
+        "Total": 0,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": "Ask",
+        "Price": 3834.0,
+        "Quantity": 4766,
+        "Total": 0,
+        "ProductType": "Equities"
+      }
+    ]
+  },
+  {
+    "Ticker": {
+      "Symbol": "AMZN"
     },
-    {
-        "Ticker": {
-            "Symbol": "MSFT"
-        },
-        "Bids": [
-            {
-                "Type": "Bid",
-                "Price": 6798.0,
-                "Quantity": 2165,
-                "Total": 0,
-                "ProductType": "Futures"
-            },
-            {
-                "Type": "Bid",
-                "Price": 6442.0,
-                "Quantity": 3689,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Bid",
-                "Price": 6119.0,
-                "Quantity": 9132,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Bid",
-                "Price": 5812.0,
-                "Quantity": 481,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Bid",
-                "Price": 5549.0,
-                "Quantity": 6218,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Bid",
-                "Price": 5245.0,
-                "Quantity": 2521,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Bid",
-                "Price": 4918.0,
-                "Quantity": 1518,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Bid",
-                "Price": 4589.0,
-                "Quantity": 7857,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Bid",
-                "Price": 4291.0,
-                "Quantity": 2053,
-                "Total": 0,
-                "ProductType": "Futures"
-            },
-            {
-                "Type": "Bid",
-                "Price": 3974.0,
-                "Quantity": 4201,
-                "Total": 0,
-                "ProductType": "Equities"
-            }
-        ],
-        "Asks": [
-            {
-                "Type": "Ask",
-                "Price": 6992.0,
-                "Quantity": 2487,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Ask",
-                "Price": 6621.0,
-                "Quantity": 4132,
-                "Total": 0,
-                "ProductType": "Futures"
-            },
-            {
-                "Type": "Ask",
-                "Price": 6309.0,
-                "Quantity": 1911,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Ask",
-                "Price": 5986.0,
-                "Quantity": 5598,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Ask",
-                "Price": 5674.0,
-                "Quantity": 2564,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Ask",
-                "Price": 5345.0,
-                "Quantity": 3221,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Ask",
-                "Price": 5011.0,
-                "Quantity": 1797,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Ask",
-                "Price": 4715.0,
-                "Quantity": 7452,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Ask",
-                "Price": 4545.0,
-                "Quantity": 3333,
-                "Total": 0.0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Ask",
-                "Price": 4378.0,
-                "Quantity": 2936,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Ask",
-                "Price": 4057.0,
-                "Quantity": 4921,
-                "Total": 0,
-                "ProductType": "Futures"
-            }
-        ]
+    "Bids": [
+      {
+        "Type": "Bid",
+        "Price": 12367232.0,
+        "Quantity": 33,
+        "Total": 0.0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Bid",
+        "Price": 123672.0,
+        "Quantity": 33,
+        "Total": 0.0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Bid",
+        "Price": 12367.0,
+        "Quantity": 33,
+        "Total": 0.0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Bid",
+        "Price": 12333.0,
+        "Quantity": 33,
+        "Total": 0.0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Bid",
+        "Price": 6723.0,
+        "Quantity": 3176,
+        "Total": 0,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": "Bid",
+        "Price": 6361.0,
+        "Quantity": 4589,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Bid",
+        "Price": 6062.0,
+        "Quantity": 1843,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Bid",
+        "Price": 5719.0,
+        "Quantity": 7852,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Bid",
+        "Price": 5432.0,
+        "Quantity": 2359,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Bid",
+        "Price": 5150.0,
+        "Quantity": 6452,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Bid",
+        "Price": 4843.0,
+        "Quantity": 3721,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Bid",
+        "Price": 4535.0,
+        "Quantity": 2790,
+        "Total": 0,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": "Bid",
+        "Price": 4206.0,
+        "Quantity": 9165,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Bid",
+        "Price": 3932.0,
+        "Quantity": 5481,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Bid",
+        "Price": 3434.0,
+        "Quantity": 11,
+        "Total": 0.0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Bid",
+        "Price": 1233.0,
+        "Quantity": 33,
+        "Total": 0.0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Bid",
+        "Price": 123.0,
+        "Quantity": 33,
+        "Total": 0.0,
+        "ProductType": "Options"
+      }
+    ],
+    "Asks": [
+      {
+        "Type": "Ask",
+        "Price": 6687.0,
+        "Quantity": 44,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 6565.0,
+        "Quantity": 1111,
+        "Total": 0.0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 6332.0,
+        "Quantity": 5061,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Ask",
+        "Price": 6031.0,
+        "Quantity": 1833,
+        "Total": 0,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": "Ask",
+        "Price": 5735.0,
+        "Quantity": 7091,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Ask",
+        "Price": 5477.0,
+        "Quantity": 2254,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Ask",
+        "Price": 5201.0,
+        "Quantity": 3655,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 4883.0,
+        "Quantity": 2847,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Ask",
+        "Price": 4592.0,
+        "Quantity": 9615,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 4261.0,
+        "Quantity": 1563,
+        "Total": 0,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": "Ask",
+        "Price": 3976.0,
+        "Quantity": 4452,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Ask",
+        "Price": 3434.0,
+        "Quantity": 11,
+        "Total": 0.0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 332.0,
+        "Quantity": 332,
+        "Total": 0.0,
+        "ProductType": "Options"
+      }
+    ]
+  },
+  {
+    "Ticker": {
+      "Symbol": "MSFT"
     },
-    {
-        "Ticker": {
-            "Symbol": "GOOGL"
-        },
-        "Bids": [
-            {
-                "Type": "Bid",
-                "Price": 5300.7,
-                "Quantity": 555,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Bid",
-                "Price": 5300.0,
-                "Quantity": 65,
-                "Total": 0,
-                "ProductType": "Futures"
-            },
-            {
-                "Type": "Bid",
-                "Price": 4200.0,
-                "Quantity": 14,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Bid",
-                "Price": 3940.0,
-                "Quantity": 991,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Bid",
-                "Price": 3440.0,
-                "Quantity": 3333,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Bid",
-                "Price": 3100.0,
-                "Quantity": 5555,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Bid",
-                "Price": 2980.0,
-                "Quantity": 991,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Bid",
-                "Price": 2900.0,
-                "Quantity": 12,
-                "Total": 0,
-                "ProductType": "Futures"
-            },
-            {
-                "Type": "Bid",
-                "Price": 2387.0,
-                "Quantity": 198,
-                "Total": 0,
-                "ProductType": "Futures"
-            },
-            {
-                "Type": "Bid",
-                "Price": 1943.0,
-                "Quantity": 687,
-                "Total": 0,
-                "ProductType": "Options"
-            }
-        ],
-        "Asks": [
-            {
-                "Type": "Ask",
-                "Price": 6121.0,
-                "Quantity": 300,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Ask",
-                "Price": 5820.0,
-                "Quantity": 9275,
-                "Total": 0,
-                "ProductType": "Futures"
-            },
-            {
-                "Type": "Ask",
-                "Price": 5521.0,
-                "Quantity": 300,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Ask",
-                "Price": 5222.0,
-                "Quantity": 1204,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Ask",
-                "Price": 4876.0,
-                "Quantity": 6527,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Ask",
-                "Price": 4647.0,
-                "Quantity": 4197,
-                "Total": 0,
-                "ProductType": "Options"
-            },
-            {
-                "Type": "Ask",
-                "Price": 4345.0,
-                "Quantity": 2672,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Ask",
-                "Price": 3947.0,
-                "Quantity": 8487,
-                "Total": 0,
-                "ProductType": "Equities"
-            },
-            {
-                "Type": "Ask",
-                "Price": 3662.0,
-                "Quantity": 2753,
-                "Total": 0,
-                "ProductType": "Bonds"
-            },
-            {
-                "Type": "Ask",
-                "Price": 3352.0,
-                "Quantity": 7957,
-                "Total": 0,
-                "ProductType": "Options"
-            }
-        ]
-    }
+    "Bids": [
+      {
+        "Type": "Bid",
+        "Price": 6798.0,
+        "Quantity": 2165,
+        "Total": 0,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": "Bid",
+        "Price": 6442.0,
+        "Quantity": 3689,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Bid",
+        "Price": 6119.0,
+        "Quantity": 9132,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Bid",
+        "Price": 5812.0,
+        "Quantity": 481,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Bid",
+        "Price": 5549.0,
+        "Quantity": 6218,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Bid",
+        "Price": 5245.0,
+        "Quantity": 2521,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Bid",
+        "Price": 4918.0,
+        "Quantity": 1518,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Bid",
+        "Price": 4589.0,
+        "Quantity": 7857,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Bid",
+        "Price": 4291.0,
+        "Quantity": 2053,
+        "Total": 0,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": "Bid",
+        "Price": 3974.0,
+        "Quantity": 4201,
+        "Total": 0,
+        "ProductType": "Equities"
+      }
+    ],
+    "Asks": [
+      {
+        "Type": "Ask",
+        "Price": 6992.0,
+        "Quantity": 2487,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Ask",
+        "Price": 6621.0,
+        "Quantity": 4132,
+        "Total": 0,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": "Ask",
+        "Price": 6309.0,
+        "Quantity": 1911,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 5986.0,
+        "Quantity": 5598,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Ask",
+        "Price": 5674.0,
+        "Quantity": 2564,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Ask",
+        "Price": 5345.0,
+        "Quantity": 3221,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Ask",
+        "Price": 5011.0,
+        "Quantity": 1797,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 4715.0,
+        "Quantity": 7452,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 4545.0,
+        "Quantity": 3333,
+        "Total": 0.0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 4378.0,
+        "Quantity": 2936,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Ask",
+        "Price": 4057.0,
+        "Quantity": 4921,
+        "Total": 0,
+        "ProductType": "Futures"
+      }
+    ]
+  },
+  {
+    "Ticker": {
+      "Symbol": "GOOGL"
+    },
+    "Bids": [
+      {
+        "Type": "Bid",
+        "Price": 5300.7,
+        "Quantity": 555,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Bid",
+        "Price": 5300.0,
+        "Quantity": 65,
+        "Total": 0,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": "Bid",
+        "Price": 4200.0,
+        "Quantity": 14,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Bid",
+        "Price": 3940.0,
+        "Quantity": 991,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Bid",
+        "Price": 3440.0,
+        "Quantity": 3333,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Bid",
+        "Price": 3100.0,
+        "Quantity": 5555,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Bid",
+        "Price": 2980.0,
+        "Quantity": 991,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Bid",
+        "Price": 2900.0,
+        "Quantity": 12,
+        "Total": 0,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": "Bid",
+        "Price": 2387.0,
+        "Quantity": 198,
+        "Total": 0,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": "Bid",
+        "Price": 1943.0,
+        "Quantity": 687,
+        "Total": 0,
+        "ProductType": "Options"
+      }
+    ],
+    "Asks": [
+      {
+        "Type": "Ask",
+        "Price": 6121.0,
+        "Quantity": 300,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 5820.0,
+        "Quantity": 9275,
+        "Total": 0,
+        "ProductType": "Futures"
+      },
+      {
+        "Type": "Ask",
+        "Price": 5521.0,
+        "Quantity": 300,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Ask",
+        "Price": 5222.0,
+        "Quantity": 1204,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Ask",
+        "Price": 4876.0,
+        "Quantity": 6527,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Ask",
+        "Price": 4647.0,
+        "Quantity": 4197,
+        "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 4345.0,
+        "Quantity": 2672,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Ask",
+        "Price": 3947.0,
+        "Quantity": 8487,
+        "Total": 0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Ask",
+        "Price": 3662.0,
+        "Quantity": 2753,
+        "Total": 0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Ask",
+        "Price": 3352.0,
+        "Quantity": 7957,
+        "Total": 0,
+        "ProductType": "Options"
+      }
+    ]
+  }
 ]

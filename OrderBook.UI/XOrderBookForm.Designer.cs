@@ -43,9 +43,13 @@
             tickerDropDown = new ComboBox();
             tickerLabel = new DevExpress.XtraEditors.LabelControl();
             entryOrderbtn = new DevExpress.XtraEditors.SimpleButton();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)orderBookBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridBids).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridAsks).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // orderBookBindingSource
@@ -156,6 +160,26 @@
             entryOrderbtn.Text = "Entry Order";
             entryOrderbtn.Click += entryOrderbtn_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(55, 88);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(21, 15);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(580, 88);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(21, 15);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 9;
+            pictureBox2.TabStop = false;
+            // 
             // XOrderBookForm
             // 
             Appearance.BackColor = Color.FromArgb(18, 23, 35);
@@ -163,6 +187,8 @@
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1044, 585);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
             Controls.Add(entryOrderbtn);
             Controls.Add(tickerLabel);
             Controls.Add(tickerDropDown);
@@ -179,6 +205,8 @@
             ((System.ComponentModel.ISupportInitialize)orderBookBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridBids).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridAsks).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -193,5 +221,7 @@
         private ComboBox tickerDropDown;
         private DevExpress.XtraEditors.LabelControl tickerLabel;
         private DevExpress.XtraEditors.SimpleButton entryOrderbtn;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

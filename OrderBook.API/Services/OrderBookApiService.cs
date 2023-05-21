@@ -29,6 +29,8 @@ public class OrderBookApiService : IOrderBookApiService
 
         var orderBooks = await response.Content.ReadFromJsonAsync<ObservableCollection<OrderBookModel>>();
 
+        _lastOrderBooks = orderBooks;
+
         return orderBooks;
     }
 

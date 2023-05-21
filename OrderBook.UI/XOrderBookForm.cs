@@ -100,7 +100,7 @@ public partial class XOrderBookForm : DevExpress.XtraEditors.XtraForm
     private async void RefreshData(object sender, EventArgs e)
     {
         // trigger when there is a change in the observable collection of orderbooks
-        var updatedOrderBooks = await _orderBookViewModel.RefreshData(); 
+        var updatedOrderBooks = await _orderBookViewModel.RefreshData();
 
         if (updatedOrderBooks != null)
         {
