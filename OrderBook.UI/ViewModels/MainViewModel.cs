@@ -8,17 +8,14 @@ namespace OrderBook.UI.ViewModels;
 public class MainViewModel : ViewModelBase
 {
     private readonly IOrderBookApiService _orderBookApiService;
-    private readonly IDataProvider _dataProvider;
     public ObservableCollection<OrderBookViewModel> OrderBooks { get; } = new();
     public ObservableCollection<TickerModel> Tickers { get; } = new();
-    public ObservableCollection<OrderBookModel> OrderBooksModel { get; set; } = new();
 
     private List<(XOrderBookForm Form, OrderBookViewModel ViewModel)> formViewModelPairs = new List<(XOrderBookForm, OrderBookViewModel)>();
     
-    public MainViewModel(IOrderBookApiService orderBookApiService, IDataProvider dataProvider)
+    public MainViewModel(IOrderBookApiService orderBookApiService)
     {
         _orderBookApiService = orderBookApiService;
-        _dataProvider = dataProvider;
     }
 
     // Handle button click events and open the corresponding windows
@@ -48,7 +45,10 @@ public class MainViewModel : ViewModelBase
 
     public async Task Load()
     {
+        // get existing orderbooks
         await _orderBookApiService.GetInitialOrderBooks();
+
+        // Choice of loading tickers list at the start considering this value wont change frequently
         var tickers = await _orderBookApiService.GetTicker();
 
         Tickers.Clear();

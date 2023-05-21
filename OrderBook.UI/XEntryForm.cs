@@ -87,41 +87,37 @@ public partial class XEntryForm : DevExpress.XtraEditors.XtraForm
 
     public async Task EntryOrderBtnAction(string selectedEntryType)
     {
+        // Drop Down values
         string selectedAction = actionDropDown.SelectedItem?.ToString() ?? string.Empty;
         string selectedProductType = productTypeDropDown.SelectedItem?.ToString() ?? string.Empty;
 
+        // Textboxes values
         string price = priceTextBox.Text;
-
-        if (price == null)
-        {
-            MessageBox.Show("Enter valid price.");
-            return;
-        }
-        if (!decimal.TryParse(price, out _))
-        {
-            MessageBox.Show("Enter valid price.");
-            return;
-        }
-
         string quantity = quantityTextBox.Text;
 
-        if (quantity == null)
+        // Handling wrong inputs
+        string messageBox = string.Empty;
+
+        if (string.IsNullOrEmpty(price) || !decimal.TryParse(price, out _))
         {
-            MessageBox.Show("Enter valid quantity.");
-            return;
+            messageBox = "Enter valid price.";
         }
-        if (!int.TryParse(quantity, out _))
+        else if (string.IsNullOrEmpty(quantity) || !int.TryParse(quantity, out _))
         {
-            MessageBox.Show("Enter valid quantity.");
+            messageBox = "Enter valid quantity.";
+        }
+        else if (string.IsNullOrEmpty(selectedAction))
+        {
+            messageBox = "Invalid Ticker.";
+        }
+
+        if (!string.IsNullOrEmpty(messageBox))
+        {
+            MessageBox.Show(messageBox);
             return;
         }
 
-        if (string.IsNullOrEmpty(selectedAction))
-        {
-            MessageBox.Show("Invalid Ticker.");
-            return;
-        }
-
+        // Call the EntryOrder 
         int resultCode = await _viewModel.EntryOrder(
             new OrderModel()
             {
@@ -133,22 +129,29 @@ public partial class XEntryForm : DevExpress.XtraEditors.XtraForm
             _currentTicker,
             selectedEntryType);
 
-        if (resultCode == 1 && selectedEntryType == "PlaceOrder")
-            MessageBox.Show("Order already existing. Updated successfully.");
+        // Error and message handling
 
-        if (resultCode == 1 && selectedEntryType == "AmendOrder")
-            MessageBox.Show("Order updated successfully.");
+        if (resultCode == 1)
+        {
+            if (selectedEntryType == "PlaceOrder")
+                messageBox = "Order already existing. Updated successfully.";
+            else if (selectedEntryType == "AmendOrder")
+                messageBox = "Order updated successfully.";
+            else if (selectedEntryType == "CancelOrder")
+                messageBox = "Order canceled successfully.";
+        }
+        else if (resultCode == 2)
+        {
+            if (selectedEntryType == "PlaceOrder")
+                messageBox = "New Order placed successfully.";
+            else
+                messageBox = "Error: No Order corresponding.";
+        }
+        else
+        {
+            messageBox = "Error while placing the order.";
+        }
 
-        if (resultCode == 1 && selectedEntryType == "CancelOrder")
-            MessageBox.Show("Order canceled successfully.");
-
-        if (resultCode == 2 && selectedEntryType == "PlaceOrder")
-            MessageBox.Show("New Order placed successfully.");
-
-        if (resultCode == 2 && selectedEntryType != "PlaceOrder")
-            MessageBox.Show("Error : No Order corresponding.");
-
-        if (resultCode != 1 && resultCode != 2)
-            MessageBox.Show("Error while placing the order.");
+        MessageBox.Show(messageBox);
     }
 }

@@ -57,14 +57,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="orderBookBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAJRFJREFUeF7t2Hvo9glZ53HHcZoOds5WipZqhyjbShs1nXV1EEUMZUVwEVeQLFFK
+        vgAADr4B6kKxwAAAJRFJREFUeF7t2Hvo9glZ53HHcZoOds5WipZqhyjbShs1nXV1EEUMZUVwEVeQLFFK
         kAwVXJRk/UNZQdYQcVCSNpKgjE4E0YmIjSgqoijapdbtMJU2HsbDOM5hr6t57p5n7uf9/J7f4b7u7/X9
         Xm/h9c8zM8/vPnx/7+uDj/gPd97+oKSZ4n+PkDSTA0AabD8IkuZwAEiD7QdB0hwOAGmw/SBImsMBIA22
         HwRJczgApMH2gyBpDgeANNh+ECTN4QCQBtsPgqQ5HADSYPtBkDSHA0AabD8IkuZwAEiD7QdB0hwOAGmw
@@ -228,7 +225,7 @@
   <data name="XMainForm.IconOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAJRNJREFUeF7t2HvIrQl133HHcTK5mHtMJTJtko4hMU2iHbUyWBVRxKBUBItYQWIq
+        vAAADrwBlbxySQAAJRNJREFUeF7t2HvIrQl133HHcTK5mHtMJTJtko4hMU2iHbUyWBVRxKBUBItYQWIq
         SitILSpYlEj9Q6kgNYg4KJG0RAJpQm4EQm6E0BASkhASEtKSZJqLabTjZbyM45yZrpU5O+fMPt/znvey
         137W86yv8PnnzMx59+V5v+uHj/ondz/xIUkzxf8eJWkmB4A02H4QJM3hAJAG2w+CpDkcANJg+0GQNIcD
         QBpsPwiS5nAASIPtB0HSHA4AabD9IEiawwEgDbYfBElzOACkwfaDIGkOB4A02H4QJM3hAJAG2w+CpDkc

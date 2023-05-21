@@ -11,7 +11,7 @@ namespace OrderBook.UI
         public XMainForm()
         {
             InitializeComponent();
-            _mainViewModel = new MainViewModel(new OrderBookApiService(), new DataProvider());
+            _mainViewModel = new MainViewModel(new OrderBookApiService());
         }
 
         private async void btnOpenOrderBookForm_Click(object sender, EventArgs e)
@@ -20,11 +20,6 @@ namespace OrderBook.UI
         }
 
         private async void XMainForm_Load(object sender, EventArgs e)
-        {
-            await LoadData();
-        }
-
-        private async Task LoadData()
         {
             await _mainViewModel.Load();
             orderBookBindingSource.DataSource = _mainViewModel.OrderBooks;
