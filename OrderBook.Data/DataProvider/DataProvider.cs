@@ -120,18 +120,34 @@ public class DataProvider : IDataProvider
                     // Update the existing bid order quantity
                     existingBid.Quantity = order.Quantity;
                 }
+                else
+                {
+                    // if no entry is found, add it
+                    orderBook.Bids.Add(order);
+                }
             }
+            // Same logic for the asks
             else if (order.Type == "Ask")
             {
                 var existingAsk = orderBook.Asks.FirstOrDefault(o => o.Price == order.Price);
 
                 if (existingAsk != null)
                 {
-                    // Update the existing ask order quantity
                     existingAsk.Quantity = order.Quantity;
+                }
+                else
+                {
+                    orderBook.Asks.Add(order);
                 }
             }
         }
+
+        // Sorting by price
+        orderBooks.ForEach(ob =>
+        {
+            ob.Bids.Sort((o1, o2) => o2.Price.CompareTo(o1.Price));
+            ob.Asks.Sort((o1, o2) => o2.Price.CompareTo(o1.Price));
+        });
 
         // Serialize the updated list of order books back to JSON
         var updatedJsonData = System.Text.Json.JsonSerializer.Serialize(orderBooks, _jsonSerializerOptions);

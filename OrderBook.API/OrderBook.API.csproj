@@ -11,4 +11,10 @@
     <ProjectReference Include="..\OrderBook.Data\OrderBook.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Properties\launchSettings.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

@@ -2,6 +2,7 @@
 using OrderBook.UI.ViewModels;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace OrderBook.UI;
 
@@ -28,7 +29,7 @@ public partial class XOrderBookForm : DevExpress.XtraEditors.XtraForm
     {
         BindingGridToViewModel(dataGridAsks, nameof(DataGridView.DataSource), "Asks");
         BindingGridToViewModel(dataGridBids, nameof(DataGridView.DataSource), "Bids");
-        BindingDropDownToViewModel(tickerDropDown, nameof(System.Windows.Forms.ComboBox.SelectedItem), "Ticker");
+        BindingDropDownToViewModel(tickerDropDown, nameof(ComboBox.SelectedItem), "Ticker");
 
         if (_listOfTicker.Any())
         {
