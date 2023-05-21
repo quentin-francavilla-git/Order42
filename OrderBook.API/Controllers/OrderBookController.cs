@@ -28,7 +28,7 @@ public class OrderBookController : ControllerBase
     [HttpGet("byTicker/{tickerSymbol}")]
     public async Task<ActionResult<OrderBookModel>> GetByTicker(string tickerSymbol)
     {
-        OrderBookModel orderBook = await _dataProvider.GetOrderBookByTicker(tickerSymbol);
+        OrderBookModel orderBook = await _dataProvider.GetOrderBookByTicker(tickerSymbol) ?? new OrderBookModel();
 
         return orderBook;
     }

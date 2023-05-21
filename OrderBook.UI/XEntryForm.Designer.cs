@@ -37,13 +37,13 @@
             quantityTextBox = new TextBox();
             priceTextBox = new TextBox();
             actionDropDown = new ComboBox();
+            entryOrderLabel = new DevExpress.XtraEditors.LabelControl();
             tickerLabel = new DevExpress.XtraEditors.LabelControl();
-            tickerDropDown = new ComboBox();
             SuspendLayout();
             // 
             // actionLabel
             // 
-            actionLabel.Location = new Point(154, 74);
+            actionLabel.Location = new Point(154, 87);
             actionLabel.Name = "actionLabel";
             actionLabel.Size = new Size(35, 16);
             actionLabel.TabIndex = 0;
@@ -51,7 +51,7 @@
             // 
             // quantityLabel
             // 
-            quantityLabel.Location = new Point(142, 119);
+            quantityLabel.Location = new Point(142, 173);
             quantityLabel.Name = "quantityLabel";
             quantityLabel.Size = new Size(47, 16);
             quantityLabel.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             // priceLabel
             // 
-            priceLabel.Location = new Point(161, 159);
+            priceLabel.Location = new Point(161, 132);
             priceLabel.Name = "priceLabel";
             priceLabel.Size = new Size(28, 16);
             priceLabel.TabIndex = 2;
@@ -70,7 +70,7 @@
             cancelBtn.Location = new Point(420, 236);
             cancelBtn.Name = "cancelBtn";
             cancelBtn.Size = new Size(108, 34);
-            cancelBtn.TabIndex = 3;
+            cancelBtn.TabIndex = 6;
             cancelBtn.Text = "Cancel Order";
             // 
             // amendBtn
@@ -78,7 +78,7 @@
             amendBtn.Location = new Point(245, 236);
             amendBtn.Name = "amendBtn";
             amendBtn.Size = new Size(108, 34);
-            amendBtn.TabIndex = 4;
+            amendBtn.TabIndex = 5;
             amendBtn.Text = "Amend Order";
             // 
             // placeBtn
@@ -86,57 +86,60 @@
             placeBtn.Location = new Point(72, 236);
             placeBtn.Name = "placeBtn";
             placeBtn.Size = new Size(108, 34);
-            placeBtn.TabIndex = 5;
+            placeBtn.TabIndex = 4;
             placeBtn.Text = "Place Order";
             placeBtn.Click += placeBtn_Click;
             // 
             // quantityTextBox
             // 
-            quantityTextBox.Location = new Point(233, 112);
+            quantityTextBox.Location = new Point(233, 166);
             quantityTextBox.Name = "quantityTextBox";
             quantityTextBox.Size = new Size(120, 23);
-            quantityTextBox.TabIndex = 6;
+            quantityTextBox.TabIndex = 3;
             // 
             // priceTextBox
             // 
-            priceTextBox.Location = new Point(233, 152);
+            priceTextBox.Location = new Point(233, 125);
             priceTextBox.Name = "priceTextBox";
             priceTextBox.Size = new Size(120, 23);
-            priceTextBox.TabIndex = 7;
+            priceTextBox.TabIndex = 2;
             // 
             // actionDropDown
             // 
             actionDropDown.DropDownStyle = ComboBoxStyle.DropDownList;
             actionDropDown.FormattingEnabled = true;
-            actionDropDown.Location = new Point(233, 71);
+            actionDropDown.Location = new Point(233, 84);
             actionDropDown.Name = "actionDropDown";
             actionDropDown.Size = new Size(120, 24);
-            actionDropDown.TabIndex = 8;
+            actionDropDown.TabIndex = 1;
+            // 
+            // entryOrderLabel
+            // 
+            entryOrderLabel.Appearance.Font = new Font("Tahoma", 11.2695656F, FontStyle.Regular, GraphicsUnit.Point);
+            entryOrderLabel.Appearance.Options.UseFont = true;
+            entryOrderLabel.Location = new Point(161, 12);
+            entryOrderLabel.Name = "entryOrderLabel";
+            entryOrderLabel.Size = new Size(144, 22);
+            entryOrderLabel.TabIndex = 9;
+            entryOrderLabel.Text = "Entry an Order for";
             // 
             // tickerLabel
             // 
-            tickerLabel.Location = new Point(154, 30);
+            tickerLabel.Appearance.Font = new Font("Tahoma", 11.2695656F, FontStyle.Bold, GraphicsUnit.Point);
+            tickerLabel.Appearance.Options.UseFont = true;
+            tickerLabel.Location = new Point(311, 12);
             tickerLabel.Name = "tickerLabel";
-            tickerLabel.Size = new Size(35, 16);
-            tickerLabel.TabIndex = 9;
-            tickerLabel.Text = "Ticker";
-            // 
-            // tickerDropDown
-            // 
-            tickerDropDown.DropDownStyle = ComboBoxStyle.DropDownList;
-            tickerDropDown.FormattingEnabled = true;
-            tickerDropDown.Location = new Point(233, 27);
-            tickerDropDown.Name = "tickerDropDown";
-            tickerDropDown.Size = new Size(120, 24);
-            tickerDropDown.TabIndex = 10;
+            tickerLabel.Size = new Size(78, 22);
+            tickerLabel.TabIndex = 10;
+            tickerLabel.Text = "{Ticker}";
             // 
             // XEntryForm
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(611, 370);
-            Controls.Add(tickerDropDown);
             Controls.Add(tickerLabel);
+            Controls.Add(entryOrderLabel);
             Controls.Add(actionDropDown);
             Controls.Add(priceTextBox);
             Controls.Add(quantityTextBox);
@@ -164,7 +167,7 @@
         private TextBox quantityTextBox;
         private TextBox priceTextBox;
         private ComboBox actionDropDown;
+        private DevExpress.XtraEditors.LabelControl entryOrderLabel;
         private DevExpress.XtraEditors.LabelControl tickerLabel;
-        private ComboBox tickerDropDown;
     }
 }

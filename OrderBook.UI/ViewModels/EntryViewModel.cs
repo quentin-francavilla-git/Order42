@@ -13,8 +13,8 @@ public class EntryViewModel : ViewModelBase
     private readonly IOrderBookApiService _orderBookApiService;
     public event EventHandler OrderPlaced;
     private List<string> _action;
-    private string _quantity;
-    private string _price;
+    private string _quantity = "";
+    private string _price = "";
 
     public EntryViewModel(IOrderBookApiService orderBookApiService)
     {

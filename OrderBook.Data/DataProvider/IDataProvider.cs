@@ -12,6 +12,6 @@ public interface IDataProvider
     public List<OrderBookModel> OrderBooks { get; set; }
     public List<TickerModel> Tickers { get; set; }
 
-    public Task<OrderBookModel> GetOrderBookByTicker(string tickerSymbol);
+    public Task<OrderBookModel?> GetOrderBookByTicker(string tickerSymbol);
     public Task PlaceOrder(OrderModel order, string symbol);
 }

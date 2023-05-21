@@ -31,11 +31,13 @@ public class DataProvider : IDataProvider
             PropertyNameCaseInsensitive = true,
             WriteIndented = true
         };
+        OrderBooks = new List<OrderBookModel>();
+        Tickers = new List<TickerModel>();
         LoadOrderBooksData();
         LoadTickersData();
     }
 
-    public async Task<OrderBookModel> GetOrderBookByTicker(string tickerSymbol)
+    public async Task<OrderBookModel?> GetOrderBookByTicker(string tickerSymbol)
     {
         LoadTickersData();
         return await Task.FromResult(OrderBooks.FirstOrDefault(e => e.Ticker.Symbol == tickerSymbol));
@@ -47,7 +49,7 @@ public class DataProvider : IDataProvider
         {
             string jsonData = File.ReadAllText(_jsonTickersPath);
 
-            Tickers = JsonConvert.DeserializeObject<List<TickerModel>>(jsonData);
+            Tickers = JsonConvert.DeserializeObject<List<TickerModel>>(jsonData) ?? new List<TickerModel>();
         }
         catch (FileNotFoundException ex)
         {
@@ -69,7 +71,7 @@ public class DataProvider : IDataProvider
         {
             string jsonData = File.ReadAllText(_jsonOrderBooksPath);
 
-            OrderBooks = JsonConvert.DeserializeObject<List<OrderBookModel>>(jsonData);
+            OrderBooks = JsonConvert.DeserializeObject<List<OrderBookModel>>(jsonData) ?? new List<OrderBookModel>();
 
             foreach (var orderBook in OrderBooks)
             {
@@ -106,8 +108,14 @@ public class DataProvider : IDataProvider
         // Deserialize the JSON data into a list of OrderBookModel objects
         var orderBooks = System.Text.Json.JsonSerializer.Deserialize<List<OrderBookModel>>(jsonData, _jsonSerializerOptions);
 
+        if (orderBooks == null)
+        {
+            Console.WriteLine("Order Books list cannot be null.");
+            return;
+        }
+
         // Find the OrderBookModel with the specified Ticker.Symbol
-        var orderBook = await Task.FromResult(orderBooks.FirstOrDefault(ob => ob.Ticker.Symbol == symbol));
+        var orderBook = await Task.FromResult(orderBooks.FirstOrDefault(ob => ob.Ticker.Symbol == symbol) ?? new OrderBookModel());
 
         if (orderBook != null)
         {

@@ -79,7 +79,7 @@ public class OrderBookViewModel : ViewModelBase
         }
     }
 
-    public async Task OpenEntryForm()
+    public void OpenEntryForm()
     {
         var entryViewModel = new EntryViewModel(_orderBookApiService);
 
@@ -89,11 +89,14 @@ public class OrderBookViewModel : ViewModelBase
 
         entryForm.FormClosed += (sender, e) =>
         {
-            var closedForm = (XEntryForm)sender;
-            var pair = formViewModelPairs.FirstOrDefault(x => x.Form == closedForm);
-            if (pair != default)
+            var closedForm = sender as XEntryForm;
+            if (closedForm != null)
             {
-                formViewModelPairs.Remove(pair);
+                var pair = formViewModelPairs.FirstOrDefault(x => x.Form == closedForm);
+                if (pair != default)
+                {
+                    formViewModelPairs.Remove(pair);
+                }
             }
         };
 

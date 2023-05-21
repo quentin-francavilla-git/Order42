@@ -33,11 +33,14 @@ public class MainViewModel : ViewModelBase
 
         orderBookform.FormClosed += (sender, e) =>
         {
-            var closedForm = (XOrderBookForm)sender;
-            var pair = formViewModelPairs.FirstOrDefault(x => x.Form == closedForm);
-            if (pair != default)
+            var closedForm = sender as XOrderBookForm;
+            if (closedForm != null)
             {
-                formViewModelPairs.Remove(pair);
+                var pair = formViewModelPairs.FirstOrDefault(x => x.Form == closedForm);
+                if (pair != default)
+                {
+                    formViewModelPairs.Remove(pair);
+                }
             }
         };
 

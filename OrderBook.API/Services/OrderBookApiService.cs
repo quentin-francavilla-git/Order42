@@ -6,7 +6,6 @@ using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text;
-using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace OrderBook.Data.Services;
@@ -34,7 +33,7 @@ public class OrderBookApiService : IOrderBookApiService
         response.EnsureSuccessStatusCode();
     }
 
-    public async Task<ObservableCollection<OrderBookModel>> GetOrderBook()
+    public async Task<ObservableCollection<OrderBookModel>?> GetOrderBook()
     {
         var response = await _httpClient.GetAsync("api/orderbook");
         response.EnsureSuccessStatusCode();
@@ -49,7 +48,7 @@ public class OrderBookApiService : IOrderBookApiService
         var response = await _httpClient.GetAsync("api/ticker");
         response.EnsureSuccessStatusCode();
 
-        var tickers = await response.Content.ReadFromJsonAsync<ObservableCollection<TickerModel>>();
+        var tickers = await response.Content.ReadFromJsonAsync<ObservableCollection<TickerModel>>() ?? new ObservableCollection<TickerModel>();
 
         return tickers;
     }
@@ -60,7 +59,7 @@ public class OrderBookApiService : IOrderBookApiService
             var response = await _httpClient.GetAsync($"api/orderbook/byTicker/{tickerSymbol}");
             response.EnsureSuccessStatusCode();
 
-            var orderBook = await response.Content.ReadFromJsonAsync<OrderBookModel>();
+            var orderBook = await response.Content.ReadFromJsonAsync<OrderBookModel>() ?? new OrderBookModel();
             return orderBook;
         }
         catch (HttpRequestException ex)

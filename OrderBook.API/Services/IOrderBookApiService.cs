@@ -7,7 +7,7 @@ namespace OrderBook.Data.Services;
 
 public interface IOrderBookApiService
 {
-    public Task<ObservableCollection<OrderBookModel>> GetOrderBook();
+    public Task<ObservableCollection<OrderBookModel>?> GetOrderBook();
     public Task<ObservableCollection<TickerModel>> GetTicker();
     public Task<OrderBookModel> GetOrderBookByTicker(string tickerSymbol);
     public Task PlaceOrder(OrderModel order, string symbol);
