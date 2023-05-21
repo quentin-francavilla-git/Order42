@@ -85,6 +85,7 @@ public partial class XEntryForm : DevExpress.XtraEditors.XtraForm
         await _orderBookViewModel.LoadOrderBookByTicker(_orderBookViewModel.OrderBook.Ticker.Symbol);
     }
 
+
     public async Task EntryOrderBtnAction(string selectedEntryType)
     {
         // Drop Down values

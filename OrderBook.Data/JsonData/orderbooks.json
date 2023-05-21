@@ -180,6 +180,20 @@
         "Quantity": 222,
         "Total": 0.0,
         "ProductType": "Equities"
+      },
+      {
+        "Type": "Ask",
+        "Price": 1212.0,
+        "Quantity": 11,
+        "Total": 0.0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 1112.0,
+        "Quantity": 21,
+        "Total": 0.0,
+        "ProductType": "Options"
       }
     ]
   },
