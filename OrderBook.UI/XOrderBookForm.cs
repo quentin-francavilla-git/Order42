@@ -1,4 +1,5 @@
-﻿using OrderBook.Data.Models;
+﻿using DevExpress.XtraDiagram.Base;
+using OrderBook.Data.Models;
 using OrderBook.UI.ViewModels;
 using System.Collections.ObjectModel;
 using System.ComponentModel;

@@ -140,7 +140,7 @@
             // 
             // entryOrderbtn
             // 
-            entryOrderbtn.Location = new Point(202, 24);
+            entryOrderbtn.Location = new Point(206, 28);
             entryOrderbtn.Name = "entryOrderbtn";
             entryOrderbtn.Size = new Size(108, 34);
             entryOrderbtn.TabIndex = 7;

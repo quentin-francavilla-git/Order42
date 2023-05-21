@@ -21,7 +21,7 @@ public class OrderBookApiService : IOrderBookApiService
         _httpClient.BaseAddress = new Uri(BaseUrl);
     }
 
-    public async Task PlaceOrder(OrderModel order, string symbol)
+    public async Task<int> PlaceOrder(OrderModel order, string symbol)
     {
         // Convert the order to JSON
         var jsonOrder = JsonConvert.SerializeObject(order);
@@ -31,6 +31,36 @@ public class OrderBookApiService : IOrderBookApiService
         // Send the HTTP POST request to the controller endpoint
         var response = await _httpClient.PostAsync(url, content);
         response.EnsureSuccessStatusCode();
+
+        int resultCode = 0;
+
+        if (response.IsSuccessStatusCode)
+        {
+            var resultContent = await response.Content.ReadAsStringAsync();
+            resultCode = int.Parse(resultContent);
+        }
+        return resultCode;
+    }
+
+    public async Task<int> AmendOrder(OrderModel order, string symbol)
+    {
+        // Convert the order to JSON
+        var jsonOrder = JsonConvert.SerializeObject(order);
+        var content = new StringContent(jsonOrder, Encoding.UTF8, "application/json");
+        var url = $"api/order/amendOrder?symbol={symbol}";
+
+        // Send the HTTP POST request to the controller endpoint
+        var response = await _httpClient.PostAsync(url, content);
+        response.EnsureSuccessStatusCode();
+
+        int resultCode = 0;
+
+        if (response.IsSuccessStatusCode)
+        {
+            var resultContent = await response.Content.ReadAsStringAsync();
+            resultCode = int.Parse(resultContent);
+        }
+        return resultCode;
     }
 
     public async Task<ObservableCollection<OrderBookModel>?> GetOrderBook()

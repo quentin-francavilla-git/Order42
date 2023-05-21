@@ -20,7 +20,14 @@ public class OrderController : ControllerBase
     [HttpPost("placeOrder")]
     public async Task<IActionResult> PlaceOrder(OrderModel order, string symbol)
     {
-        await _dataProvider.PlaceOrder(order, symbol);
-        return Ok();
+        int resultCode = await _dataProvider.PlaceOrder(order, symbol);
+        return Ok(resultCode);
+    }
+
+    [HttpPost("amendOrder")]
+    public async Task<IActionResult> AmendOrder(OrderModel order, string symbol)
+    {
+        int resultCode = await _dataProvider.AmendOrder(order, symbol);
+        return Ok(resultCode);
     }
 }

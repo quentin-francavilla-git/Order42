@@ -12,6 +12,7 @@ public class EntryViewModel : ViewModelBase
 {
     private readonly IOrderBookApiService _orderBookApiService;
     public event EventHandler OrderPlaced;
+    public event EventHandler OrderAmended;
     private List<string> _action;
     private string _quantity = "";
     private string _price = "";
@@ -61,10 +62,29 @@ public class EntryViewModel : ViewModelBase
         OrderPlaced?.Invoke(this, e);
     }
 
-    public async Task PlaceOrder(OrderModel order, string symbol)
+    public async Task<int> PlaceOrder(OrderModel order, string symbol)
     {
-        await _orderBookApiService.PlaceOrder(order, symbol);
+        int resultCode = await _orderBookApiService.PlaceOrder(order, symbol);
 
         OnOrderPlaced(EventArgs.Empty);
+
+        return resultCode;
     }
+
+    // Amend order
+
+    protected virtual void OnOrderAmended(EventArgs e)
+    {
+        OrderAmended?.Invoke(this, e);
+    }
+
+    public async Task<int> AmendOrder(OrderModel order, string symbol)
+    {
+        int resultCode = await _orderBookApiService.AmendOrder(order, symbol);
+
+        OnOrderAmended(EventArgs.Empty);
+
+        return resultCode;
+    }
+
 }
