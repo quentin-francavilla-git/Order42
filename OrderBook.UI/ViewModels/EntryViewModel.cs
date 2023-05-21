@@ -13,6 +13,7 @@ public class EntryViewModel : ViewModelBase
     private readonly IOrderBookApiService _orderBookApiService;
     public event EventHandler OrderPlaced;
     public event EventHandler OrderAmended;
+    public event EventHandler OrderCanceled;
     private List<string> _action;
     private string _quantity = "";
     private string _price = "";
@@ -56,35 +57,66 @@ public class EntryViewModel : ViewModelBase
         }
     }
 
-    // Place Order
+    //// Place Order
     protected virtual void OnOrderPlaced(EventArgs e)
     {
         OrderPlaced?.Invoke(this, e);
     }
 
-    public async Task<int> PlaceOrder(OrderModel order, string symbol)
-    {
-        int resultCode = await _orderBookApiService.PlaceOrder(order, symbol);
+    //public async Task<int> PlaceOrder(OrderModel order, string symbol)
+    //{
+    //    int resultCode = await _orderBookApiService.PlaceOrder(order, symbol);
 
-        OnOrderPlaced(EventArgs.Empty);
+    //    OnOrderPlaced(EventArgs.Empty);
 
-        return resultCode;
-    }
+    //    return resultCode;
+    //}
 
-    // Amend order
+    //// Amend order
 
     protected virtual void OnOrderAmended(EventArgs e)
     {
         OrderAmended?.Invoke(this, e);
     }
 
-    public async Task<int> AmendOrder(OrderModel order, string symbol)
-    {
-        int resultCode = await _orderBookApiService.AmendOrder(order, symbol);
+    //public async Task<int> AmendOrder(OrderModel order, string symbol)
+    //{
+    //    int resultCode = await _orderBookApiService.AmendOrder(order, symbol);
 
-        OnOrderAmended(EventArgs.Empty);
+    //    OnOrderAmended(EventArgs.Empty);
+
+    //    return resultCode;
+    //}
+
+    //// Cancel Order
+    protected virtual void OnOrderCanceled(EventArgs e)
+    {
+        OrderCanceled?.Invoke(this, e);
+    }
+
+    //public async Task<int> CancelOrder(OrderModel order, string symbol)
+    //{
+    //    int resultCode = await _orderBookApiService.CancelOrder(order, symbol);
+
+    //    OnOrderCanceled(EventArgs.Empty);
+
+    //    return resultCode;
+    //}
+
+
+    public async Task<int> EntryOrder(OrderModel order, string symbol, string entryType)
+    {
+        int resultCode = await _orderBookApiService.EntryOrder(order, symbol, entryType);
+
+        if (entryType == "PlaceOrder")
+            OnOrderPlaced(EventArgs.Empty);
+        if (entryType == "AmendOrder")
+            OnOrderAmended(EventArgs.Empty);
+        if (entryType == "CancelOrder")
+            OnOrderCanceled(EventArgs.Empty);
 
         return resultCode;
     }
+
 
 }

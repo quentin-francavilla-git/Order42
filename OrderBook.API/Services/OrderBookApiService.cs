@@ -21,12 +21,14 @@ public class OrderBookApiService : IOrderBookApiService
         _httpClient.BaseAddress = new Uri(BaseUrl);
     }
 
-    public async Task<int> PlaceOrder(OrderModel order, string symbol)
+    // ----- Post (Commands)
+
+    public async Task<int> EntryOrder(OrderModel order, string symbol, string entryType)
     {
         // Convert the order to JSON
         var jsonOrder = JsonConvert.SerializeObject(order);
         var content = new StringContent(jsonOrder, Encoding.UTF8, "application/json");
-        var url = $"api/order/placeOrder?symbol={symbol}";
+        var url = $"api/order/entryOrder?symbol={symbol}&entryType={entryType}";
 
         // Send the HTTP POST request to the controller endpoint
         var response = await _httpClient.PostAsync(url, content);
@@ -42,26 +44,70 @@ public class OrderBookApiService : IOrderBookApiService
         return resultCode;
     }
 
-    public async Task<int> AmendOrder(OrderModel order, string symbol)
-    {
-        // Convert the order to JSON
-        var jsonOrder = JsonConvert.SerializeObject(order);
-        var content = new StringContent(jsonOrder, Encoding.UTF8, "application/json");
-        var url = $"api/order/amendOrder?symbol={symbol}";
+    //public async Task<int> PlaceOrder(OrderModel order, string symbol)
+    //{
+    //    // Convert the order to JSON
+    //    var jsonOrder = JsonConvert.SerializeObject(order);
+    //    var content = new StringContent(jsonOrder, Encoding.UTF8, "application/json");
+    //    var url = $"api/order/placeOrder?symbol={symbol}";
 
-        // Send the HTTP POST request to the controller endpoint
-        var response = await _httpClient.PostAsync(url, content);
-        response.EnsureSuccessStatusCode();
+    //    // Send the HTTP POST request to the controller endpoint
+    //    var response = await _httpClient.PostAsync(url, content);
+    //    response.EnsureSuccessStatusCode();
 
-        int resultCode = 0;
+    //    int resultCode = 0;
 
-        if (response.IsSuccessStatusCode)
-        {
-            var resultContent = await response.Content.ReadAsStringAsync();
-            resultCode = int.Parse(resultContent);
-        }
-        return resultCode;
-    }
+    //    if (response.IsSuccessStatusCode)
+    //    {
+    //        var resultContent = await response.Content.ReadAsStringAsync();
+    //        resultCode = int.Parse(resultContent);
+    //    }
+    //    return resultCode;
+    //}
+
+    //public async Task<int> AmendOrder(OrderModel order, string symbol)
+    //{
+    //    // Convert the order to JSON
+    //    var jsonOrder = JsonConvert.SerializeObject(order);
+    //    var content = new StringContent(jsonOrder, Encoding.UTF8, "application/json");
+    //    var url = $"api/order/amendOrder?symbol={symbol}";
+
+    //    // Send the HTTP POST request to the controller endpoint
+    //    var response = await _httpClient.PostAsync(url, content);
+    //    response.EnsureSuccessStatusCode();
+
+    //    int resultCode = 0;
+
+    //    if (response.IsSuccessStatusCode)
+    //    {
+    //        var resultContent = await response.Content.ReadAsStringAsync();
+    //        resultCode = int.Parse(resultContent);
+    //    }
+    //    return resultCode;
+    //}
+
+    //public async Task<int> CancelOrder(OrderModel order, string symbol)
+    //{
+    //    // Convert the order to JSON
+    //    var jsonOrder = JsonConvert.SerializeObject(order);
+    //    var content = new StringContent(jsonOrder, Encoding.UTF8, "application/json");
+    //    var url = $"api/order/cancelOrder?symbol={symbol}";
+
+    //    // Send the HTTP POST request to the controller endpoint
+    //    var response = await _httpClient.PostAsync(url, content);
+    //    response.EnsureSuccessStatusCode();
+
+    //    int resultCode = 0;
+
+    //    if (response.IsSuccessStatusCode)
+    //    {
+    //        var resultContent = await response.Content.ReadAsStringAsync();
+    //        resultCode = int.Parse(resultContent);
+    //    }
+    //    return resultCode;
+    //}
+
+    // ----- GET (Queries)
 
     public async Task<ObservableCollection<OrderBookModel>?> GetOrderBook()
     {

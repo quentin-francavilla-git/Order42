@@ -31,7 +31,7 @@
             actionLabel = new DevExpress.XtraEditors.LabelControl();
             quantityLabel = new DevExpress.XtraEditors.LabelControl();
             priceLabel = new DevExpress.XtraEditors.LabelControl();
-            cancelBtn = new DevExpress.XtraEditors.SimpleButton();
+            cancelOrderBtn = new DevExpress.XtraEditors.SimpleButton();
             amendOrderBtn = new DevExpress.XtraEditors.SimpleButton();
             placeBtn = new DevExpress.XtraEditors.SimpleButton();
             quantityTextBox = new TextBox();
@@ -65,13 +65,14 @@
             priceLabel.TabIndex = 2;
             priceLabel.Text = "Price";
             // 
-            // cancelBtn
+            // cancelOrderBtn
             // 
-            cancelBtn.Location = new Point(420, 236);
-            cancelBtn.Name = "cancelBtn";
-            cancelBtn.Size = new Size(108, 34);
-            cancelBtn.TabIndex = 6;
-            cancelBtn.Text = "Cancel Order";
+            cancelOrderBtn.Location = new Point(420, 236);
+            cancelOrderBtn.Name = "cancelOrderBtn";
+            cancelOrderBtn.Size = new Size(108, 34);
+            cancelOrderBtn.TabIndex = 6;
+            cancelOrderBtn.Text = "Cancel Order";
+            cancelOrderBtn.Click += cancelOrderBtn_Click;
             // 
             // amendOrderBtn
             // 
@@ -146,7 +147,7 @@
             Controls.Add(quantityTextBox);
             Controls.Add(placeBtn);
             Controls.Add(amendOrderBtn);
-            Controls.Add(cancelBtn);
+            Controls.Add(cancelOrderBtn);
             Controls.Add(priceLabel);
             Controls.Add(quantityLabel);
             Controls.Add(actionLabel);
@@ -162,7 +163,7 @@
         private DevExpress.XtraEditors.LabelControl actionLabel;
         private DevExpress.XtraEditors.LabelControl quantityLabel;
         private DevExpress.XtraEditors.LabelControl priceLabel;
-        private DevExpress.XtraEditors.SimpleButton cancelBtn;
+        private DevExpress.XtraEditors.SimpleButton cancelOrderBtn;
         private DevExpress.XtraEditors.SimpleButton amendOrderBtn;
         private DevExpress.XtraEditors.SimpleButton placeBtn;
         private TextBox quantityTextBox;

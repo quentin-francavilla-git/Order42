@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Mvvm.Native;
+using DevExpress.XtraEditors;
 using OrderBook.Data.Models;
 using OrderBook.UI.ViewModels;
 using System.Collections.ObjectModel;
@@ -19,6 +20,7 @@ public partial class XEntryForm : DevExpress.XtraEditors.XtraForm
         _orderBookViewModel = orderBookViewModel;
         _viewModel.OrderPlaced += placeOrderBtn_Click;
         _viewModel.OrderAmended += amendOrderBtn_Click;
+        _viewModel.OrderCanceled += cancelOrderBtn_Click;
         _currentTicker = currentTicker;
     }
 
@@ -59,56 +61,7 @@ public partial class XEntryForm : DevExpress.XtraEditors.XtraForm
     {
         _viewModel.OrderPlaced -= placeOrderBtn_Click;
 
-        string selectedItem = actionDropDown.SelectedItem?.ToString() ?? string.Empty;
-
-        string price = priceTextBox.Text;
-
-        if (price == null)
-        {
-            MessageBox.Show("Enter valid price.");
-            return;
-        }
-        if (!decimal.TryParse(price, out _))
-        {
-            MessageBox.Show("Enter valid price.");
-            return;
-        }
-
-        string quantity = quantityTextBox.Text;
-
-        if (quantity == null)
-        {
-            MessageBox.Show("Enter valid quantity.");
-            return;
-        }
-        if (!int.TryParse(quantity, out _))
-        {
-            MessageBox.Show("Enter valid quantity.");
-            return;
-        }
-
-        if (selectedItem == null)
-        {
-            MessageBox.Show("Invalid Ticker.");
-            return;
-        }
-
-        int resultCode = await _viewModel.PlaceOrder(
-            new OrderModel()
-            {
-                Type = selectedItem,
-                Price = decimal.Parse(price),
-                Quantity = int.Parse(quantity),
-                ProductType = "Options"
-            },
-            _currentTicker);
-
-        if (resultCode == 1)
-            MessageBox.Show("Order already existing. Updated successfully.");
-        else if (resultCode == 2)
-            MessageBox.Show("New Order placed successfully.");
-        else
-            MessageBox.Show("Error while placing the order.");
+        await EntryOrderBtnAction("PlaceOrder");
 
         await _orderBookViewModel.LoadOrderBookByTicker(_orderBookViewModel.OrderBook.Ticker.Symbol);
     }
@@ -117,7 +70,23 @@ public partial class XEntryForm : DevExpress.XtraEditors.XtraForm
     {
         _viewModel.OrderAmended -= amendOrderBtn_Click;
 
-        string selectedItem = actionDropDown.SelectedItem?.ToString() ?? string.Empty;
+        await EntryOrderBtnAction("AmendOrder");
+
+        await _orderBookViewModel.LoadOrderBookByTicker(_orderBookViewModel.OrderBook.Ticker.Symbol);
+    }
+
+    private async void cancelOrderBtn_Click(object sender, EventArgs e)
+    {
+        _viewModel.OrderCanceled -= cancelOrderBtn_Click;
+
+        await EntryOrderBtnAction("CancelOrder");
+
+        await _orderBookViewModel.LoadOrderBookByTicker(_orderBookViewModel.OrderBook.Ticker.Symbol);
+    }
+
+    public async Task EntryOrderBtnAction(string selectedEntryType)
+    {
+        string selectedAction = actionDropDown.SelectedItem?.ToString() ?? string.Empty;
 
         string price = priceTextBox.Text;
 
@@ -145,29 +114,39 @@ public partial class XEntryForm : DevExpress.XtraEditors.XtraForm
             return;
         }
 
-        if (selectedItem == null)
+        if (string.IsNullOrEmpty(selectedAction))
         {
             MessageBox.Show("Invalid Ticker.");
             return;
         }
 
-        int resultCode = await _viewModel.AmendOrder(
+        int resultCode = await _viewModel.EntryOrder(
             new OrderModel()
             {
-                Type = selectedItem,
+                Type = selectedAction,
                 Price = decimal.Parse(price),
                 Quantity = int.Parse(quantity),
                 ProductType = "Options"
             },
-            _currentTicker);
+            _currentTicker,
+            selectedEntryType);
 
-        if (resultCode == 1)
+        if (resultCode == 1 && selectedEntryType == "PlaceOrder")
+            MessageBox.Show("Order already existing. Updated successfully.");
+
+        if (resultCode == 1 && selectedEntryType == "AmendOrder")
             MessageBox.Show("Order updated successfully.");
-        else if (resultCode == 2)
-            MessageBox.Show("Error : No Order corresponding.");
-        else
-            MessageBox.Show("Error while amending the order.");
 
-        await _orderBookViewModel.LoadOrderBookByTicker(_orderBookViewModel.OrderBook.Ticker.Symbol);
+        if (resultCode == 1 && selectedEntryType == "CancelOrder")
+            MessageBox.Show("Order canceled successfully.");
+
+        if (resultCode == 2 && selectedEntryType == "PlaceOrder")
+            MessageBox.Show("New Order placed successfully.");
+
+        if (resultCode == 2 && selectedEntryType != "PlaceOrder")
+            MessageBox.Show("Error : No Order corresponding.");
+
+        if (resultCode != 1 && resultCode != 2)
+            MessageBox.Show("Error while placing the order.");
     }
 }
