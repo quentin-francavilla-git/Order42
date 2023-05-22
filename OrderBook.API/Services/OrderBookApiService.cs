@@ -12,6 +12,7 @@ namespace OrderBook.Data.Services;
 
 public class OrderBookApiService : IOrderBookApiService
 {
+    public event EventHandler DataUpdated = delegate { };
     private readonly HttpClient _httpClient;
     private const string BaseUrl = "https://localhost:7228";
     private ObservableCollection<OrderBookModel>? _lastOrderBooks;
@@ -35,7 +36,6 @@ public class OrderBookApiService : IOrderBookApiService
     }
 
     // ----- Post (Commands)
-
     public async Task<int> EntryOrder(OrderModel order, string symbol, string entryType)
     {
         // Convert the order to JSON
@@ -54,6 +54,10 @@ public class OrderBookApiService : IOrderBookApiService
             var resultContent = await response.Content.ReadAsStringAsync();
             resultCode = int.Parse(resultContent);
         }
+
+        // Raise event -> OrderbookViewModel RefreshData()
+        DataUpdated?.Invoke(null, EventArgs.Empty);
+
         return resultCode;
     }
 

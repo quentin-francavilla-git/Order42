@@ -4,6 +4,7 @@ using OrderBook.Data.Services;
 using OrderBook.UI.ViewModels;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace OrderBook.UI;
 
@@ -11,13 +12,16 @@ public partial class XOrderBookForm : DevExpress.XtraEditors.XtraForm
 {
     private readonly OrderBookViewModel _orderBookViewModel;
     private readonly ObservableCollection<TickerModel> _listOfTicker;
+    private readonly IOrderBookApiService _orderBookApiService;
 
-    public XOrderBookForm(OrderBookViewModel viewModel, ObservableCollection<TickerModel> listOfTicker)
+    public XOrderBookForm(OrderBookViewModel viewModel, ObservableCollection<TickerModel> listOfTicker, IOrderBookApiService orderBookApiService)
     {
         InitializeComponent();
         _orderBookViewModel = viewModel;
         DataContext = _orderBookViewModel;
         _listOfTicker = listOfTicker;
+        _orderBookApiService = orderBookApiService;
+        _orderBookApiService.DataUpdated += RefreshData;
     }
 
     private async void XOrderBookForm_Load(object sender, EventArgs e)
@@ -97,15 +101,9 @@ public partial class XOrderBookForm : DevExpress.XtraEditors.XtraForm
     }
 
     // Other methods
-    private async void RefreshData(object sender, EventArgs e)
+    public async void RefreshData(object? sender, EventArgs e)
     {
-        // trigger when there is a change in the observable collection of orderbooks
-        var updatedOrderBooks = await _orderBookViewModel.RefreshData();
-
-        if (updatedOrderBooks != null)
-        {
-            await _orderBookViewModel.LoadOrderBookByTicker(_orderBookViewModel.OrderBook.Ticker.Symbol);
-        }
+        await _orderBookViewModel.LoadOrderBookByTicker(_orderBookViewModel.OrderBook.Ticker.Symbol);
     }
 
     // Events

@@ -1,6 +1,8 @@
 ﻿using DevExpress.XtraEditors;
+using OrderBook.Data.DataProvider;
 using OrderBook.Data.Enums;
 using OrderBook.Data.Models;
+using OrderBook.Data.Services;
 using OrderBook.UI.ViewModels;
 
 namespace OrderBook.UI;
@@ -20,6 +22,7 @@ public partial class XEntryForm : DevExpress.XtraEditors.XtraForm
         _viewModel.OrderPlaced += placeOrderBtn_Click;
         _viewModel.OrderAmended += amendOrderBtn_Click;
         _viewModel.OrderCanceled += cancelOrderBtn_Click;
+
         _currentTicker = currentTicker;
     }
 
@@ -73,7 +76,7 @@ public partial class XEntryForm : DevExpress.XtraEditors.XtraForm
 
         await EntryOrderBtnAction(nameof(EnumEntryType.PlaceOrder));
 
-        await _orderBookViewModel.LoadOrderBookByTicker(_orderBookViewModel.OrderBook.Ticker.Symbol);
+        //await _orderBookViewModel.LoadOrderBookByTicker(_orderBookViewModel.OrderBook.Ticker.Symbol);
     }
 
     private async void amendOrderBtn_Click(object? sender, EventArgs e)
@@ -82,7 +85,7 @@ public partial class XEntryForm : DevExpress.XtraEditors.XtraForm
 
         await EntryOrderBtnAction(nameof(EnumEntryType.AmendOrder));
 
-        await _orderBookViewModel.LoadOrderBookByTicker(_orderBookViewModel.OrderBook.Ticker.Symbol);
+        //await _orderBookViewModel.LoadOrderBookByTicker(_orderBookViewModel.OrderBook.Ticker.Symbol);
     }
 
     private async void cancelOrderBtn_Click(object? sender, EventArgs e)
@@ -91,7 +94,7 @@ public partial class XEntryForm : DevExpress.XtraEditors.XtraForm
 
         await EntryOrderBtnAction(nameof(EnumEntryType.CancelOrder));
 
-        await _orderBookViewModel.LoadOrderBookByTicker(_orderBookViewModel.OrderBook.Ticker.Symbol);
+        //await _orderBookViewModel.LoadOrderBookByTicker(_orderBookViewModel.OrderBook.Ticker.Symbol);
     }
 
 

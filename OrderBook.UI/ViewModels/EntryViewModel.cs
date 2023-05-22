@@ -84,6 +84,7 @@ public class EntryViewModel : ViewModelBase
     {
         int resultCode = await _orderBookApiService.EntryOrder(order, symbol, entryType);
 
+        // Raise the correct event
         if (entryType == nameof(EnumEntryType.PlaceOrder))
             OnOrderPlaced(EventArgs.Empty);
         if (entryType == nameof(EnumEntryType.AmendOrder))

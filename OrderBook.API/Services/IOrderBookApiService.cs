@@ -1,4 +1,5 @@
 ﻿using OrderBook.Data.Models;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ namespace OrderBook.Data.Services;
 
 public interface IOrderBookApiService
 {
+    public event EventHandler DataUpdated;
     public Task<ObservableCollection<OrderBookModel>?> GetInitialOrderBooks();
     public Task<ObservableCollection<OrderBookModel>?> GetOrderBook();
     public Task<ObservableCollection<TickerModel>> GetTicker();

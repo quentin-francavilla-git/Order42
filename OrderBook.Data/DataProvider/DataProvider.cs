@@ -3,14 +3,10 @@ using OrderBook.Data.Enums;
 using OrderBook.Data.Models;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using System.Xml;
-using Formatting = Newtonsoft.Json.Formatting;
 
 namespace OrderBook.Data.DataProvider;
 
