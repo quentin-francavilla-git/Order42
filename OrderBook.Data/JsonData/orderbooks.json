@@ -92,6 +92,13 @@
     "Asks": [
       {
         "Type": "Ask",
+        "Price": 44444.0,
+        "Quantity": 33,
+        "Total": 0.0,
+        "ProductType": "Equities"
+      },
+      {
+        "Type": "Ask",
         "Price": 6788.0,
         "Quantity": 3434,
         "Total": 0.0,

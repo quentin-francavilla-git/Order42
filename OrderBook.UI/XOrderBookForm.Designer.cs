@@ -198,8 +198,9 @@
             Controls.Add(dataGridBids);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             IconOptions.Image = (Image)resources.GetObject("XOrderBookForm.IconOptions.Image");
+            Location = new Point(700, 150);
             Name = "XOrderBookForm";
-            StartPosition = FormStartPosition.CenterScreen;
+            StartPosition = FormStartPosition.Manual;
             Text = "Order Book";
             Load += XOrderBookForm_Load;
             ((System.ComponentModel.ISupportInitialize)orderBookBindingSource).EndInit();

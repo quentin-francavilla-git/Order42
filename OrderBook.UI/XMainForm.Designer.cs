@@ -112,7 +112,10 @@
             Controls.Add(separatorControl1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             IconOptions.Image = (Image)resources.GetObject("XMainForm.IconOptions.Image");
+            Location = new Point(350, 510);
+            MaximizeBox = false;
             Name = "XMainForm";
+            StartPosition = FormStartPosition.Manual;
             Text = "Order Manager";
             Load += XMainForm_Load;
             ((System.ComponentModel.ISupportInitialize)orderBookBindingSource).EndInit();
