@@ -36,6 +36,7 @@
             pictureBox1 = new PictureBox();
             openTradeFormBtn = new DevExpress.XtraEditors.SimpleButton();
             separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
+            refreshAPI = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)orderBookBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)separatorControl1).BeginInit();
@@ -87,13 +88,23 @@
             separatorControl1.Size = new Size(277, 28);
             separatorControl1.TabIndex = 4;
             // 
+            // refreshAPI
+            // 
+            refreshAPI.Location = new Point(125, 209);
+            refreshAPI.Name = "refreshAPI";
+            refreshAPI.Size = new Size(82, 34);
+            refreshAPI.TabIndex = 5;
+            refreshAPI.Text = "Reconnect";
+            refreshAPI.Click += refreshAPI_Click;
+            // 
             // XMainForm
             // 
             Appearance.BackColor = Color.FromArgb(18, 23, 35);
             Appearance.Options.UseBackColor = true;
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(336, 222);
+            ClientSize = new Size(334, 264);
+            Controls.Add(refreshAPI);
             Controls.Add(openTradeFormBtn);
             Controls.Add(pictureBox1);
             Controls.Add(labelTitle);
@@ -118,5 +129,6 @@
         private PictureBox pictureBox1;
         private DevExpress.XtraEditors.SimpleButton openTradeFormBtn;
         private DevExpress.XtraEditors.SeparatorControl separatorControl1;
+        private DevExpress.XtraEditors.SimpleButton refreshAPI;
     }
 }

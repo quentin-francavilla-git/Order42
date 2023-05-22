@@ -1,4 +1,5 @@
 ﻿using OrderBook.Data.Services;
+using OrderBook.UI.Helpers.ErrorHandler;
 using OrderBook.UI.ViewModels;
 
 namespace OrderBook.UI
@@ -22,6 +23,11 @@ namespace OrderBook.UI
         {
             await _mainViewModel.Load();
             orderBookBindingSource.DataSource = _mainViewModel.OrderBooks;
+        }
+
+        private async void refreshAPI_Click(object sender, EventArgs e)
+        {
+            await _mainViewModel.Refresh();
         }
     }
 }

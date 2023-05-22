@@ -1,5 +1,6 @@
 ﻿using OrderBook.Data.Models;
 using OrderBook.Data.Services;
+using OrderBook.UI.Helpers.ErrorHandler;
 using System.Collections.ObjectModel;
 
 namespace OrderBook.UI.ViewModels;
@@ -7,6 +8,7 @@ namespace OrderBook.UI.ViewModels;
 public class OrderBookViewModel : ViewModelBase
 {
     private readonly IOrderBookApiService _orderBookApiService;
+
     private List<OrderModel> _bids;
     private List<OrderModel> _asks;
     public OrderBookModel OrderBook { get; set; }
@@ -17,11 +19,11 @@ public class OrderBookViewModel : ViewModelBase
     {
         OrderBook = orderBook;
         _orderBookApiService = orderBookApiService;
+
         _bids = new List<OrderModel>();
         _asks = new List<OrderModel>();
 
         _orderBookApiService.DataUpdated += RefreshData;
-
     }
 
     public TickerModel Ticker
@@ -79,7 +81,7 @@ public class OrderBookViewModel : ViewModelBase
        return await _orderBookApiService.GetOrderBook();
     }
 
-    public async Task<ObservableCollection<TickerModel>> LoadTickers()
+    public async Task<ObservableCollection<TickerModel>?> LoadTickers()
     {
         return await _orderBookApiService.GetTicker();
     }

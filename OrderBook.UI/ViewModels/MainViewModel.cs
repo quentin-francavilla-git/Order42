@@ -1,13 +1,13 @@
-﻿using OrderBook.Data.DataProvider;
-using OrderBook.Data.Models;
+﻿using OrderBook.Data.Models;
 using OrderBook.Data.Services;
+using OrderBook.UI.Helpers.ErrorHandler;
 using System.Collections.ObjectModel;
 
 namespace OrderBook.UI.ViewModels;
 
 public class MainViewModel : ViewModelBase
 {
-    private readonly IOrderBookApiService _orderBookApiService;
+    private IOrderBookApiService _orderBookApiService;
     public ObservableCollection<OrderBookViewModel> OrderBooks { get; } = new();
     public ObservableCollection<TickerModel> Tickers { get; } = new();
 
@@ -16,12 +16,17 @@ public class MainViewModel : ViewModelBase
     public MainViewModel(IOrderBookApiService orderBookApiService)
     {
         _orderBookApiService = orderBookApiService;
+        ErrorHandlerService.ErrorOccurred += ErrorHandlerService_ErrorOccurred;
     }
 
-    // Handle button click events and open the corresponding windows
+    // Handle button click events and open the orderbook window
     public async Task OpenOrderBookWindow()
     {
-        await Load();
+        var connectionCode = await Load();
+
+        if (connectionCode == 42)
+            return;
+
         var orderBookViewModel = new OrderBookViewModel(new OrderBookModel(), _orderBookApiService);
 
         var orderBookform = new XOrderBookForm(orderBookViewModel, Tickers);
@@ -43,17 +48,26 @@ public class MainViewModel : ViewModelBase
         orderBookform.Show();
     }
 
-    public async Task Load()
+    public async Task<int> Load()
     {
         // Loading tickers list at the start cause this value wont change frequently
         var tickers = await _orderBookApiService.GetTicker();
 
         Tickers.Clear();
 
+        if (tickers == null)
+            return 42;
+
         foreach (var ticker in tickers)
         {
             Tickers.Add(ticker);
         }
+        return 0;
+    }
 
+    public async Task Refresh()
+    {
+        _orderBookApiService = new OrderBookApiService();
+        await Load();
     }
 }

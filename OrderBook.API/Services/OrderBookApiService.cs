@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using OrderBook.Data.Models;
+using OrderBook.UI.Helpers.ErrorHandler;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -25,49 +26,72 @@ public class OrderBookApiService : IOrderBookApiService
     // ----- Post (Commands)
     public async Task<int> EntryOrder(OrderModel order, string symbol, string entryType)
     {
-        // Convert the order to JSON
-        var jsonOrder = JsonConvert.SerializeObject(order);
-        var content = new StringContent(jsonOrder, Encoding.UTF8, "application/json");
-        var url = $"api/order/entryOrder?symbol={symbol}&entryType={entryType}";
-
-        // Send the HTTP POST request to the controller endpoint
-        var response = await _httpClient.PostAsync(url, content);
-        response.EnsureSuccessStatusCode();
-
-        int resultCode = 0;
-
-        if (response.IsSuccessStatusCode)
+        try
         {
-            var resultContent = await response.Content.ReadAsStringAsync();
-            resultCode = int.Parse(resultContent);
+            // Convert the order to JSON
+            var jsonOrder = JsonConvert.SerializeObject(order);
+            var content = new StringContent(jsonOrder, Encoding.UTF8, "application/json");
+            var url = $"api/order/entryOrder?symbol={symbol}&entryType={entryType}";
+
+            // Send the HTTP POST request to the controller endpoint
+            var response = await _httpClient.PostAsync(url, content);
+            response.EnsureSuccessStatusCode();
+
+            int resultCode = 0;
+
+            if (response.IsSuccessStatusCode)
+            {
+                var resultContent = await response.Content.ReadAsStringAsync();
+                resultCode = int.Parse(resultContent);
+            }
+
+            // Raise event -> OrderbookViewModel RefreshData()
+            DataUpdated?.Invoke(null, EventArgs.Empty);
+
+            return resultCode;
         }
-
-        // Raise event -> OrderbookViewModel RefreshData()
-        DataUpdated?.Invoke(null, EventArgs.Empty);
-
-        return resultCode;
+        catch (HttpRequestException ex)
+        {
+            ErrorHandlerService.RaiseError("Failed to connect to the API: " + ex.Message);
+            return 42;
+        }
     }
 
     // ----- GET (Queries)
 
     public async Task<ObservableCollection<OrderBookModel>?> GetOrderBook()
     {
-        var response = await _httpClient.GetAsync("api/orderbook");
-        response.EnsureSuccessStatusCode();
+        try
+        {
+            var response = await _httpClient.GetAsync("api/orderbook");
+            response.EnsureSuccessStatusCode();
 
-        var orderBooks = await response.Content.ReadFromJsonAsync<ObservableCollection<OrderBookModel>>();
-
-        return orderBooks;
+            var orderBooks = await response.Content.ReadFromJsonAsync<ObservableCollection<OrderBookModel>>();
+            return orderBooks;
+        }
+        catch (HttpRequestException ex)
+        {
+            ErrorHandlerService.RaiseError("Failed to connect to the API: " + ex.Message);
+            return null;
+        }
     }
 
-    public async Task<ObservableCollection<TickerModel>> GetTicker()
+    public async Task<ObservableCollection<TickerModel>?> GetTicker()
     {
-        var response = await _httpClient.GetAsync("api/ticker");
-        response.EnsureSuccessStatusCode();
+        try
+        {
+            var response = await _httpClient.GetAsync("api/ticker");
+            response.EnsureSuccessStatusCode();
 
-        var tickers = await response.Content.ReadFromJsonAsync<ObservableCollection<TickerModel>>() ?? new ObservableCollection<TickerModel>();
+            var tickers = await response.Content.ReadFromJsonAsync<ObservableCollection<TickerModel>>() ?? new ObservableCollection<TickerModel>();
 
-        return tickers;
+            return tickers;
+        }
+        catch (HttpRequestException ex)
+        {
+            ErrorHandlerService.RaiseError("Failed to connect to the API: " + ex.Message);
+            return null;
+        }
     }
     public async Task<OrderBookModel> GetOrderBookByTicker(string tickerSymbol)
     {

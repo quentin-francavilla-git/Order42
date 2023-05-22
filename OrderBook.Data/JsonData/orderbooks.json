@@ -270,7 +270,7 @@
       {
         "Type": "Ask",
         "Price": 63305.1,
-        "Quantity": 2444,
+        "Quantity": 222,
         "Total": 0.0,
         "ProductType": "Bonds"
       },
@@ -357,6 +357,13 @@
         "Quantity": 1987,
         "Total": 0,
         "ProductType": "Futures"
+      },
+      {
+        "Type": "Ask",
+        "Price": 33.0,
+        "Quantity": 33,
+        "Total": 0.0,
+        "ProductType": "Options"
       }
     ]
   },
@@ -666,7 +673,7 @@
       {
         "Type": "Ask",
         "Price": 222222.0,
-        "Quantity": 332,
+        "Quantity": 5,
         "Total": 0.0,
         "ProductType": "Options"
       },
