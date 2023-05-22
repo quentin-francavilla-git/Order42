@@ -44,6 +44,10 @@
             // 
             // btnOpenOrderBookForm
             // 
+            btnOpenOrderBookForm.Appearance.BackColor = Color.FromArgb(33, 43, 65);
+            btnOpenOrderBookForm.Appearance.Options.UseBackColor = true;
+            btnOpenOrderBookForm.AppearanceHovered.BackColor = Color.FromArgb(45, 58, 88);
+            btnOpenOrderBookForm.AppearanceHovered.Options.UseBackColor = true;
             btnOpenOrderBookForm.Location = new Point(76, 103);
             btnOpenOrderBookForm.Name = "btnOpenOrderBookForm";
             btnOpenOrderBookForm.Size = new Size(189, 34);
@@ -75,6 +79,10 @@
             // 
             // openTradeFormBtn
             // 
+            openTradeFormBtn.Appearance.BackColor = Color.FromArgb(33, 43, 65);
+            openTradeFormBtn.Appearance.Options.UseBackColor = true;
+            openTradeFormBtn.AppearanceHovered.BackColor = Color.FromArgb(45, 58, 88);
+            openTradeFormBtn.AppearanceHovered.Options.UseBackColor = true;
             openTradeFormBtn.Location = new Point(76, 156);
             openTradeFormBtn.Name = "openTradeFormBtn";
             openTradeFormBtn.Size = new Size(189, 34);
@@ -83,6 +91,7 @@
             // 
             // separatorControl1
             // 
+            separatorControl1.LineColor = Color.FromArgb(32, 42, 65);
             separatorControl1.Location = new Point(28, 62);
             separatorControl1.Name = "separatorControl1";
             separatorControl1.Size = new Size(277, 28);
@@ -90,9 +99,13 @@
             // 
             // refreshAPI
             // 
+            refreshAPI.Appearance.BackColor = Color.FromArgb(33, 43, 65);
+            refreshAPI.Appearance.Options.UseBackColor = true;
+            refreshAPI.AppearanceHovered.BackColor = Color.FromArgb(45, 58, 88);
+            refreshAPI.AppearanceHovered.Options.UseBackColor = true;
             refreshAPI.Location = new Point(125, 209);
             refreshAPI.Name = "refreshAPI";
-            refreshAPI.Size = new Size(82, 34);
+            refreshAPI.Size = new Size(84, 31);
             refreshAPI.TabIndex = 5;
             refreshAPI.Text = "Reconnect";
             refreshAPI.Click += refreshAPI_Click;

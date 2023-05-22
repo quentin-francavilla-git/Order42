@@ -76,7 +76,7 @@
             // 
             // cancelOrderBtn
             // 
-            cancelOrderBtn.Appearance.BackColor = Color.FromArgb(243, 55, 57);
+            cancelOrderBtn.Appearance.BackColor = Color.FromArgb(242, 55, 57);
             cancelOrderBtn.Appearance.Options.UseBackColor = true;
             cancelOrderBtn.Location = new Point(348, 282);
             cancelOrderBtn.Name = "cancelOrderBtn";
@@ -87,7 +87,7 @@
             // 
             // amendOrderBtn
             // 
-            amendOrderBtn.Appearance.BackColor = Color.FromArgb(243, 214, 55);
+            amendOrderBtn.Appearance.BackColor = Color.FromArgb(242, 214, 55);
             amendOrderBtn.Appearance.Options.UseBackColor = true;
             amendOrderBtn.Location = new Point(215, 282);
             amendOrderBtn.Name = "amendOrderBtn";
@@ -98,7 +98,7 @@
             // 
             // placeBtn
             // 
-            placeBtn.Appearance.BackColor = Color.FromArgb(59, 231, 64);
+            placeBtn.Appearance.BackColor = Color.FromArgb(54, 216, 59);
             placeBtn.Appearance.Options.UseBackColor = true;
             placeBtn.Location = new Point(76, 282);
             placeBtn.Name = "placeBtn";
