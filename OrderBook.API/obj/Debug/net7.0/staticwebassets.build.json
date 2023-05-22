@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "7ppnAQs8VcNF/xnlEqFu/2G54PxOIEQwhDpq4TTpKNA=",
+  "Source": "OrderBook.API",
+  "BasePath": "_content/OrderBook.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

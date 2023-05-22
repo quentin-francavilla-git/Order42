@@ -56,7 +56,15 @@ public class MainViewModel : ViewModelBase
         Tickers.Clear();
 
         if (tickers == null)
+        {
             return 42;
+        }
+
+        if (tickers.Count <= 0)
+        {
+            ErrorHandlerService.RaiseError("Could not load file \"OrderBook.Data\\JsonData\\ticker.json\".");
+            return 42;
+        }
 
         foreach (var ticker in tickers)
         {

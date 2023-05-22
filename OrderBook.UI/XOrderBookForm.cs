@@ -1,10 +1,7 @@
-﻿using DevExpress.XtraDiagram.Base;
-using OrderBook.Data.Models;
-using OrderBook.Data.Services;
+﻿using OrderBook.Data.Models;
 using OrderBook.UI.ViewModels;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Windows.Forms;
 
 namespace OrderBook.UI;
 
@@ -109,5 +106,13 @@ public partial class XOrderBookForm : DevExpress.XtraEditors.XtraForm
     private void entryOrderbtn_Click(object sender, EventArgs e)
     {
         _orderBookViewModel.OpenEntryForm();
+    }
+
+    private async void refreshButton_Click(object sender, EventArgs e)
+    {
+        if (tickerDropDown.SelectedItem is TickerModel selectedTicker)
+        {
+            await _orderBookViewModel.LoadOrderBookByTicker(selectedTicker.Symbol);
+        }
     }
 }

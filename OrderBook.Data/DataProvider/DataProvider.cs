@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using OrderBook.Data.Enums;
 using OrderBook.Data.Models;
 using System;
@@ -18,11 +19,18 @@ public class DataProvider : IDataProvider
     private readonly string _jsonOrderBooksPath;
 
     private readonly JsonSerializerOptions _jsonSerializerOptions;
+    private readonly IConfiguration _configuration;
 
-    public DataProvider()
+    public DataProvider(IConfiguration configuration)
     {
-        _jsonTickersPath = "C:\\Users\\Quentin\\Documents\\Projets\\.NET\\WinForms\\MiraeOrderBook\\OrderBook.Data\\JsonData\\tickers.json";
-        _jsonOrderBooksPath = "C:\\Users\\Quentin\\Documents\\Projets\\.NET\\WinForms\\MiraeOrderBook\\OrderBook.Data\\JsonData\\orderbooks.json";
+        _configuration = configuration;
+
+        _jsonOrderBooksPath = _configuration.GetSection("AppSettings:JsonOrderBooksPath").Value ?? string.Empty;
+        _jsonTickersPath = _configuration.GetSection("AppSettings:JsonTickersPath").Value ?? string.Empty;
+        
+        if (string.IsNullOrEmpty(_jsonOrderBooksPath) || string.IsNullOrEmpty(_jsonTickersPath))
+            Console.WriteLine("JSON file not found in appsettings.");
+
         _jsonSerializerOptions = new JsonSerializerOptions
         {
             PropertyNameCaseInsensitive = true,
