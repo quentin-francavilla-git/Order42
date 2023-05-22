@@ -20,6 +20,8 @@ public class OrderBookViewModel : ViewModelBase
         _bids = new List<OrderModel>();
         _asks = new List<OrderModel>();
 
+        _orderBookApiService.DataUpdated += RefreshData;
+
     }
 
     public TickerModel Ticker
@@ -62,15 +64,10 @@ public class OrderBookViewModel : ViewModelBase
     }
 
     // Other methods
-    //public async void RefreshData(object? sender, EventArgs e)
-    //{
-    //    var updatedOrderBooks = await LoadOrderBooks();
-
-    //    if (updatedOrderBooks != null)
-    //    {
-    //        await LoadOrderBookByTicker(OrderBook.Ticker.Symbol);
-    //    }
-    //}
+    public async void RefreshData(object? sender, EventArgs e)
+    {
+        await LoadOrderBookByTicker(OrderBook.Ticker.Symbol);
+    }
 
     public async Task<ObservableCollection<OrderBookModel>?> LoadOrderBooks()
     {

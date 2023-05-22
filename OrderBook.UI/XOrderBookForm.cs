@@ -12,16 +12,13 @@ public partial class XOrderBookForm : DevExpress.XtraEditors.XtraForm
 {
     private readonly OrderBookViewModel _orderBookViewModel;
     private readonly ObservableCollection<TickerModel> _listOfTicker;
-    private readonly IOrderBookApiService _orderBookApiService;
 
-    public XOrderBookForm(OrderBookViewModel viewModel, ObservableCollection<TickerModel> listOfTicker, IOrderBookApiService orderBookApiService)
+    public XOrderBookForm(OrderBookViewModel viewModel, ObservableCollection<TickerModel> listOfTicker)
     {
         InitializeComponent();
         _orderBookViewModel = viewModel;
         DataContext = _orderBookViewModel;
         _listOfTicker = listOfTicker;
-        _orderBookApiService = orderBookApiService;
-        _orderBookApiService.DataUpdated += RefreshData;
     }
 
     private async void XOrderBookForm_Load(object sender, EventArgs e)
@@ -98,12 +95,6 @@ public partial class XOrderBookForm : DevExpress.XtraEditors.XtraForm
         });
 
         dataGridView.DataSource = bindingSource;
-    }
-
-    // Other methods
-    public async void RefreshData(object? sender, EventArgs e)
-    {
-        await _orderBookViewModel.LoadOrderBookByTicker(_orderBookViewModel.OrderBook.Ticker.Symbol);
     }
 
     // Events

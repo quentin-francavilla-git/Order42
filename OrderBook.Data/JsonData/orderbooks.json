@@ -409,13 +409,6 @@
       },
       {
         "Type": "Bid",
-        "Price": 5150.0,
-        "Quantity": 6452,
-        "Total": 0,
-        "ProductType": "Options"
-      },
-      {
-        "Type": "Bid",
         "Price": 4843.0,
         "Quantity": 3721,
         "Total": 0,
@@ -467,13 +460,6 @@
     "Asks": [
       {
         "Type": "Ask",
-        "Price": 6687.0,
-        "Quantity": 44,
-        "Total": 0,
-        "ProductType": "Options"
-      },
-      {
-        "Type": "Ask",
         "Price": 6666.0,
         "Quantity": 6666,
         "Total": 0.0,
@@ -512,6 +498,13 @@
         "Price": 5201.0,
         "Quantity": 3655,
         "Total": 0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 5150.0,
+        "Quantity": 77777,
+        "Total": 0.0,
         "ProductType": "Options"
       },
       {

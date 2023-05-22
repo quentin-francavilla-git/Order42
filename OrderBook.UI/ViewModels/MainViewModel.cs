@@ -24,7 +24,7 @@ public class MainViewModel : ViewModelBase
         await Load();
         var orderBookViewModel = new OrderBookViewModel(new OrderBookModel(), _orderBookApiService);
 
-        var orderBookform = new XOrderBookForm(orderBookViewModel, Tickers, _orderBookApiService);
+        var orderBookform = new XOrderBookForm(orderBookViewModel, Tickers);
 
         formViewModelPairs.Add((orderBookform, orderBookViewModel));
 
