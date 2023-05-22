@@ -1,6 +1,5 @@
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.API\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.API\bin\Debug\net7.0\appsettings.json
-C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.API\bin\Debug\net7.0\orderbooks.json
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.API\bin\Debug\net7.0\OrderBook.API.exe
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.API\bin\Debug\net7.0\OrderBook.API.deps.json
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.API\bin\Debug\net7.0\OrderBook.API.runtimeconfig.json

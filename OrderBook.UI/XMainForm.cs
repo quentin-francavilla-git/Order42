@@ -1,5 +1,4 @@
-﻿using OrderBook.Data.DataProvider;
-using OrderBook.Data.Services;
+﻿using OrderBook.Data.Services;
 using OrderBook.UI.ViewModels;
 
 namespace OrderBook.UI

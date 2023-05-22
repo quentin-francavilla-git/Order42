@@ -1,8 +1,7 @@
-﻿using DevExpress.Mvvm.Native;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
+using OrderBook.Data.Enums;
 using OrderBook.Data.Models;
 using OrderBook.UI.ViewModels;
-using System.Collections.ObjectModel;
 
 namespace OrderBook.UI;
 
@@ -30,8 +29,18 @@ public partial class XEntryForm : DevExpress.XtraEditors.XtraForm
         BindingTextBoxToViewModel(quantityTextBox, nameof(TextBox.Text), nameof(_viewModel.Quantity));
         BindingTextBoxToViewModel(priceTextBox, nameof(TextBox.Text), nameof(_viewModel.Price));
 
-        InitDropDownMenu(actionDropDown, new List<string>() { "Ask", "Bid" });
-        InitDropDownMenu(productTypeDropDown, new List<string>() { "Options", "Futures", "Equities", "Bonds" });
+        InitDropDownMenu(actionDropDown, new List<string>()
+        {
+            nameof(EnumAction.Ask),
+            nameof(EnumAction.Bid)
+        });
+        InitDropDownMenu(productTypeDropDown, new List<string>()
+        {
+            nameof(EnumProductType.Options),
+            nameof(EnumProductType.Futures),
+            nameof(EnumProductType.Equities),
+            nameof(EnumProductType.Bonds)
+        });
         InitLabel(tickerLabel, _currentTicker);
     }
 
@@ -58,29 +67,29 @@ public partial class XEntryForm : DevExpress.XtraEditors.XtraForm
 
 
     // Events
-    private async void placeOrderBtn_Click(object sender, EventArgs e)
+    private async void placeOrderBtn_Click(object? sender, EventArgs e)
     {
         _viewModel.OrderPlaced -= placeOrderBtn_Click;
 
-        await EntryOrderBtnAction("PlaceOrder");
+        await EntryOrderBtnAction(nameof(EnumEntryType.PlaceOrder));
 
         await _orderBookViewModel.LoadOrderBookByTicker(_orderBookViewModel.OrderBook.Ticker.Symbol);
     }
 
-    private async void amendOrderBtn_Click(object sender, EventArgs e)
+    private async void amendOrderBtn_Click(object? sender, EventArgs e)
     {
         _viewModel.OrderAmended -= amendOrderBtn_Click;
 
-        await EntryOrderBtnAction("AmendOrder");
+        await EntryOrderBtnAction(nameof(EnumEntryType.AmendOrder));
 
         await _orderBookViewModel.LoadOrderBookByTicker(_orderBookViewModel.OrderBook.Ticker.Symbol);
     }
 
-    private async void cancelOrderBtn_Click(object sender, EventArgs e)
+    private async void cancelOrderBtn_Click(object? sender, EventArgs e)
     {
         _viewModel.OrderCanceled -= cancelOrderBtn_Click;
 
-        await EntryOrderBtnAction("CancelOrder");
+        await EntryOrderBtnAction(nameof(EnumEntryType.CancelOrder));
 
         await _orderBookViewModel.LoadOrderBookByTicker(_orderBookViewModel.OrderBook.Ticker.Symbol);
     }
@@ -134,16 +143,16 @@ public partial class XEntryForm : DevExpress.XtraEditors.XtraForm
 
         if (resultCode == 1)
         {
-            if (selectedEntryType == "PlaceOrder")
+            if (selectedEntryType == nameof(EnumEntryType.PlaceOrder))
                 messageBox = "Order already existing. Updated successfully.";
-            else if (selectedEntryType == "AmendOrder")
+            else if (selectedEntryType == nameof(EnumEntryType.AmendOrder))
                 messageBox = "Order updated successfully.";
-            else if (selectedEntryType == "CancelOrder")
+            else if (selectedEntryType == nameof(EnumEntryType.CancelOrder))
                 messageBox = "Order canceled successfully.";
         }
         else if (resultCode == 2)
         {
-            if (selectedEntryType == "PlaceOrder")
+            if (selectedEntryType == nameof(EnumEntryType.PlaceOrder))
                 messageBox = "New Order placed successfully.";
             else
                 messageBox = "Error: No Order corresponding.";

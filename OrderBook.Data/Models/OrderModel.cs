@@ -7,4 +7,13 @@ public class OrderModel
     public int Quantity { get; set; }
     public decimal Total { get; set; }
     public string ProductType { get; set; }
+
+    public OrderModel()
+    {
+        Type = string.Empty;
+        Price = 0;
+        Quantity = 0;
+        Total = 0;
+        ProductType = string.Empty;
+    }
 }

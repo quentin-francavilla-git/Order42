@@ -1,4 +1,5 @@
-﻿using OrderBook.Data.Models;
+﻿using OrderBook.Data.Enums;
+using OrderBook.Data.Models;
 using OrderBook.Data.Services;
 using System;
 using System.Collections.Generic;
@@ -11,17 +12,21 @@ namespace OrderBook.UI.ViewModels;
 public class EntryViewModel : ViewModelBase
 {
     private readonly IOrderBookApiService _orderBookApiService;
-    public event EventHandler OrderPlaced;
-    public event EventHandler OrderAmended;
-    public event EventHandler OrderCanceled;
+
+    public event EventHandler OrderPlaced = delegate { };
+    public event EventHandler OrderAmended = delegate { };
+    public event EventHandler OrderCanceled = delegate { };
+
     private List<string> _action;
-    private string _quantity = "";
-    private string _price = "";
+    private string _quantity;
+    private string _price;
 
     public EntryViewModel(IOrderBookApiService orderBookApiService)
     {
         _orderBookApiService = orderBookApiService;
         _action = new List<string>();
+        _price = string.Empty;
+        _quantity = string.Empty;
     }
 
     public List<string> Action
@@ -64,7 +69,6 @@ public class EntryViewModel : ViewModelBase
     }
 
     // Amend order
-
     protected virtual void OnOrderAmended(EventArgs e)
     {
         OrderAmended?.Invoke(this, e);
@@ -80,11 +84,11 @@ public class EntryViewModel : ViewModelBase
     {
         int resultCode = await _orderBookApiService.EntryOrder(order, symbol, entryType);
 
-        if (entryType == "PlaceOrder")
+        if (entryType == nameof(EnumEntryType.PlaceOrder))
             OnOrderPlaced(EventArgs.Empty);
-        if (entryType == "AmendOrder")
+        if (entryType == nameof(EnumEntryType.AmendOrder))
             OnOrderAmended(EventArgs.Empty);
-        if (entryType == "CancelOrder")
+        if (entryType == nameof(EnumEntryType.CancelOrder))
             OnOrderCanceled(EventArgs.Empty);
 
         return resultCode;

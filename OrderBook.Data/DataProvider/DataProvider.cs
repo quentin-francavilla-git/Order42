@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using OrderBook.Data.Enums;
 using OrderBook.Data.Models;
 using System;
 using System.Collections.Generic;
@@ -120,14 +121,14 @@ public class DataProvider : IDataProvider
 
         if (orderBook != null)
         {
-            if (order.Type == "Bid")
+            if (order.Type == nameof(EnumAction.Bid))
             {
                 // Find the matching order in the bids and asks lists
                 var existingBid = orderBook.Bids.FirstOrDefault(o => o.Price == order.Price && o.ProductType == order.ProductType);
                 if (existingBid != null)
                 {
                     // Remove existing bid
-                    if (entryType == "CancelOrder")
+                    if (entryType == nameof(EnumEntryType.CancelOrder))
                         orderBook.Bids.RemoveAll(o => o.Price == order.Price && o.ProductType == order.ProductType);
                     else
                     {
@@ -138,19 +139,19 @@ public class DataProvider : IDataProvider
                 }
                 else
                 {
-                    if (entryType == "PlaceOrder")
+                    if (entryType == nameof(EnumEntryType.PlaceOrder))
                         orderBook.Bids.Add(order);
                     resultCode = 2;
                 }
             }
             // Same logic for the asks
-            else if (order.Type == "Ask")
+            else if (order.Type == nameof(EnumAction.Ask))
             {
                 var existingAsk = orderBook.Asks.FirstOrDefault(o => o.Price == order.Price && o.ProductType == order.ProductType);
 
                 if (existingAsk != null)
                 {
-                    if (entryType == "CancelOrder")
+                    if (entryType == nameof(EnumEntryType.CancelOrder))
                         orderBook.Asks.RemoveAll(o => o.Price == order.Price && o.ProductType == order.ProductType);
                     else
                     {
@@ -161,7 +162,7 @@ public class DataProvider : IDataProvider
                 }
                 else
                 {
-                    if (entryType == "PlaceOrder")
+                    if (entryType == nameof(EnumEntryType.PlaceOrder))
                         orderBook.Asks.Add(order);
 
                     resultCode = 2;

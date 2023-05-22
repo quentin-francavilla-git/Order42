@@ -2,7 +2,6 @@ C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\bin
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\bin\Debug\net7.0-windows\OrderBook.API.runtimeconfig.json
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\bin\Debug\net7.0-windows\appsettings.Development.json
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\bin\Debug\net7.0-windows\appsettings.json
-C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\bin\Debug\net7.0-windows\orderbooks.json
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\bin\Debug\net7.0-windows\OrderBook.API.exe
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\bin\Debug\net7.0-windows\OrderBook.UI.exe
 C:\Users\Quentin\Documents\Projets\.NET\WinForms\MiraeOrderBook\OrderBook.UI\bin\Debug\net7.0-windows\OrderBook.UI.deps.json

@@ -1,8 +1,6 @@
-﻿using DevExpress.Data.Browsing;
-using OrderBook.Data.Models;
+﻿using OrderBook.Data.Models;
 using OrderBook.Data.Services;
 using System.Collections.ObjectModel;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace OrderBook.UI.ViewModels;
 
