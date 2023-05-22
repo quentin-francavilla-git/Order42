@@ -45,10 +45,7 @@ public class MainViewModel : ViewModelBase
 
     public async Task Load()
     {
-        // get existing orderbooks
-        await _orderBookApiService.GetInitialOrderBooks();
-
-        // Choice of loading tickers list at the start considering this value wont change frequently
+        // Loading tickers list at the start cause this value wont change frequently
         var tickers = await _orderBookApiService.GetTicker();
 
         Tickers.Clear();

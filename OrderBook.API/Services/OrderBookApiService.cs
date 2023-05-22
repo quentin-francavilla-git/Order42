@@ -15,24 +15,11 @@ public class OrderBookApiService : IOrderBookApiService
     public event EventHandler DataUpdated = delegate { };
     private readonly HttpClient _httpClient;
     private const string BaseUrl = "https://localhost:7228";
-    private ObservableCollection<OrderBookModel>? _lastOrderBooks;
 
     public OrderBookApiService()
     {
         _httpClient = new HttpClient();
         _httpClient.BaseAddress = new Uri(BaseUrl);
-    }
-
-    public async Task<ObservableCollection<OrderBookModel>?> GetInitialOrderBooks()
-    {
-        var response = await _httpClient.GetAsync("api/orderbook");
-        response.EnsureSuccessStatusCode();
-
-        var orderBooks = await response.Content.ReadFromJsonAsync<ObservableCollection<OrderBookModel>>();
-
-        _lastOrderBooks = orderBooks;
-
-        return orderBooks;
     }
 
     // ----- Post (Commands)
@@ -69,66 +56,8 @@ public class OrderBookApiService : IOrderBookApiService
         response.EnsureSuccessStatusCode();
 
         var orderBooks = await response.Content.ReadFromJsonAsync<ObservableCollection<OrderBookModel>>();
-        if (orderBooks != null && !AreOrderBooksEqual(orderBooks, _lastOrderBooks))
-        {
-            _lastOrderBooks = orderBooks;
-            return orderBooks;
-        }
 
-        return null;
-    }
-
-    private bool AreOrderBooksEqual(ObservableCollection<OrderBookModel>? orderBooks1, ObservableCollection<OrderBookModel>? orderBooks2)
-    {
-        if (orderBooks1 == null && orderBooks2 == null)
-            return true;
-
-        if (orderBooks1 == null || orderBooks2 == null)
-            return false;
-
-        for (int i = 0; i < orderBooks1.Count; i++)
-        {
-            var orderBook1 = orderBooks1[i];
-            var orderBook2 = orderBooks2[i];
-
-            // Compare the Ticker
-            if (!AreTickersEqual(orderBook1.Ticker, orderBook2.Ticker))
-                return false;
-
-            // Compare the Bids
-            if (!AreOrdersEqual(orderBook1.Bids, orderBook2.Bids))
-                return false;
-
-            // Compare the Asks
-            if (!AreOrdersEqual(orderBook1.Asks, orderBook2.Asks))
-                return false;
-        }
-
-        return true;
-    }
-
-    private bool AreTickersEqual(TickerModel ticker1, TickerModel ticker2)
-    {
-        // Compare the properties of TickerModel for equality
-        return ticker1.Symbol == ticker2.Symbol; // Add other relevant property comparisons if needed
-    }
-
-    private bool AreOrdersEqual(List<OrderModel> orders1, List<OrderModel> orders2)
-    {
-        if (orders1.Count != orders2.Count)
-            return false;
-
-        for (int i = 0; i < orders1.Count; i++)
-        {
-            var order1 = orders1[i];
-            var order2 = orders2[i];
-
-            // Compare the properties of OrderModel for equality
-            if (order1.Type != order2.Type || order1.Price != order2.Price || order1.Quantity != order2.Quantity || order1.Total != order2.Total || order1.ProductType != order2.ProductType)
-                return false;
-        }
-
-        return true;
+        return orderBooks;
     }
 
     public async Task<ObservableCollection<TickerModel>> GetTicker()

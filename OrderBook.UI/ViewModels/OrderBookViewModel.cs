@@ -66,7 +66,12 @@ public class OrderBookViewModel : ViewModelBase
     // Other methods
     public async void RefreshData(object? sender, EventArgs e)
     {
-        await LoadOrderBookByTicker(OrderBook.Ticker.Symbol);
+        var updatedOrderBooks = await LoadOrderBooks();
+
+        if (updatedOrderBooks != null)
+        {
+            await LoadOrderBookByTicker(OrderBook.Ticker.Symbol);
+        }
     }
 
     public async Task<ObservableCollection<OrderBookModel>?> LoadOrderBooks()

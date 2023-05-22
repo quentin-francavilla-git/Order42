@@ -92,13 +92,6 @@
     "Asks": [
       {
         "Type": "Ask",
-        "Price": 8888.0,
-        "Quantity": 8,
-        "Total": 0.0,
-        "ProductType": "Options"
-      },
-      {
-        "Type": "Ask",
         "Price": 6788.0,
         "Quantity": 3434,
         "Total": 0.0,
@@ -276,6 +269,20 @@
     "Asks": [
       {
         "Type": "Ask",
+        "Price": 63305.1,
+        "Quantity": 2444,
+        "Total": 0.0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Ask",
+        "Price": 63305.0,
+        "Quantity": 2444,
+        "Total": 0.0,
+        "ProductType": "Bonds"
+      },
+      {
+        "Type": "Ask",
         "Price": 43321.0,
         "Quantity": 2323,
         "Total": 0.0,
@@ -291,7 +298,7 @@
       {
         "Type": "Ask",
         "Price": 6305.0,
-        "Quantity": 4035,
+        "Quantity": 2444,
         "Total": 0,
         "ProductType": "Bonds"
       },
@@ -368,7 +375,7 @@
       {
         "Type": "Bid",
         "Price": 12333.0,
-        "Quantity": 33,
+        "Quantity": 1444,
         "Total": 0.0,
         "ProductType": "Options"
       },
@@ -460,6 +467,13 @@
     "Asks": [
       {
         "Type": "Ask",
+        "Price": 77777.0,
+        "Quantity": 77777,
+        "Total": 0.0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
         "Price": 6666.0,
         "Quantity": 6666,
         "Total": 0.0,
@@ -546,6 +560,13 @@
         "Type": "Ask",
         "Price": 332.0,
         "Quantity": 332,
+        "Total": 0.0,
+        "ProductType": "Options"
+      },
+      {
+        "Type": "Ask",
+        "Price": 1.0,
+        "Quantity": 1,
         "Total": 0.0,
         "ProductType": "Options"
       }
