@@ -11,13 +11,13 @@ using System.Threading.Tasks;
 
 namespace OrderBook.Data.Services;
 
-public class OrderBookApiService : IOrderBookApiService
+public class ApiManager : IApiManager
 {
     public event EventHandler DataUpdated = delegate { };
     private readonly HttpClient _httpClient;
     private const string BaseUrl = "https://localhost:7228";
 
-    public OrderBookApiService()
+    public ApiManager()
     {
         _httpClient = new HttpClient();
         _httpClient.BaseAddress = new Uri(BaseUrl);

@@ -11,7 +11,7 @@ namespace OrderBook.UI
         public XMainForm()
         {
             InitializeComponent();
-            _mainViewModel = new MainViewModel(new OrderBookApiService());
+            _mainViewModel = new MainViewModel(new ApiManager());
         }
 
         private async void btnOpenOrderBookForm_Click(object sender, EventArgs e)

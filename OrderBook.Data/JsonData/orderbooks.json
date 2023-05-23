@@ -93,7 +93,7 @@
       {
         "Type": "Ask",
         "Price": 44444.0,
-        "Quantity": 33,
+        "Quantity": 444,
         "Total": 0.0,
         "ProductType": "Equities"
       },
@@ -291,7 +291,7 @@
       {
         "Type": "Ask",
         "Price": 63305.1,
-        "Quantity": 222,
+        "Quantity": 2222,
         "Total": 0.0,
         "ProductType": "Bonds"
       },

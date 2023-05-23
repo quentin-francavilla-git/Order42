@@ -38,16 +38,14 @@ public class DataProvider : IDataProvider
         };
         OrderBooks = new List<OrderBookModel>();
         Tickers = new List<TickerModel>();
+        LoadData();
+    }
+
+    public void LoadData()
+    {
         LoadOrderBooksData();
         LoadTickersData();
     }
-
-    public async Task<OrderBookModel?> GetOrderBookByTicker(string tickerSymbol)
-    {
-        LoadTickersData();
-        return await Task.FromResult(OrderBooks.FirstOrDefault(e => e.Ticker.Symbol == tickerSymbol));
-    }
-
     private void LoadTickersData()
     {
         try
@@ -104,6 +102,13 @@ public class DataProvider : IDataProvider
             Console.WriteLine("An error occurred: " + ex.Message);
         }
     }
+
+    public async Task<OrderBookModel?> GetOrderBookByTicker(string tickerSymbol)
+    {
+        LoadTickersData();
+        return await Task.FromResult(OrderBooks.FirstOrDefault(e => e.Ticker.Symbol == tickerSymbol));
+    }
+
 
     public async Task<int> EntryOrder(OrderModel order, string symbol, string entryType)
     {

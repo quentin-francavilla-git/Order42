@@ -6,7 +6,7 @@ namespace OrderBook.UI.ViewModels;
 
 public class EntryViewModel : ViewModelBase
 {
-    private readonly IOrderBookApiService _orderBookApiService;
+    private readonly IApiManager _orderBookApiService;
 
     public event EventHandler OrderPlaced = delegate { };
     public event EventHandler OrderAmended = delegate { };
@@ -16,7 +16,7 @@ public class EntryViewModel : ViewModelBase
     private string _quantity;
     private string _price;
 
-    public EntryViewModel(IOrderBookApiService orderBookApiService)
+    public EntryViewModel(IApiManager orderBookApiService)
     {
         _orderBookApiService = orderBookApiService;
         _action = new List<string>();

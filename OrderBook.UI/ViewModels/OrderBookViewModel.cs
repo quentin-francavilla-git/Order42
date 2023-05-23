@@ -7,7 +7,7 @@ namespace OrderBook.UI.ViewModels;
 
 public class OrderBookViewModel : ViewModelBase
 {
-    private readonly IOrderBookApiService _orderBookApiService;
+    private readonly IApiManager _orderBookApiService;
 
     private List<OrderModel> _bids;
     private List<OrderModel> _asks;
@@ -15,7 +15,7 @@ public class OrderBookViewModel : ViewModelBase
     private List<(XEntryForm Form, EntryViewModel ViewModel)> formViewModelPairs = new List<(XEntryForm, EntryViewModel)>();
 
 
-    public OrderBookViewModel(OrderBookModel orderBook, IOrderBookApiService orderBookApiService)
+    public OrderBookViewModel(OrderBookModel orderBook, IApiManager orderBookApiService)
     {
         OrderBook = orderBook;
         _orderBookApiService = orderBookApiService;

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OrderBook.Data.Services;
 
-public interface IOrderBookApiService
+public interface IApiManager
 {
     public event EventHandler DataUpdated;
     public Task<ObservableCollection<OrderBookModel>?> GetOrderBook();

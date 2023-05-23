@@ -14,6 +14,11 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
+using (var scope = app.Services.CreateScope())
+{
+    var dataProvider = scope.ServiceProvider.GetRequiredService<IDataProvider>();
+}
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

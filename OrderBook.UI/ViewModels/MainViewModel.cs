@@ -7,13 +7,13 @@ namespace OrderBook.UI.ViewModels;
 
 public class MainViewModel : ViewModelBase
 {
-    private IOrderBookApiService _orderBookApiService;
+    private IApiManager _orderBookApiService;
     public ObservableCollection<OrderBookViewModel> OrderBooks { get; } = new();
     public ObservableCollection<TickerModel> Tickers { get; } = new();
 
     private List<(XOrderBookForm Form, OrderBookViewModel ViewModel)> formViewModelPairs = new List<(XOrderBookForm, OrderBookViewModel)>();
     
-    public MainViewModel(IOrderBookApiService orderBookApiService)
+    public MainViewModel(IApiManager orderBookApiService)
     {
         _orderBookApiService = orderBookApiService;
         ErrorHandlerService.ErrorOccurred += ErrorHandlerService_ErrorOccurred;
@@ -75,7 +75,7 @@ public class MainViewModel : ViewModelBase
 
     public async Task Refresh()
     {
-        _orderBookApiService = new OrderBookApiService();
+        _orderBookApiService = new ApiManager();
         await Load();
     }
 }
