@@ -46,6 +46,10 @@
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             refreshButton = new DevExpress.XtraEditors.SimpleButton();
+            fromDatePicker = new DateTimePicker();
+            toDatePicker = new DateTimePicker();
+            fromLabel = new DevExpress.XtraEditors.LabelControl();
+            toLabel = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)orderBookBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridBids).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridAsks).BeginInit();
@@ -82,12 +86,12 @@
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(40, 40, 40);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dataGridBids.DefaultCellStyle = dataGridViewCellStyle3;
-            dataGridBids.Location = new Point(554, 109);
+            dataGridBids.Location = new Point(641, 121);
             dataGridBids.Name = "dataGridBids";
             dataGridBids.ReadOnly = true;
             dataGridBids.RowHeadersWidth = 49;
             dataGridBids.RowTemplate.Height = 28;
-            dataGridBids.Size = new Size(468, 452);
+            dataGridBids.Size = new Size(606, 452);
             dataGridBids.TabIndex = 0;
             // 
             // dataGridAsks
@@ -104,19 +108,19 @@
             dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(40, 40, 40);
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
             dataGridAsks.DefaultCellStyle = dataGridViewCellStyle5;
-            dataGridAsks.Location = new Point(26, 109);
+            dataGridAsks.Location = new Point(12, 121);
             dataGridAsks.Name = "dataGridAsks";
             dataGridAsks.ReadOnly = true;
             dataGridAsks.RowHeadersWidth = 49;
             dataGridAsks.RowTemplate.Height = 28;
-            dataGridAsks.Size = new Size(468, 452);
+            dataGridAsks.Size = new Size(606, 452);
             dataGridAsks.TabIndex = 1;
             // 
             // asksLabel
             // 
             asksLabel.Appearance.ForeColor = Color.White;
             asksLabel.Appearance.Options.UseForeColor = true;
-            asksLabel.Location = new Point(26, 87);
+            asksLabel.Location = new Point(12, 99);
             asksLabel.Name = "asksLabel";
             asksLabel.Size = new Size(26, 16);
             asksLabel.TabIndex = 2;
@@ -126,7 +130,7 @@
             // 
             bidsLabel.Appearance.ForeColor = Color.White;
             bidsLabel.Appearance.Options.UseForeColor = true;
-            bidsLabel.Location = new Point(554, 87);
+            bidsLabel.Location = new Point(641, 99);
             bidsLabel.Name = "bidsLabel";
             bidsLabel.Size = new Size(23, 16);
             bidsLabel.TabIndex = 3;
@@ -136,7 +140,7 @@
             // 
             tickerDropDown.DropDownStyle = ComboBoxStyle.DropDownList;
             tickerDropDown.FormattingEnabled = true;
-            tickerDropDown.Location = new Point(26, 34);
+            tickerDropDown.Location = new Point(41, 38);
             tickerDropDown.Name = "tickerDropDown";
             tickerDropDown.Size = new Size(145, 24);
             tickerDropDown.TabIndex = 5;
@@ -146,7 +150,7 @@
             // 
             tickerLabel.Appearance.ForeColor = Color.White;
             tickerLabel.Appearance.Options.UseForeColor = true;
-            tickerLabel.Location = new Point(26, 12);
+            tickerLabel.Location = new Point(41, 16);
             tickerLabel.Name = "tickerLabel";
             tickerLabel.Size = new Size(35, 16);
             tickerLabel.TabIndex = 6;
@@ -168,7 +172,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(55, 88);
+            pictureBox1.Location = new Point(41, 100);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(21, 15);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -178,7 +182,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(580, 88);
+            pictureBox2.Location = new Point(667, 100);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(21, 15);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -191,12 +195,54 @@
             refreshButton.Appearance.Options.UseBackColor = true;
             refreshButton.AppearanceHovered.BackColor = Color.FromArgb(45, 58, 88);
             refreshButton.AppearanceHovered.Options.UseBackColor = true;
-            refreshButton.Location = new Point(914, 28);
+            refreshButton.Location = new Point(320, 28);
             refreshButton.Name = "refreshButton";
             refreshButton.Size = new Size(108, 34);
             refreshButton.TabIndex = 10;
             refreshButton.Text = "Refresh";
             refreshButton.Click += refreshButton_Click;
+            // 
+            // fromDatePicker
+            // 
+            fromDatePicker.CalendarForeColor = SystemColors.ActiveCaptionText;
+            fromDatePicker.Format = DateTimePickerFormat.Short;
+            fromDatePicker.Location = new Point(957, 62);
+            fromDatePicker.Name = "fromDatePicker";
+            fromDatePicker.Size = new Size(94, 23);
+            fromDatePicker.TabIndex = 11;
+            fromDatePicker.Value = new DateTime(2017, 1, 31, 0, 0, 0, 0);
+            fromDatePicker.ValueChanged += datePicker_ValueChanged;
+            // 
+            // toDatePicker
+            // 
+            toDatePicker.CalendarForeColor = SystemColors.ActiveCaptionText;
+            toDatePicker.Format = DateTimePickerFormat.Short;
+            toDatePicker.Location = new Point(1082, 62);
+            toDatePicker.Name = "toDatePicker";
+            toDatePicker.Size = new Size(94, 23);
+            toDatePicker.TabIndex = 12;
+            toDatePicker.Value = new DateTime(2024, 12, 25, 0, 0, 0, 0);
+            toDatePicker.ValueChanged += datePicker_ValueChanged;
+            // 
+            // fromLabel
+            // 
+            fromLabel.Appearance.ForeColor = Color.White;
+            fromLabel.Appearance.Options.UseForeColor = true;
+            fromLabel.Location = new Point(957, 37);
+            fromLabel.Name = "fromLabel";
+            fromLabel.Size = new Size(30, 16);
+            fromLabel.TabIndex = 13;
+            fromLabel.Text = "From";
+            // 
+            // toLabel
+            // 
+            toLabel.Appearance.ForeColor = Color.White;
+            toLabel.Appearance.Options.UseForeColor = true;
+            toLabel.Location = new Point(1082, 37);
+            toLabel.Name = "toLabel";
+            toLabel.Size = new Size(15, 16);
+            toLabel.TabIndex = 14;
+            toLabel.Text = "To";
             // 
             // XOrderBookForm
             // 
@@ -204,7 +250,11 @@
             Appearance.Options.UseBackColor = true;
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1044, 585);
+            ClientSize = new Size(1259, 585);
+            Controls.Add(toLabel);
+            Controls.Add(fromLabel);
+            Controls.Add(toDatePicker);
+            Controls.Add(fromDatePicker);
             Controls.Add(refreshButton);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
@@ -217,7 +267,7 @@
             Controls.Add(dataGridBids);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             IconOptions.Image = (Image)resources.GetObject("XOrderBookForm.IconOptions.Image");
-            Location = new Point(700, 150);
+            Location = new Point(600, 150);
             Name = "XOrderBookForm";
             StartPosition = FormStartPosition.Manual;
             Text = "Order Book";
@@ -244,5 +294,9 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private DevExpress.XtraEditors.SimpleButton refreshButton;
+        private DateTimePicker fromDatePicker;
+        private DateTimePicker toDatePicker;
+        private DevExpress.XtraEditors.LabelControl fromLabel;
+        private DevExpress.XtraEditors.LabelControl toLabel;
     }
 }

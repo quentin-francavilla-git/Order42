@@ -1,4 +1,6 @@
-﻿namespace OrderBook.Data.Models;
+﻿using System;
+
+namespace OrderBook.Data.Models;
 
 public class OrderModel
 {
@@ -7,6 +9,7 @@ public class OrderModel
     public int Quantity { get; set; }
     public decimal Total { get; set; }
     public string ProductType { get; set; }
+    public DateTime Time { get; set; }
 
     public OrderModel()
     {

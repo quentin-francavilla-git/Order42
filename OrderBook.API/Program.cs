@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OrderBook.Data.DataProvider;
+using System;
 
 var builder = WebApplication.CreateBuilder();
 

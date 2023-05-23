@@ -7,23 +7,23 @@ namespace OrderBook.UI.ViewModels;
 
 public class OrderBookViewModel : ViewModelBase
 {
-    private readonly IApiManager _orderBookApiService;
+    private readonly IApiManager _apiManager;
 
     private List<OrderModel> _bids;
     private List<OrderModel> _asks;
     public OrderBookModel OrderBook { get; set; }
-    private List<(XEntryForm Form, EntryViewModel ViewModel)> formViewModelPairs = new List<(XEntryForm, EntryViewModel)>();
+    private readonly List<(XEntryForm Form, EntryViewModel ViewModel)> formViewModelPairs = new();
 
 
-    public OrderBookViewModel(OrderBookModel orderBook, IApiManager orderBookApiService)
+    public OrderBookViewModel(OrderBookModel orderBook, IApiManager apiManager)
     {
         OrderBook = orderBook;
-        _orderBookApiService = orderBookApiService;
+        _apiManager = apiManager;
 
         _bids = new List<OrderModel>();
         _asks = new List<OrderModel>();
 
-        _orderBookApiService.DataUpdated += RefreshData;
+        _apiManager.DataUpdated += RefreshData;
     }
 
     public TickerModel Ticker
@@ -78,17 +78,17 @@ public class OrderBookViewModel : ViewModelBase
 
     public async Task<ObservableCollection<OrderBookModel>?> LoadOrderBooks()
     {
-       return await _orderBookApiService.GetOrderBook();
+       return await _apiManager.GetOrderBook();
     }
 
     public async Task<ObservableCollection<TickerModel>?> LoadTickers()
     {
-        return await _orderBookApiService.GetTicker();
+        return await _apiManager.GetTicker();
     }
 
     public async Task LoadOrderBookByTicker(string tickerSymbol)
     {
-        var orderBook = await _orderBookApiService.GetOrderBookByTicker(tickerSymbol);
+        var orderBook = await _apiManager.GetOrderBookByTicker(tickerSymbol);
         if (orderBook != null)
         {
             // Update the order book properties with the retrieved data
@@ -100,16 +100,15 @@ public class OrderBookViewModel : ViewModelBase
 
     public void OpenEntryForm()
     {
-        var entryViewModel = new EntryViewModel(_orderBookApiService);
+        var entryViewModel = new EntryViewModel(_apiManager);
 
-        var entryForm = new XEntryForm(entryViewModel, this, Ticker.Symbol);
+        var entryForm = new XEntryForm(entryViewModel, Ticker.Symbol);
 
         formViewModelPairs.Add((entryForm, entryViewModel));
 
         entryForm.FormClosed += (sender, e) =>
         {
-            var closedForm = sender as XEntryForm;
-            if (closedForm != null)
+            if (sender is XEntryForm closedForm)
             {
                 var pair = formViewModelPairs.FirstOrDefault(x => x.Form == closedForm);
                 if (pair != default)

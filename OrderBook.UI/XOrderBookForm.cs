@@ -1,7 +1,9 @@
 ﻿using OrderBook.Data.Models;
+using OrderBook.UI.Helpers.ErrorHandler;
 using OrderBook.UI.ViewModels;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace OrderBook.UI;
 
@@ -91,6 +93,16 @@ public partial class XOrderBookForm : DevExpress.XtraEditors.XtraForm
             Name = "Product"
         });
 
+        dataGridView.Columns.Add(new DataGridViewTextBoxColumn
+        {
+            DataPropertyName = nameof(OrderModel.Time),
+            HeaderText = "Time/Date",
+            Name = "Time/Date"
+        });
+
+        dataGridView.Columns["Product"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridView.Columns["Quantity"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
         dataGridView.DataSource = bindingSource;
     }
 
@@ -100,6 +112,7 @@ public partial class XOrderBookForm : DevExpress.XtraEditors.XtraForm
         if (tickerDropDown.SelectedItem is TickerModel selectedTicker)
         {
             await _orderBookViewModel.LoadOrderBookByTicker(selectedTicker.Symbol);
+            SetDateRange();
         }
     }
 
@@ -114,5 +127,53 @@ public partial class XOrderBookForm : DevExpress.XtraEditors.XtraForm
         {
             await _orderBookViewModel.LoadOrderBookByTicker(selectedTicker.Symbol);
         }
+        SetDateRange();
+    }
+
+    private void datePicker_ValueChanged(object sender, EventArgs e)
+    {
+        SetDateRange();
+    }
+
+    private void SetDateRange()
+    {
+        DateTime startDate = fromDatePicker.Value;
+        DateTime endDate = toDatePicker.Value;
+
+        if (dataGridAsks.BindingContext == null || dataGridBids.BindingContext == null)
+        {
+            ErrorHandlerService.RaiseError("BindingContext is null.");
+            return;
+        }
+
+        CurrencyManager currencyManager = (CurrencyManager)dataGridAsks.BindingContext[dataGridAsks.DataSource];
+        currencyManager.SuspendBinding();
+
+        // Asks
+        foreach (DataGridViewRow row in dataGridAsks.Rows)
+        {
+            if (!row.IsNewRow)
+            {
+                DateTime rowDateTime = Convert.ToDateTime(row.Cells["Time/Date"].Value);
+                row.Visible = (rowDateTime >= startDate && rowDateTime <= endDate);
+            }
+        }
+
+        currencyManager.ResumeBinding();
+
+        // Bids
+        currencyManager = (CurrencyManager)dataGridBids.BindingContext[dataGridBids.DataSource];
+        currencyManager.SuspendBinding();
+
+        foreach (DataGridViewRow row in dataGridBids.Rows)
+        {
+            if (!row.IsNewRow)
+            {
+                DateTime rowDateTime = Convert.ToDateTime(row.Cells["Time/Date"].Value);
+                row.Visible = (rowDateTime >= startDate && rowDateTime <= endDate);
+            }
+        }
+
+        currencyManager.ResumeBinding();
     }
 }

@@ -36,8 +36,10 @@ public class DataProvider : IDataProvider
             PropertyNameCaseInsensitive = true,
             WriteIndented = true
         };
+
         OrderBooks = new List<OrderBookModel>();
         Tickers = new List<TickerModel>();
+
         LoadData();
     }
 
@@ -143,6 +145,7 @@ public class DataProvider : IDataProvider
                     {
                         // Update the existing bid order quantity
                         existingBid.Quantity = order.Quantity;
+                        existingBid.Time = order.Time;
                     }
                     resultCode = 1;
                 }
@@ -166,6 +169,7 @@ public class DataProvider : IDataProvider
                     {
                         // Update the existing bid order quantity
                         existingAsk.Quantity = order.Quantity;
+                        existingAsk.Time = order.Time;
                     }
                     resultCode = 1;
                 }

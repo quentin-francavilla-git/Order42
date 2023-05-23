@@ -36,7 +36,6 @@
             pictureBox1 = new PictureBox();
             openTradeFormBtn = new DevExpress.XtraEditors.SimpleButton();
             separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
-            refreshAPI = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)orderBookBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)separatorControl1).BeginInit();
@@ -48,7 +47,7 @@
             btnOpenOrderBookForm.Appearance.Options.UseBackColor = true;
             btnOpenOrderBookForm.AppearanceHovered.BackColor = Color.FromArgb(45, 58, 88);
             btnOpenOrderBookForm.AppearanceHovered.Options.UseBackColor = true;
-            btnOpenOrderBookForm.Location = new Point(76, 103);
+            btnOpenOrderBookForm.Location = new Point(76, 123);
             btnOpenOrderBookForm.Name = "btnOpenOrderBookForm";
             btnOpenOrderBookForm.Size = new Size(189, 34);
             btnOpenOrderBookForm.TabIndex = 0;
@@ -83,7 +82,7 @@
             openTradeFormBtn.Appearance.Options.UseBackColor = true;
             openTradeFormBtn.AppearanceHovered.BackColor = Color.FromArgb(45, 58, 88);
             openTradeFormBtn.AppearanceHovered.Options.UseBackColor = true;
-            openTradeFormBtn.Location = new Point(76, 156);
+            openTradeFormBtn.Location = new Point(76, 176);
             openTradeFormBtn.Name = "openTradeFormBtn";
             openTradeFormBtn.Size = new Size(189, 34);
             openTradeFormBtn.TabIndex = 3;
@@ -97,19 +96,6 @@
             separatorControl1.Size = new Size(277, 28);
             separatorControl1.TabIndex = 4;
             // 
-            // refreshAPI
-            // 
-            refreshAPI.Appearance.BackColor = Color.FromArgb(33, 43, 65);
-            refreshAPI.Appearance.Options.UseBackColor = true;
-            refreshAPI.AppearanceHovered.BackColor = Color.FromArgb(45, 58, 88);
-            refreshAPI.AppearanceHovered.Options.UseBackColor = true;
-            refreshAPI.Location = new Point(125, 209);
-            refreshAPI.Name = "refreshAPI";
-            refreshAPI.Size = new Size(84, 31);
-            refreshAPI.TabIndex = 5;
-            refreshAPI.Text = "Reconnect";
-            refreshAPI.Click += refreshAPI_Click;
-            // 
             // XMainForm
             // 
             Appearance.BackColor = Color.FromArgb(18, 23, 35);
@@ -117,7 +103,6 @@
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(334, 264);
-            Controls.Add(refreshAPI);
             Controls.Add(openTradeFormBtn);
             Controls.Add(pictureBox1);
             Controls.Add(labelTitle);
@@ -125,7 +110,7 @@
             Controls.Add(separatorControl1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             IconOptions.Image = (Image)resources.GetObject("XMainForm.IconOptions.Image");
-            Location = new Point(350, 510);
+            Location = new Point(250, 510);
             MaximizeBox = false;
             Name = "XMainForm";
             StartPosition = FormStartPosition.Manual;
@@ -145,6 +130,5 @@
         private PictureBox pictureBox1;
         private DevExpress.XtraEditors.SimpleButton openTradeFormBtn;
         private DevExpress.XtraEditors.SeparatorControl separatorControl1;
-        private DevExpress.XtraEditors.SimpleButton refreshAPI;
     }
 }

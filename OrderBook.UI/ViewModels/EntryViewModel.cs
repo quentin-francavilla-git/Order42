@@ -6,7 +6,7 @@ namespace OrderBook.UI.ViewModels;
 
 public class EntryViewModel : ViewModelBase
 {
-    private readonly IApiManager _orderBookApiService;
+    private readonly IApiManager _apiManager;
 
     public event EventHandler OrderPlaced = delegate { };
     public event EventHandler OrderAmended = delegate { };
@@ -16,9 +16,9 @@ public class EntryViewModel : ViewModelBase
     private string _quantity;
     private string _price;
 
-    public EntryViewModel(IApiManager orderBookApiService)
+    public EntryViewModel(IApiManager apiManager)
     {
-        _orderBookApiService = orderBookApiService;
+        _apiManager = apiManager;
         _action = new List<string>();
         _price = string.Empty;
         _quantity = string.Empty;
@@ -77,7 +77,7 @@ public class EntryViewModel : ViewModelBase
 
     public async Task<int> EntryOrder(OrderModel order, string symbol, string entryType)
     {
-        int resultCode = await _orderBookApiService.EntryOrder(order, symbol, entryType);
+        int resultCode = await _apiManager.EntryOrder(order, symbol, entryType);
 
         // Raise the correct event
         if (entryType == nameof(EnumEntryType.PlaceOrder))

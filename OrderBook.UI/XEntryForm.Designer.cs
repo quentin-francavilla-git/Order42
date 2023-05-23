@@ -194,7 +194,7 @@
             Controls.Add(quantityLabel);
             Controls.Add(actionLabel);
             IconOptions.Image = (Image)resources.GetObject("XEntryForm.IconOptions.Image");
-            Location = new Point(155, 100);
+            Location = new Point(55, 100);
             Name = "XEntryForm";
             StartPosition = FormStartPosition.Manual;
             Text = "Entry Order";
