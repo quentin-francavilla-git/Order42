@@ -1,9 +1,7 @@
 ﻿using OrderBook.Data.Models;
 using OrderBook.UI.Helpers.ErrorHandler;
 using OrderBook.UI.ViewModels;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Windows.Forms;
 
 namespace OrderBook.UI;
 

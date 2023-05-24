@@ -19,8 +19,10 @@ public class ApiBridge : IApiBridge
 
     public ApiBridge()
     {
-        _httpClient = new HttpClient();
-        _httpClient.BaseAddress = new Uri(BaseUrl);
+        _httpClient = new HttpClient
+        {
+            BaseAddress = new Uri(BaseUrl)
+        };
     }
 
     // ----- Post (Commands)
