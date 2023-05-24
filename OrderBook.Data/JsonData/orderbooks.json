@@ -129,10 +129,10 @@
       {
         "Type": "Ask",
         "Price": 121212.0,
-        "Quantity": 12212,
+        "Quantity": 44444,
         "Total": 0.0,
         "ProductType": "Options",
-        "Time": "2023-05-23T20:22:42.6360851+02:00"
+        "Time": "2023-05-23T21:34:25.785413+02:00"
       },
       {
         "Type": "Ask",
@@ -735,22 +735,6 @@
         "Total": 0.0,
         "ProductType": "Options",
         "Time": "2020-08-10T10:16:24"
-      },
-      {
-        "Type": "Ask",
-        "Price": 111.0,
-        "Quantity": 1111,
-        "Total": 0.0,
-        "ProductType": "Options",
-        "Time": "2023-05-23T20:20:48.237317+02:00"
-      },
-      {
-        "Type": "Ask",
-        "Price": 1.0,
-        "Quantity": 1,
-        "Total": 0.0,
-        "ProductType": "Options",
-        "Time": "2020-01-11T11:02:13"
       }
     ]
   },

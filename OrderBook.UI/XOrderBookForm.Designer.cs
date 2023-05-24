@@ -268,6 +268,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             IconOptions.Image = (Image)resources.GetObject("XOrderBookForm.IconOptions.Image");
             Location = new Point(600, 150);
+            MaximizeBox = false;
             Name = "XOrderBookForm";
             StartPosition = FormStartPosition.Manual;
             Text = "Order Book";

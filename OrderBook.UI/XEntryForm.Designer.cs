@@ -195,6 +195,7 @@
             Controls.Add(actionLabel);
             IconOptions.Image = (Image)resources.GetObject("XEntryForm.IconOptions.Image");
             Location = new Point(55, 100);
+            MaximizeBox = false;
             Name = "XEntryForm";
             StartPosition = FormStartPosition.Manual;
             Text = "Entry Order";

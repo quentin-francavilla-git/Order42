@@ -195,7 +195,6 @@ public class DataProvider : IDataProvider
 
         // Write the updated JSON data back to the file
         File.WriteAllText(_jsonOrderBooksPath, updatedJsonData);
-
         return resultCode;
     }
 }
