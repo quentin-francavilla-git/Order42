@@ -1,12 +1,12 @@
-﻿using OrderBook.Data.Enums;
+﻿using OrderBook.API.Services.ApiBridge;
+using OrderBook.Data.Enums;
 using OrderBook.Data.Models;
-using OrderBook.Data.Services;
 
 namespace OrderBook.UI.ViewModels;
 
 public class EntryViewModel : ViewModelBase
 {
-    private readonly IApiManager _apiManager;
+    private readonly IApiBridge _apiBridge;
 
     public event EventHandler OrderPlaced = delegate { };
     public event EventHandler OrderAmended = delegate { };
@@ -16,9 +16,9 @@ public class EntryViewModel : ViewModelBase
     private string _quantity;
     private string _price;
 
-    public EntryViewModel(IApiManager apiManager)
+    public EntryViewModel(IApiBridge apiBridge)
     {
-        _apiManager = apiManager;
+        _apiBridge = apiBridge;
         _action = new List<string>();
         _price = string.Empty;
         _quantity = string.Empty;
@@ -77,7 +77,7 @@ public class EntryViewModel : ViewModelBase
 
     public async Task<int> EntryOrder(OrderModel order, string symbol, string entryType)
     {
-        int resultCode = await _apiManager.EntryOrder(order, symbol, entryType);
+        int resultCode = await _apiBridge.EntryOrder(order, symbol, entryType);
 
         // Raise the correct event
         if (entryType == nameof(EnumEntryType.PlaceOrder))

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using OrderBook.Data.DataProvider;
+using OrderBook.API.Services.DataProvider;
 using System;
 
 var builder = WebApplication.CreateBuilder();

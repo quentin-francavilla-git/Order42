@@ -1,6 +1,5 @@
-﻿using OrderBook.Data.Services;
-using OrderBook.UI.Helpers.ErrorHandler;
-using OrderBook.UI.ViewModels;
+﻿using OrderBook.UI.ViewModels;
+using OrderBook.API.Services.ApiBridge;
 
 namespace OrderBook.UI
 {
@@ -11,7 +10,7 @@ namespace OrderBook.UI
         public XMainForm()
         {
             InitializeComponent();
-            _mainViewModel = new MainViewModel(new ApiManager());
+            _mainViewModel = new MainViewModel(new ApiBridge());
         }
 
         private async void btnOpenOrderBookForm_Click(object sender, EventArgs e)

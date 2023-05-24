@@ -3,9 +3,9 @@ using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
-namespace OrderBook.Data.Services;
+namespace OrderBook.API.Services.ApiBridge;
 
-public interface IApiManager
+public interface IApiBridge
 {
     public event EventHandler DataUpdated;
     public Task<ObservableCollection<OrderBookModel>?> GetOrderBook();

@@ -10,9 +10,9 @@ namespace OrderBook.UI;
 public partial class XOrderBookForm : DevExpress.XtraEditors.XtraForm
 {
     private readonly OrderBookViewModel _orderBookViewModel;
-    private readonly ObservableCollection<TickerModel> _listOfTicker;
+    private readonly List<TickerModel> _listOfTicker;
 
-    public XOrderBookForm(OrderBookViewModel viewModel, ObservableCollection<TickerModel> listOfTicker)
+    public XOrderBookForm(OrderBookViewModel viewModel, List<TickerModel> listOfTicker)
     {
         InitializeComponent();
         _orderBookViewModel = viewModel;
@@ -48,7 +48,7 @@ public partial class XOrderBookForm : DevExpress.XtraEditors.XtraForm
     }
 
     // Init controls
-    private void InitDropDownMenu(ComboBox dropDownButton, ObservableCollection<TickerModel> listOfTicker)
+    private void InitDropDownMenu(ComboBox dropDownButton, List<TickerModel> listOfTicker)
     {
         dropDownButton.DataSource = listOfTicker;
         dropDownButton.DisplayMember = nameof(TickerModel.Symbol);

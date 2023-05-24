@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace OrderBook.Data.DataProvider;
+namespace OrderBook.API.Services.DataProvider;
 
 public class DataProvider : IDataProvider
 {
@@ -27,7 +27,7 @@ public class DataProvider : IDataProvider
 
         _jsonOrderBooksPath = _configuration.GetSection("AppSettings:JsonOrderBooksPath").Value ?? string.Empty;
         _jsonTickersPath = _configuration.GetSection("AppSettings:JsonTickersPath").Value ?? string.Empty;
-        
+
         if (string.IsNullOrEmpty(_jsonOrderBooksPath) || string.IsNullOrEmpty(_jsonTickersPath))
             Console.WriteLine("JSON file not found in appsettings.");
 

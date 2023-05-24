@@ -9,15 +9,15 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderBook.Data.Services;
+namespace OrderBook.API.Services.ApiBridge;
 
-public class ApiManager : IApiManager
+public class ApiBridge : IApiBridge
 {
     public event EventHandler DataUpdated = delegate { };
     private readonly HttpClient _httpClient;
     private const string BaseUrl = "https://localhost:7228";
 
-    public ApiManager()
+    public ApiBridge()
     {
         _httpClient = new HttpClient();
         _httpClient.BaseAddress = new Uri(BaseUrl);
@@ -107,7 +107,7 @@ public class ApiManager : IApiManager
         {
             Console.WriteLine("An error occurred while making the HTTP request: " + ex.Message);
         }
-        catch (Newtonsoft.Json.JsonException ex)
+        catch (JsonException ex)
         {
             Console.WriteLine("An error occurred while parsing the JSON response: " + ex.Message);
         }

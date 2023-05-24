@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace OrderBook.Data.DataProvider;
+namespace OrderBook.API.Services.DataProvider;
 
 public interface IDataProvider
 {

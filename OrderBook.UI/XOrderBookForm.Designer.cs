@@ -86,7 +86,7 @@
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(40, 40, 40);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dataGridBids.DefaultCellStyle = dataGridViewCellStyle3;
-            dataGridBids.Location = new Point(641, 121);
+            dataGridBids.Location = new Point(656, 121);
             dataGridBids.Name = "dataGridBids";
             dataGridBids.ReadOnly = true;
             dataGridBids.RowHeadersWidth = 49;
@@ -108,7 +108,7 @@
             dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(40, 40, 40);
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
             dataGridAsks.DefaultCellStyle = dataGridViewCellStyle5;
-            dataGridAsks.Location = new Point(12, 121);
+            dataGridAsks.Location = new Point(29, 121);
             dataGridAsks.Name = "dataGridAsks";
             dataGridAsks.ReadOnly = true;
             dataGridAsks.RowHeadersWidth = 49;
@@ -120,7 +120,7 @@
             // 
             asksLabel.Appearance.ForeColor = Color.White;
             asksLabel.Appearance.Options.UseForeColor = true;
-            asksLabel.Location = new Point(12, 99);
+            asksLabel.Location = new Point(29, 99);
             asksLabel.Name = "asksLabel";
             asksLabel.Size = new Size(26, 16);
             asksLabel.TabIndex = 2;
@@ -130,7 +130,7 @@
             // 
             bidsLabel.Appearance.ForeColor = Color.White;
             bidsLabel.Appearance.Options.UseForeColor = true;
-            bidsLabel.Location = new Point(641, 99);
+            bidsLabel.Location = new Point(656, 99);
             bidsLabel.Name = "bidsLabel";
             bidsLabel.Size = new Size(23, 16);
             bidsLabel.TabIndex = 3;
@@ -140,7 +140,7 @@
             // 
             tickerDropDown.DropDownStyle = ComboBoxStyle.DropDownList;
             tickerDropDown.FormattingEnabled = true;
-            tickerDropDown.Location = new Point(41, 38);
+            tickerDropDown.Location = new Point(49, 42);
             tickerDropDown.Name = "tickerDropDown";
             tickerDropDown.Size = new Size(145, 24);
             tickerDropDown.TabIndex = 5;
@@ -150,7 +150,7 @@
             // 
             tickerLabel.Appearance.ForeColor = Color.White;
             tickerLabel.Appearance.Options.UseForeColor = true;
-            tickerLabel.Location = new Point(41, 16);
+            tickerLabel.Location = new Point(49, 20);
             tickerLabel.Name = "tickerLabel";
             tickerLabel.Size = new Size(35, 16);
             tickerLabel.TabIndex = 6;
@@ -162,7 +162,7 @@
             entryOrderbtn.Appearance.Options.UseBackColor = true;
             entryOrderbtn.AppearanceHovered.BackColor = Color.FromArgb(45, 58, 88);
             entryOrderbtn.AppearanceHovered.Options.UseBackColor = true;
-            entryOrderbtn.Location = new Point(206, 28);
+            entryOrderbtn.Location = new Point(214, 32);
             entryOrderbtn.Name = "entryOrderbtn";
             entryOrderbtn.Size = new Size(108, 34);
             entryOrderbtn.TabIndex = 7;
@@ -172,7 +172,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(41, 100);
+            pictureBox1.Location = new Point(58, 100);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(21, 15);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -182,7 +182,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(667, 100);
+            pictureBox2.Location = new Point(682, 100);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(21, 15);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -195,7 +195,7 @@
             refreshButton.Appearance.Options.UseBackColor = true;
             refreshButton.AppearanceHovered.BackColor = Color.FromArgb(45, 58, 88);
             refreshButton.AppearanceHovered.Options.UseBackColor = true;
-            refreshButton.Location = new Point(320, 28);
+            refreshButton.Location = new Point(328, 32);
             refreshButton.Name = "refreshButton";
             refreshButton.Size = new Size(108, 34);
             refreshButton.TabIndex = 10;
@@ -250,7 +250,7 @@
             Appearance.Options.UseBackColor = true;
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1259, 585);
+            ClientSize = new Size(1290, 609);
             Controls.Add(toLabel);
             Controls.Add(fromLabel);
             Controls.Add(toDatePicker);

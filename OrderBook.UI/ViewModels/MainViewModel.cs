@@ -1,5 +1,5 @@
-﻿using OrderBook.Data.Models;
-using OrderBook.Data.Services;
+﻿using OrderBook.API.Services.ApiBridge;
+using OrderBook.Data.Models;
 using OrderBook.UI.Helpers.ErrorHandler;
 using System.Collections.ObjectModel;
 
@@ -7,15 +7,15 @@ namespace OrderBook.UI.ViewModels;
 
 public class MainViewModel : ViewModelBase
 {
-    private readonly IApiManager _apiManager;
-    public ObservableCollection<OrderBookViewModel> OrderBooks { get; } = new();
-    public ObservableCollection<TickerModel> Tickers { get; } = new();
+    private readonly IApiBridge _apiBridge;
+    public List<OrderBookViewModel> OrderBooks { get; } = new();
+    public List<TickerModel> Tickers { get; } = new();
 
     private readonly List<(XOrderBookForm Form, OrderBookViewModel ViewModel)> formViewModelPairs = new();
     
-    public MainViewModel(IApiManager apiManager)
+    public MainViewModel(IApiBridge apiBridge)
     {
-        _apiManager = apiManager;
+        _apiBridge = apiBridge;
         ErrorHandlerService.ErrorOccurred += ErrorHandlerService_ErrorOccurred;
     }
 
@@ -27,7 +27,7 @@ public class MainViewModel : ViewModelBase
         if (connectionCode == 42)
             return;
 
-        var orderBookViewModel = new OrderBookViewModel(new OrderBookModel(), _apiManager);
+        var orderBookViewModel = new OrderBookViewModel(new OrderBookModel(), _apiBridge);
 
         var orderBookform = new XOrderBookForm(orderBookViewModel, Tickers);
 
@@ -50,7 +50,7 @@ public class MainViewModel : ViewModelBase
     public async Task<int> Load()
     {
         // Loading tickers list at the start cause this value wont change frequently
-        var tickers = await _apiManager.GetTicker();
+        var tickers = await _apiBridge.GetTicker();
 
         Tickers.Clear();
 

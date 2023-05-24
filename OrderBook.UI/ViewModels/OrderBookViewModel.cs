@@ -1,13 +1,12 @@
-﻿using OrderBook.Data.Models;
-using OrderBook.Data.Services;
-using OrderBook.UI.Helpers.ErrorHandler;
+﻿using OrderBook.API.Services.ApiBridge;
+using OrderBook.Data.Models;
 using System.Collections.ObjectModel;
 
 namespace OrderBook.UI.ViewModels;
 
 public class OrderBookViewModel : ViewModelBase
 {
-    private readonly IApiManager _apiManager;
+    private readonly IApiBridge _apiBridge;
 
     private List<OrderModel> _bids;
     private List<OrderModel> _asks;
@@ -15,15 +14,15 @@ public class OrderBookViewModel : ViewModelBase
     private readonly List<(XEntryForm Form, EntryViewModel ViewModel)> formViewModelPairs = new();
 
 
-    public OrderBookViewModel(OrderBookModel orderBook, IApiManager apiManager)
+    public OrderBookViewModel(OrderBookModel orderBook, IApiBridge apiBridge)
     {
         OrderBook = orderBook;
-        _apiManager = apiManager;
+        _apiBridge = apiBridge;
 
         _bids = new List<OrderModel>();
         _asks = new List<OrderModel>();
 
-        _apiManager.DataUpdated += RefreshData;
+        _apiBridge.DataUpdated += RefreshData;
     }
 
     public TickerModel Ticker
@@ -78,17 +77,17 @@ public class OrderBookViewModel : ViewModelBase
 
     public async Task<ObservableCollection<OrderBookModel>?> LoadOrderBooks()
     {
-       return await _apiManager.GetOrderBook();
+       return await _apiBridge.GetOrderBook();
     }
 
     public async Task<ObservableCollection<TickerModel>?> LoadTickers()
     {
-        return await _apiManager.GetTicker();
+        return await _apiBridge.GetTicker();
     }
 
     public async Task LoadOrderBookByTicker(string tickerSymbol)
     {
-        var orderBook = await _apiManager.GetOrderBookByTicker(tickerSymbol);
+        var orderBook = await _apiBridge.GetOrderBookByTicker(tickerSymbol);
         if (orderBook != null)
         {
             // Update the order book properties with the retrieved data
@@ -100,7 +99,7 @@ public class OrderBookViewModel : ViewModelBase
 
     public void OpenEntryForm()
     {
-        var entryViewModel = new EntryViewModel(_apiManager);
+        var entryViewModel = new EntryViewModel(_apiBridge);
 
         var entryForm = new XEntryForm(entryViewModel, Ticker.Symbol);
 
