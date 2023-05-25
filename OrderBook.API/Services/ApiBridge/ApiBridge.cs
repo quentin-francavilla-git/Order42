@@ -143,4 +143,21 @@ public class ApiBridge : IApiBridge
         };
     }
 
+    public async Task<List<TradeModel>?> GetTrades()
+    {
+        try
+        {
+            var response = await _httpClient.GetAsync("api/trade");
+            response.EnsureSuccessStatusCode();
+
+            var trades = await response.Content.ReadFromJsonAsync<List<TradeModel>>() ?? new List<TradeModel>();
+
+            return trades;
+        }
+        catch (HttpRequestException ex)
+        {
+            ErrorHandlerService.RaiseError("Failed to connect to the API: " + ex.Message);
+            return null;
+        }
+    }
 }

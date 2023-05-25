@@ -12,16 +12,20 @@ namespace OrderBook.UI
             InitializeComponent();
             _mainViewModel = new MainViewModel(new ApiBridge());
         }
+        private void XMainForm_Load(object sender, EventArgs e)
+        {
+            orderBookBindingSource.DataSource = _mainViewModel.OrderBooks;
+        }
 
         private async void btnOpenOrderBookForm_Click(object sender, EventArgs e)
         {
             await _mainViewModel.OpenOrderBookWindow();
         }
 
-        private async void XMainForm_Load(object sender, EventArgs e)
+
+        private async void openTradeFormBtn_Click(object sender, EventArgs e)
         {
-            await _mainViewModel.Load();
-            orderBookBindingSource.DataSource = _mainViewModel.OrderBooks;
+            await _mainViewModel.OpenTradesHistoryWindow();
         }
     }
 }

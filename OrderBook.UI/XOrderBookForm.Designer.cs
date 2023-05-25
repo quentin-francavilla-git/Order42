@@ -63,6 +63,9 @@
             // 
             // dataGridBids
             // 
+            dataGridBids.AllowUserToAddRows = false;
+            dataGridBids.AllowUserToDeleteRows = false;
+            dataGridBids.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(95, 206, 72);
             dataGridViewCellStyle1.ForeColor = Color.FromArgb(40, 40, 40);
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(127, 236, 104);
@@ -96,6 +99,9 @@
             // 
             // dataGridAsks
             // 
+            dataGridAsks.AllowUserToAddRows = false;
+            dataGridAsks.AllowUserToDeleteRows = false;
+            dataGridAsks.AllowUserToResizeRows = false;
             dataGridViewCellStyle4.BackColor = Color.FromArgb(218, 51, 51);
             dataGridAsks.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridAsks.BackgroundColor = Color.FromArgb(10, 13, 19);

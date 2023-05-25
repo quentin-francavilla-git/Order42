@@ -10,7 +10,7 @@
     <Compile Update="XEntryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="XTradesHistory.cs">
+    <Compile Update="XTradesHistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

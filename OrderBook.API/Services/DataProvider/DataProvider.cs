@@ -4,6 +4,7 @@ using OrderBook.Data.Enums;
 using OrderBook.Data.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
@@ -15,11 +16,16 @@ public class DataProvider : IDataProvider
 {
     public List<OrderBookModel> OrderBooks { get; set; }
     public List<TickerModel> Tickers { get; set; }
+    public List<TradeModel> Trades { get; set; }
+
     private readonly string _jsonTickersPath;
     private readonly string _jsonOrderBooksPath;
+    private readonly string _jsonTradesPath;
 
     private readonly JsonSerializerOptions _jsonSerializerOptions;
     private readonly IConfiguration _configuration;
+
+    private readonly Random _random = new();
 
     public DataProvider(IConfiguration configuration)
     {
@@ -27,8 +33,9 @@ public class DataProvider : IDataProvider
 
         _jsonOrderBooksPath = _configuration.GetSection("AppSettings:JsonOrderBooksPath").Value ?? string.Empty;
         _jsonTickersPath = _configuration.GetSection("AppSettings:JsonTickersPath").Value ?? string.Empty;
+        _jsonTradesPath = _configuration.GetSection("AppSettings:JsonTradesPath").Value ?? string.Empty;
 
-        if (string.IsNullOrEmpty(_jsonOrderBooksPath) || string.IsNullOrEmpty(_jsonTickersPath))
+        if (string.IsNullOrEmpty(_jsonOrderBooksPath) || string.IsNullOrEmpty(_jsonTickersPath) || string.IsNullOrEmpty(_jsonTradesPath))
             Console.WriteLine("JSON file not found in appsettings.");
 
         _jsonSerializerOptions = new JsonSerializerOptions
@@ -39,6 +46,7 @@ public class DataProvider : IDataProvider
 
         OrderBooks = new List<OrderBookModel>();
         Tickers = new List<TickerModel>();
+        Trades = new List<TradeModel>();
 
         LoadData();
     }
@@ -47,7 +55,10 @@ public class DataProvider : IDataProvider
     {
         LoadOrderBooksData();
         LoadTickersData();
+        LoadTradesData();
     }
+
+    // Load Data
     private void LoadTickersData()
     {
         try
@@ -105,13 +116,138 @@ public class DataProvider : IDataProvider
         }
     }
 
+    private void LoadTradesData()
+    {
+        try
+        {
+            string jsonData = File.ReadAllText(_jsonTradesPath);
+
+            Trades = JsonConvert.DeserializeObject<List<TradeModel>>(jsonData) ?? new List<TradeModel>();
+        }
+        catch (FileNotFoundException ex)
+        {
+            Console.WriteLine("JSON file not found: " + ex.Message);
+        }
+        catch (Newtonsoft.Json.JsonException ex)
+        {
+            Console.WriteLine("Error in JSON deserialization: " + ex.Message);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("An error occurred: " + ex.Message);
+        }
+    }
+
+    // Trade
+    public void WriteAndGenerateTrades()
+    {
+        var newTrades = GenerateTrades();
+
+        var existingTrades = new List<TradeModel>();
+
+        if (File.Exists(_jsonTradesPath))
+        {
+            var existingJson = File.ReadAllText(_jsonTradesPath);
+            existingTrades = JsonConvert.DeserializeObject<List<TradeModel>>(existingJson) ?? new List<TradeModel>();
+        }
+
+        existingTrades.AddRange(newTrades);
+
+        var sortedTrades = existingTrades.OrderByDescending(t => t.Time).ToList();
+
+        var updatedJson = System.Text.Json.JsonSerializer.Serialize(sortedTrades, _jsonSerializerOptions);
+
+        // Write updated
+        File.WriteAllText(_jsonTradesPath, updatedJson);
+
+        LoadData();
+    }
+
+    private List<TradeModel> GenerateTrades()
+    {
+        var trades = new List<TradeModel>();
+        var orderBooks = OrderBooks; // get your list of OrderBooks
+
+        foreach (var orderBook in orderBooks)
+        {
+            var order = GetRandomOrder(orderBook);
+            if (order != null)
+            {
+                string side = order.Type == nameof(EnumAction.Bid) ? side = "BUY" : side = "SELL";
+
+                var trade = new TradeModel
+                {
+                    Time = order.Time,
+                    Side = side,
+                    Ticker = orderBook.Ticker.Symbol,
+                    Quantity = _random.Next(1, order.Quantity + 1),
+                    Price = order.Price,
+                    ProductType = order.ProductType
+                };
+                trades.Add(trade);
+            }
+        }
+
+        Console.WriteLine("Trades Generated.");
+
+        return trades.OrderByDescending(t => t.Time).ToList(); ;
+    }
+    private OrderModel? GetRandomOrder(OrderBookModel orderBook)
+    {
+        var allOrders = new List<OrderModel>();
+        allOrders.AddRange(orderBook.Bids);
+        allOrders.AddRange(orderBook.Asks);
+
+        if (allOrders.Any())
+        {
+            return allOrders[_random.Next(allOrders.Count)];
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public void ApplyTrades()
+    {
+        foreach (var trade in Trades)
+        {
+            foreach (var orderBook in OrderBooks)
+            {
+                orderBook.Bids = ApplyTradeToOrders(trade, orderBook.Bids);
+                orderBook.Asks = ApplyTradeToOrders(trade, orderBook.Asks);
+            }
+        }
+
+        // apply changed in the files
+        var updatedOrderBooksJson = System.Text.Json.JsonSerializer.Serialize(OrderBooks, _jsonSerializerOptions);
+        File.WriteAllText(_jsonOrderBooksPath, updatedOrderBooksJson);
+    }
+
+    private List<OrderModel> ApplyTradeToOrders(TradeModel trade, List<OrderModel> orders)
+    {
+        for (int i = orders.Count - 1; i >= 0; i--)
+        {
+            if (orders[i].Price == trade.Price)
+            {
+                orders[i].Quantity -= trade.Quantity;
+                if (orders[i].Quantity <= 0)
+                {
+                    orders.RemoveAt(i);
+                }
+            }
+        }
+        return orders;
+    }
+
+    // OrderBook
     public async Task<OrderBookModel?> GetOrderBookByTicker(string tickerSymbol)
     {
         LoadTickersData();
         return await Task.FromResult(OrderBooks.FirstOrDefault(e => e.Ticker.Symbol == tickerSymbol));
     }
-
-
+    
+    // Order
     public async Task<int> EntryOrder(OrderModel order, string symbol, string entryType)
     {
         int resultCode = 0;

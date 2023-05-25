@@ -1,6 +1,6 @@
 ﻿namespace OrderBook.UI
 {
-    partial class XTradesHistory
+    partial class XTradesHistoryForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            tradeHistoryDataGrid = new DataGridView();
             titleLabel = new DevExpress.XtraEditors.LabelControl();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tradeHistoryDataGrid).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // tradeHistoryDataGrid
             // 
-            dataGridView1.BackgroundColor = Color.FromArgb(10, 13, 19);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 108);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 49;
-            dataGridView1.RowTemplate.Height = 28;
-            dataGridView1.Size = new Size(736, 418);
-            dataGridView1.TabIndex = 0;
+            tradeHistoryDataGrid.AllowUserToAddRows = false;
+            tradeHistoryDataGrid.AllowUserToDeleteRows = false;
+            tradeHistoryDataGrid.AllowUserToResizeRows = false;
+            tradeHistoryDataGrid.BackgroundColor = Color.FromArgb(10, 13, 19);
+            tradeHistoryDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Tahoma", 8.139131F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(40, 40, 40);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(40, 40, 40);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            tradeHistoryDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
+            tradeHistoryDataGrid.Location = new Point(26, 108);
+            tradeHistoryDataGrid.Name = "tradeHistoryDataGrid";
+            tradeHistoryDataGrid.RowHeadersWidth = 49;
+            tradeHistoryDataGrid.RowTemplate.Height = 28;
+            tradeHistoryDataGrid.Size = new Size(708, 403);
+            tradeHistoryDataGrid.TabIndex = 0;
             // 
             // titleLabel
             // 
@@ -56,7 +68,7 @@
             titleLabel.TabIndex = 2;
             titleLabel.Text = "History";
             // 
-            // XTradesHistory
+            // XTradesHistoryForm
             // 
             Appearance.BackColor = Color.FromArgb(18, 23, 35);
             Appearance.Options.UseBackColor = true;
@@ -64,21 +76,21 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(760, 538);
             Controls.Add(titleLabel);
-            Controls.Add(dataGridView1);
+            Controls.Add(tradeHistoryDataGrid);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
-            Name = "XTradesHistory";
+            Name = "XTradesHistoryForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Trades History";
+            Text = "Trade History";
             Load += XTradesHistory_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tradeHistoryDataGrid).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView tradeHistoryDataGrid;
         private DevExpress.XtraEditors.LabelControl titleLabel;
     }
 }

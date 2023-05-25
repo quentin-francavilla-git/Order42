@@ -18,6 +18,8 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var dataProvider = scope.ServiceProvider.GetRequiredService<IDataProvider>();
+    dataProvider.WriteAndGenerateTrades();
+    dataProvider.ApplyTrades();
 }
 
 app.UseHttpsRedirection();

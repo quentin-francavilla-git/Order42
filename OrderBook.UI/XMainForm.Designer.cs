@@ -87,6 +87,7 @@
             openTradeFormBtn.Size = new Size(189, 34);
             openTradeFormBtn.TabIndex = 3;
             openTradeFormBtn.Text = "Trade History";
+            openTradeFormBtn.Click += openTradeFormBtn_Click;
             // 
             // separatorControl1
             // 
