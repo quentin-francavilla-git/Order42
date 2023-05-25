@@ -18,6 +18,8 @@ public class DataProvider : IDataProvider
     public List<TickerModel> Tickers { get; set; }
     public List<TradeModel> Trades { get; set; }
 
+    public List<TradeModel> NewTrades { get; set; }
+
     private readonly string _jsonTickersPath;
     private readonly string _jsonOrderBooksPath;
     private readonly string _jsonTradesPath;
@@ -47,6 +49,7 @@ public class DataProvider : IDataProvider
         OrderBooks = new List<OrderBookModel>();
         Tickers = new List<TickerModel>();
         Trades = new List<TradeModel>();
+        NewTrades = new List<TradeModel>();
 
         LoadData();
     }
@@ -141,7 +144,8 @@ public class DataProvider : IDataProvider
     // Trade
     public void WriteAndGenerateTrades()
     {
-        var newTrades = GenerateTrades();
+        NewTrades.Clear();
+        NewTrades = GenerateTrades();
 
         var existingTrades = new List<TradeModel>();
 
@@ -151,7 +155,7 @@ public class DataProvider : IDataProvider
             existingTrades = JsonConvert.DeserializeObject<List<TradeModel>>(existingJson) ?? new List<TradeModel>();
         }
 
-        existingTrades.AddRange(newTrades);
+        existingTrades.AddRange(NewTrades);
 
         var sortedTrades = existingTrades.OrderByDescending(t => t.Time).ToList();
 
@@ -210,7 +214,7 @@ public class DataProvider : IDataProvider
 
     public void ApplyTrades()
     {
-        foreach (var trade in Trades)
+        foreach (var trade in NewTrades)
         {
             foreach (var orderBook in OrderBooks)
             {

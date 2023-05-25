@@ -1,130 +1,98 @@
 [
   {
-    "Time": "2023-05-24T19:10:11.7587233+02:00",
-    "Side": "SELL",
-    "Ticker": "GOOGL",
-    "Quantity": 9,
-    "Price": 121212.0,
+    "Time": "2021-10-14T12:08:57",
+    "Side": "BUY",
+    "Ticker": "AMZN",
+    "Quantity": 28,
+    "Price": 123.0,
     "ProductType": "Options"
   },
   {
-    "Time": "2023-05-23T20:36:12.9012614+02:00",
+    "Time": "2021-01-28T17:59:45",
     "Side": "BUY",
-    "Ticker": "MSFT",
-    "Quantity": 5010,
-    "Price": 3236.0,
-    "ProductType": "Options"
-  },
-  {
-    "Time": "2021-10-14T10:30:28",
-    "Side": "BUY",
-    "Ticker": "GOOGL",
-    "Quantity": 83,
-    "Price": 2387.0,
-    "ProductType": "Futures"
-  },
-  {
-    "Time": "2021-08-23T21:41:26",
-    "Side": "SELL",
-    "Ticker": "GOOGL",
-    "Quantity": 111,
-    "Price": 2222.0,
-    "ProductType": "Equities"
-  },
-  {
-    "Time": "2021-05-18T09:23:14",
-    "Side": "BUY",
-    "Ticker": "MSFT",
-    "Quantity": 226,
-    "Price": 4918.0,
+    "Ticker": "AMZN",
+    "Quantity": 1626,
+    "Price": 6062.0,
     "ProductType": "Bonds"
   },
   {
-    "Time": "2021-04-09T17:20:14",
+    "Time": "2020-09-30T16:30:53",
     "Side": "SELL",
     "Ticker": "AMZN",
-    "Quantity": 4143,
-    "Price": 4592.0,
-    "ProductType": "Options"
-  },
-  {
-    "Time": "2021-02-13T17:31:22",
-    "Side": "SELL",
-    "Ticker": "AMZN",
-    "Quantity": 137,
-    "Price": 6565.0,
-    "ProductType": "Options"
-  },
-  {
-    "Time": "2020-11-27T18:42:07",
-    "Side": "BUY",
-    "Ticker": "AAPL",
-    "Quantity": 5614,
-    "Price": 3521.0,
+    "Quantity": 393,
+    "Price": 6031.0,
     "ProductType": "Futures"
   },
   {
-    "Time": "2020-11-10T03:19:45",
-    "Side": "BUY",
-    "Ticker": "AAPL",
-    "Quantity": 378,
-    "Price": 5866.0,
+    "Time": "2020-09-13T21:31:01",
+    "Side": "SELL",
+    "Ticker": "MSFT",
+    "Quantity": 2059,
+    "Price": 5986.0,
     "ProductType": "Equities"
   },
   {
-    "Time": "2020-05-01T11:28:05",
-    "Side": "BUY",
-    "Ticker": "MSFT",
-    "Quantity": 1038,
-    "Price": 6798.0,
-    "ProductType": "Futures"
-  },
-  {
-    "Time": "2020-03-31T18:41:43",
-    "Side": "BUY",
-    "Ticker": "AAPL",
-    "Quantity": 43,
-    "Price": 2222.0,
-    "ProductType": "Options"
-  },
-  {
-    "Time": "2020-03-31T18:41:43",
-    "Side": "BUY",
-    "Ticker": "AAPL",
-    "Quantity": 12,
-    "Price": 2222.0,
-    "ProductType": "Options"
-  },
-  {
-    "Time": "2020-01-08T11:41:38",
+    "Time": "2020-08-03T01:15:04",
     "Side": "SELL",
-    "Ticker": "AMZN",
-    "Quantity": 36,
-    "Price": 4261.0,
+    "Ticker": "AAPL",
+    "Quantity": 1922,
+    "Price": 5075.0,
+    "ProductType": "Equities"
+  },
+  {
+    "Time": "2020-07-31T15:57:02",
+    "Side": "BUY",
+    "Ticker": "MSFT",
+    "Quantity": 866,
+    "Price": 5245.0,
+    "ProductType": "Bonds"
+  },
+  {
+    "Time": "2020-06-30T23:52:53",
+    "Side": "SELL",
+    "Ticker": "MSFT",
+    "Quantity": 81,
+    "Price": 4057.0,
     "ProductType": "Futures"
   },
   {
-    "Time": "2019-03-12T06:06:46",
+    "Time": "2019-09-05T02:16:23",
+    "Side": "SELL",
+    "Ticker": "GOOGL",
+    "Quantity": 23362,
+    "Price": 6788.0,
+    "ProductType": "Futures"
+  },
+  {
+    "Time": "2019-09-05T02:16:23",
+    "Side": "SELL",
+    "Ticker": "GOOGL",
+    "Quantity": 40129,
+    "Price": 6788.0,
+    "ProductType": "Futures"
+  },
+  {
+    "Time": "2019-03-15T16:00:47",
     "Side": "BUY",
-    "Ticker": "MSFT",
-    "Quantity": 3460,
-    "Price": 5549.0,
+    "Ticker": "AAPL",
+    "Quantity": 4396,
+    "Price": 6195.0,
     "ProductType": "Options"
   },
   {
-    "Time": "2018-11-16T01:48:43",
+    "Time": "2019-03-15T16:00:47",
     "Side": "BUY",
-    "Ticker": "AMZN",
-    "Quantity": 802,
-    "Price": 4535.0,
-    "ProductType": "Futures"
+    "Ticker": "AAPL",
+    "Quantity": 1100,
+    "Price": 6195.0,
+    "ProductType": "Options"
   },
   {
-    "Time": "2018-06-29T03:25:44",
-    "Side": "BUY",
+    "Time": "2018-07-20T19:24:29",
+    "Side": "SELL",
     "Ticker": "GOOGL",
-    "Quantity": 3007,
-    "Price": 3440.0,
+    "Quantity": 1517,
+    "Price": 3662.0,
     "ProductType": "Bonds"
   }
 ]
