@@ -32,13 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XMainForm));
             btnOpenOrderBookForm = new DevExpress.XtraEditors.SimpleButton();
             orderBookBindingSource = new BindingSource(components);
-            labelTitle = new DevExpress.XtraEditors.LabelControl();
-            pictureBox1 = new PictureBox();
             openTradeFormBtn = new DevExpress.XtraEditors.SimpleButton();
-            separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)orderBookBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)separatorControl1).BeginInit();
             SuspendLayout();
             // 
             // btnOpenOrderBookForm
@@ -54,28 +53,6 @@
             btnOpenOrderBookForm.Text = "Order Book";
             btnOpenOrderBookForm.Click += btnOpenOrderBookForm_Click;
             // 
-            // labelTitle
-            // 
-            labelTitle.Appearance.Font = new Font("Tahoma", 11.8956518F, FontStyle.Bold, GraphicsUnit.Point);
-            labelTitle.Appearance.ForeColor = Color.White;
-            labelTitle.Appearance.Options.UseFont = true;
-            labelTitle.Appearance.Options.UseForeColor = true;
-            labelTitle.Location = new Point(147, 33);
-            labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(78, 23);
-            labelTitle.TabIndex = 1;
-            labelTitle.Text = "Order42";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(110, 32);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(28, 28);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
-            // 
             // openTradeFormBtn
             // 
             openTradeFormBtn.Appearance.BackColor = Color.FromArgb(33, 43, 65);
@@ -89,13 +66,25 @@
             openTradeFormBtn.Text = "Trade History";
             openTradeFormBtn.Click += openTradeFormBtn_Click;
             // 
-            // separatorControl1
+            // pictureBox2
             // 
-            separatorControl1.LineColor = Color.FromArgb(32, 42, 65);
-            separatorControl1.Location = new Point(28, 62);
-            separatorControl1.Name = "separatorControl1";
-            separatorControl1.Size = new Size(277, 28);
-            separatorControl1.TabIndex = 4;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(112, 20);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(120, 60);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 5;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(53, 86);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(234, 160);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
             // 
             // XMainForm
             // 
@@ -104,11 +93,10 @@
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(334, 264);
+            Controls.Add(pictureBox2);
             Controls.Add(openTradeFormBtn);
-            Controls.Add(pictureBox1);
-            Controls.Add(labelTitle);
             Controls.Add(btnOpenOrderBookForm);
-            Controls.Add(separatorControl1);
+            Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             IconOptions.Image = (Image)resources.GetObject("XMainForm.IconOptions.Image");
             Location = new Point(250, 510);
@@ -118,18 +106,16 @@
             Text = "Order42 Client";
             Load += XMainForm_Load;
             ((System.ComponentModel.ISupportInitialize)orderBookBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)separatorControl1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
         private DevExpress.XtraEditors.SimpleButton btnOpenOrderBookForm;
         private BindingSource orderBookBindingSource;
-        private DevExpress.XtraEditors.LabelControl labelTitle;
-        private PictureBox pictureBox1;
         private DevExpress.XtraEditors.SimpleButton openTradeFormBtn;
-        private DevExpress.XtraEditors.SeparatorControl separatorControl1;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox1;
     }
 }
