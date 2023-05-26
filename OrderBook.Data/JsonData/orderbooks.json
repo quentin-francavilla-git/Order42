@@ -7,8 +7,8 @@
       {
         "Type": "Bid",
         "Price": 343434.0,
-        "Quantity": 343434,
-        "Total": 117946912356.0,
+        "Quantity": 57153,
+        "Total": 19628283402.0,
         "ProductType": "Futures",
         "Time": "2023-05-24T19:05:06.1066156+02:00"
       },
@@ -23,8 +23,8 @@
       {
         "Type": "Bid",
         "Price": 4200.0,
-        "Quantity": 343434,
-        "Total": 1442422800.0,
+        "Quantity": 164332,
+        "Total": 690194400.0,
         "ProductType": "Equities",
         "Time": "2023-05-24T19:05:24.1910854+02:00"
       },
@@ -79,16 +79,16 @@
       {
         "Type": "Bid",
         "Price": 2900.0,
-        "Quantity": 12,
-        "Total": 34800.0,
+        "Quantity": 9,
+        "Total": 26100.0,
         "ProductType": "Futures",
         "Time": "2019-08-14T16:05:44"
       },
       {
         "Type": "Bid",
         "Price": 1843.0,
-        "Quantity": 113,
-        "Total": 208259.0,
+        "Quantity": 80,
+        "Total": 147440.0,
         "ProductType": "Options",
         "Time": "2021-04-11T07:58:21"
       },
@@ -121,15 +121,23 @@
       {
         "Type": "Ask",
         "Price": 44444.0,
-        "Quantity": 66666,
-        "Total": 2962903704.0,
+        "Quantity": 27215,
+        "Total": 1209543460.0,
         "ProductType": "Equities",
         "Time": "2023-05-23T20:40:27.2052404+02:00"
       },
       {
         "Type": "Ask",
+        "Price": 43415.0,
+        "Quantity": 235,
+        "Total": 10202525.0,
+        "ProductType": "Options",
+        "Time": "2023-05-26T11:08:24.058712+02:00"
+      },
+      {
+        "Type": "Ask",
         "Price": 4647.0,
-        "Quantity": 3,
+        "Quantity": 1,
         "Total": 13941.0,
         "ProductType": "Options",
         "Time": "2023-05-23T20:07:51.0322152+02:00"
@@ -161,8 +169,8 @@
       {
         "Type": "Ask",
         "Price": 2321.0,
-        "Quantity": 111,
-        "Total": 257631.0,
+        "Quantity": 99,
+        "Total": 229779.0,
         "ProductType": "Options",
         "Time": "2019-09-27T08:07:07"
       },
@@ -216,8 +224,8 @@
       {
         "Type": "Bid",
         "Price": 5866.0,
-        "Quantity": 2706,
-        "Total": 15873396.0,
+        "Quantity": 73,
+        "Total": 428218.0,
         "ProductType": "Equities",
         "Time": "2020-11-10T03:19:45"
       },
@@ -256,16 +264,16 @@
       {
         "Type": "Bid",
         "Price": 4077.0,
-        "Quantity": 9276,
-        "Total": 37818252.0,
+        "Quantity": 4727,
+        "Total": 19271979.0,
         "ProductType": "Bonds",
         "Time": "2021-11-29T11:16:49"
       },
       {
         "Type": "Bid",
         "Price": 3843.0,
-        "Quantity": 3771,
-        "Total": 14491953.0,
+        "Quantity": 1750,
+        "Total": 6725250.0,
         "ProductType": "Bonds",
         "Time": "2020-11-27T05:13:30"
       },
@@ -306,7 +314,7 @@
       {
         "Type": "Ask",
         "Price": 6632.0,
-        "Quantity": 2345,
+        "Quantity": 347,
         "Total": 15552040.0,
         "ProductType": "Equities",
         "Time": "2021-11-23T22:29:36"
@@ -347,15 +355,15 @@
         "Type": "Ask",
         "Price": 5075.0,
         "Quantity": 590,
-        "Total": 12748400.0,
+        "Total": 2994250.0,
         "ProductType": "Equities",
         "Time": "2020-08-03T01:15:04"
       },
       {
         "Type": "Ask",
         "Price": 4752.0,
-        "Quantity": 1020,
-        "Total": 4847040.0,
+        "Quantity": 471,
+        "Total": 2238192.0,
         "ProductType": "Bonds",
         "Time": "2021-07-22T15:37:46"
       },
@@ -400,14 +408,6 @@
     "Bids": [
       {
         "Type": "Bid",
-        "Price": 44444.0,
-        "Quantity": 4444,
-        "Total": 197509136.0,
-        "ProductType": "Options",
-        "Time": "2018-06-22T18:12:03"
-      },
-      {
-        "Type": "Bid",
         "Price": 12333.0,
         "Quantity": 279,
         "Total": 3440907.0,
@@ -417,8 +417,8 @@
       {
         "Type": "Bid",
         "Price": 6723.0,
-        "Quantity": 3176,
-        "Total": 21352248.0,
+        "Quantity": 159,
+        "Total": 4497687.0,
         "ProductType": "Futures",
         "Time": "2020-05-02T14:45:45"
       },
@@ -433,16 +433,16 @@
       {
         "Type": "Bid",
         "Price": 5432.0,
-        "Quantity": 2359,
-        "Total": 12814088.0,
+        "Quantity": 856,
+        "Total": 4649792.0,
         "ProductType": "Equities",
         "Time": "2018-12-09T13:02:55"
       },
       {
         "Type": "Bid",
         "Price": 4843.0,
-        "Quantity": 3721,
-        "Total": 18020803.0,
+        "Quantity": 1205,
+        "Total": 5835815.0,
         "ProductType": "Equities",
         "Time": "2021-02-02T16:49:56"
       },
@@ -482,17 +482,9 @@
     "Asks": [
       {
         "Type": "Ask",
-        "Price": 44444.0,
-        "Quantity": 34,
-        "Total": 1511096.0,
-        "ProductType": "Options",
-        "Time": "2023-05-23T20:35:30.2761696+02:00"
-      },
-      {
-        "Type": "Ask",
         "Price": 6666.0,
-        "Quantity": 6666,
-        "Total": 44435556.0,
+        "Quantity": 2079,
+        "Total": 13858614.0,
         "ProductType": "Options",
         "Time": "2018-02-09T18:54:04"
       },
@@ -508,7 +500,7 @@
         "Type": "Ask",
         "Price": 6031.0,
         "Quantity": 1440,
-        "Total": 11054823.0,
+        "Total": 8684640.0,
         "ProductType": "Futures",
         "Time": "2020-09-30T16:30:53"
       },
@@ -523,8 +515,8 @@
       {
         "Type": "Ask",
         "Price": 5477.0,
-        "Quantity": 1736,
-        "Total": 9508072.0,
+        "Quantity": 343,
+        "Total": 1878611.0,
         "ProductType": "Bonds",
         "Time": "2019-12-13T14:57:47"
       },
@@ -543,6 +535,14 @@
         "Total": 13901901.0,
         "ProductType": "Equities",
         "Time": "2020-07-09T20:17:27"
+      },
+      {
+        "Type": "Ask",
+        "Price": 4543.0,
+        "Quantity": 121,
+        "Total": 0.0,
+        "ProductType": "Options",
+        "Time": "2023-05-26T15:24:07.901565+02:00"
       },
       {
         "Type": "Ask",
@@ -586,8 +586,8 @@
       {
         "Type": "Bid",
         "Price": 6442.0,
-        "Quantity": 2016,
-        "Total": 12987072.0,
+        "Quantity": 626,
+        "Total": 4032692.0,
         "ProductType": "Bonds",
         "Time": "2020-07-18T10:12:11"
       },
@@ -602,8 +602,8 @@
       {
         "Type": "Bid",
         "Price": 5812.0,
-        "Quantity": 481,
-        "Total": 2795572.0,
+        "Quantity": 458,
+        "Total": 2661896.0,
         "ProductType": "Equities",
         "Time": "2021-03-13T19:45:53"
       },
@@ -611,7 +611,7 @@
         "Type": "Bid",
         "Price": 5245.0,
         "Quantity": 1655,
-        "Total": 13222645.0,
+        "Total": 8680475.0,
         "ProductType": "Bonds",
         "Time": "2020-07-31T15:57:02"
       },
@@ -644,7 +644,7 @@
       {
         "Type": "Ask",
         "Price": 6992.0,
-        "Quantity": 2487,
+        "Quantity": 2479,
         "Total": 17389104.0,
         "ProductType": "Bonds",
         "Time": "2020-10-03T06:18:33"
@@ -652,8 +652,8 @@
       {
         "Type": "Ask",
         "Price": 6621.0,
-        "Quantity": 4018,
-        "Total": 26603178.0,
+        "Quantity": 68,
+        "Total": 450228.0,
         "ProductType": "Futures",
         "Time": "2018-12-05T07:44:08"
       },
@@ -669,7 +669,7 @@
         "Type": "Ask",
         "Price": 5986.0,
         "Quantity": 1111,
-        "Total": 18975620.0,
+        "Total": 6650446.0,
         "ProductType": "Equities",
         "Time": "2020-09-13T21:31:01"
       },
@@ -684,8 +684,8 @@
       {
         "Type": "Ask",
         "Price": 5345.0,
-        "Quantity": 3221,
-        "Total": 17216245.0,
+        "Quantity": 66,
+        "Total": 352770.0,
         "ProductType": "Equities",
         "Time": "2019-06-09T23:36:03"
       },
@@ -700,8 +700,8 @@
       {
         "Type": "Ask",
         "Price": 4715.0,
-        "Quantity": 5640,
-        "Total": 26592600.0,
+        "Quantity": 1005,
+        "Total": 4738575.0,
         "ProductType": "Options",
         "Time": "2021-01-09T23:06:24"
       },
@@ -725,7 +725,7 @@
         "Type": "Ask",
         "Price": 4057.0,
         "Quantity": 3537,
-        "Total": 14678226.0,
+        "Total": 14349609.0,
         "ProductType": "Futures",
         "Time": "2020-06-30T23:52:53"
       }

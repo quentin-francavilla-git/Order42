@@ -1,5 +1,61 @@
 [
   {
+    "Time": "2023-05-24T19:05:24.1910854+02:00",
+    "Side": "BUY",
+    "Ticker": "GOOGL",
+    "Quantity": 179102,
+    "Price": 4200.0,
+    "ProductType": "Equities"
+  },
+  {
+    "Time": "2023-05-24T19:05:06.1066156+02:00",
+    "Side": "BUY",
+    "Ticker": "GOOGL",
+    "Quantity": 286281,
+    "Price": 343434.0,
+    "ProductType": "Futures"
+  },
+  {
+    "Time": "2023-05-23T20:40:27.2052404+02:00",
+    "Side": "SELL",
+    "Ticker": "GOOGL",
+    "Quantity": 39451,
+    "Price": 44444.0,
+    "ProductType": "Equities"
+  },
+  {
+    "Time": "2023-05-23T20:07:51.0322152+02:00",
+    "Side": "SELL",
+    "Ticker": "GOOGL",
+    "Quantity": 2,
+    "Price": 4647.0,
+    "ProductType": "Options"
+  },
+  {
+    "Time": "2021-11-29T11:16:49",
+    "Side": "BUY",
+    "Ticker": "AAPL",
+    "Quantity": 2332,
+    "Price": 4077.0,
+    "ProductType": "Bonds"
+  },
+  {
+    "Time": "2021-11-29T11:16:49",
+    "Side": "BUY",
+    "Ticker": "AAPL",
+    "Quantity": 2217,
+    "Price": 4077.0,
+    "ProductType": "Bonds"
+  },
+  {
+    "Time": "2021-11-23T22:29:36",
+    "Side": "SELL",
+    "Ticker": "AAPL",
+    "Quantity": 1998,
+    "Price": 6632.0,
+    "ProductType": "Equities"
+  },
+  {
     "Time": "2021-10-14T12:08:57",
     "Side": "BUY",
     "Ticker": "AMZN",
@@ -8,11 +64,83 @@
     "ProductType": "Options"
   },
   {
+    "Time": "2021-07-22T15:37:46",
+    "Side": "SELL",
+    "Ticker": "AAPL",
+    "Quantity": 549,
+    "Price": 4752.0,
+    "ProductType": "Bonds"
+  },
+  {
+    "Time": "2021-04-11T07:58:21",
+    "Side": "BUY",
+    "Ticker": "GOOGL",
+    "Quantity": 33,
+    "Price": 1843.0,
+    "ProductType": "Options"
+  },
+  {
+    "Time": "2021-03-13T19:45:53",
+    "Side": "BUY",
+    "Ticker": "MSFT",
+    "Quantity": 23,
+    "Price": 5812.0,
+    "ProductType": "Equities"
+  },
+  {
+    "Time": "2021-02-02T16:49:56",
+    "Side": "BUY",
+    "Ticker": "AMZN",
+    "Quantity": 2516,
+    "Price": 4843.0,
+    "ProductType": "Equities"
+  },
+  {
     "Time": "2021-01-28T17:59:45",
     "Side": "BUY",
     "Ticker": "AMZN",
     "Quantity": 1626,
     "Price": 6062.0,
+    "ProductType": "Bonds"
+  },
+  {
+    "Time": "2021-01-09T23:06:24",
+    "Side": "SELL",
+    "Ticker": "MSFT",
+    "Quantity": 4635,
+    "Price": 4715.0,
+    "ProductType": "Options"
+  },
+  {
+    "Time": "2020-11-27T05:13:30",
+    "Side": "BUY",
+    "Ticker": "AAPL",
+    "Quantity": 2021,
+    "Price": 3843.0,
+    "ProductType": "Bonds"
+  },
+  {
+    "Time": "2020-11-10T03:19:45",
+    "Side": "BUY",
+    "Ticker": "AAPL",
+    "Quantity": 141,
+    "Price": 5866.0,
+    "ProductType": "Equities"
+  },
+  {
+    "Time": "2020-11-10T03:19:45",
+    "Side": "BUY",
+    "Ticker": "AAPL",
+    "Quantity": 2492,
+    "Price": 5866.0,
+    "ProductType": "Equities"
+  },
+  {
+    "Time": "2020-10-03T06:18:33",
+    "Side": "SELL",
+    "Ticker": "MSFT",
+    "Quantity": 8,
+    "Price": 6992.0,
     "ProductType": "Bonds"
   },
   {
@@ -48,12 +176,60 @@
     "ProductType": "Bonds"
   },
   {
+    "Time": "2020-07-18T10:12:11",
+    "Side": "BUY",
+    "Ticker": "MSFT",
+    "Quantity": 1310,
+    "Price": 6442.0,
+    "ProductType": "Bonds"
+  },
+  {
+    "Time": "2020-07-18T10:12:11",
+    "Side": "BUY",
+    "Ticker": "MSFT",
+    "Quantity": 80,
+    "Price": 6442.0,
+    "ProductType": "Bonds"
+  },
+  {
     "Time": "2020-06-30T23:52:53",
     "Side": "SELL",
     "Ticker": "MSFT",
     "Quantity": 81,
     "Price": 4057.0,
     "ProductType": "Futures"
+  },
+  {
+    "Time": "2020-05-02T14:45:45",
+    "Side": "BUY",
+    "Ticker": "AMZN",
+    "Quantity": 2507,
+    "Price": 6723.0,
+    "ProductType": "Futures"
+  },
+  {
+    "Time": "2020-05-02T14:45:45",
+    "Side": "BUY",
+    "Ticker": "AMZN",
+    "Quantity": 510,
+    "Price": 6723.0,
+    "ProductType": "Futures"
+  },
+  {
+    "Time": "2019-12-13T14:57:47",
+    "Side": "SELL",
+    "Ticker": "AMZN",
+    "Quantity": 1393,
+    "Price": 5477.0,
+    "ProductType": "Bonds"
+  },
+  {
+    "Time": "2019-09-27T08:07:07",
+    "Side": "SELL",
+    "Ticker": "GOOGL",
+    "Quantity": 12,
+    "Price": 2321.0,
+    "ProductType": "Options"
   },
   {
     "Time": "2019-09-05T02:16:23",
@@ -72,6 +248,22 @@
     "ProductType": "Futures"
   },
   {
+    "Time": "2019-08-14T16:05:44",
+    "Side": "BUY",
+    "Ticker": "GOOGL",
+    "Quantity": 3,
+    "Price": 2900.0,
+    "ProductType": "Futures"
+  },
+  {
+    "Time": "2019-06-09T23:36:03",
+    "Side": "SELL",
+    "Ticker": "MSFT",
+    "Quantity": 3155,
+    "Price": 5345.0,
+    "ProductType": "Equities"
+  },
+  {
     "Time": "2019-03-15T16:00:47",
     "Side": "BUY",
     "Ticker": "AAPL",
@@ -88,11 +280,43 @@
     "ProductType": "Options"
   },
   {
+    "Time": "2018-12-09T13:02:55",
+    "Side": "BUY",
+    "Ticker": "AMZN",
+    "Quantity": 1503,
+    "Price": 5432.0,
+    "ProductType": "Equities"
+  },
+  {
+    "Time": "2018-12-05T07:44:08",
+    "Side": "SELL",
+    "Ticker": "MSFT",
+    "Quantity": 3950,
+    "Price": 6621.0,
+    "ProductType": "Futures"
+  },
+  {
     "Time": "2018-07-20T19:24:29",
     "Side": "SELL",
     "Ticker": "GOOGL",
     "Quantity": 1517,
     "Price": 3662.0,
     "ProductType": "Bonds"
+  },
+  {
+    "Time": "2018-02-09T18:54:04",
+    "Side": "SELL",
+    "Ticker": "AMZN",
+    "Quantity": 3977,
+    "Price": 6666.0,
+    "ProductType": "Options"
+  },
+  {
+    "Time": "2018-02-09T18:54:04",
+    "Side": "SELL",
+    "Ticker": "AMZN",
+    "Quantity": 610,
+    "Price": 6666.0,
+    "ProductType": "Options"
   }
 ]

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XTradesHistoryForm));
             tradeHistoryDataGrid = new DataGridView();
             titleLabel = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)tradeHistoryDataGrid).BeginInit();
@@ -51,6 +52,7 @@
             tradeHistoryDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
             tradeHistoryDataGrid.Location = new Point(26, 108);
             tradeHistoryDataGrid.Name = "tradeHistoryDataGrid";
+            tradeHistoryDataGrid.ReadOnly = true;
             tradeHistoryDataGrid.RowHeadersWidth = 49;
             tradeHistoryDataGrid.RowTemplate.Height = 28;
             tradeHistoryDataGrid.Size = new Size(708, 403);
@@ -62,11 +64,11 @@
             titleLabel.Appearance.ForeColor = Color.White;
             titleLabel.Appearance.Options.UseFont = true;
             titleLabel.Appearance.Options.UseForeColor = true;
-            titleLabel.Location = new Point(48, 40);
+            titleLabel.Location = new Point(26, 37);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(70, 23);
+            titleLabel.Size = new Size(130, 23);
             titleLabel.TabIndex = 2;
-            titleLabel.Text = "History";
+            titleLabel.Text = "Trade History";
             // 
             // XTradesHistoryForm
             // 
@@ -78,6 +80,7 @@
             Controls.Add(titleLabel);
             Controls.Add(tradeHistoryDataGrid);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            IconOptions.Image = (Image)resources.GetObject("XTradesHistoryForm.IconOptions.Image");
             MaximizeBox = false;
             Name = "XTradesHistoryForm";
             StartPosition = FormStartPosition.CenterScreen;
