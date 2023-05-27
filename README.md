@@ -1,4 +1,4 @@
-Order42 is a dynamic trading application that allows users to place, amend, and cancel orders across multiple tickers and product types. This comprehensive tool enhances trading efficiency by managing order books, maintaining trade history, and providing organized, versatile order handling options.
+Order42 is a dynamic orderbook managing application that allows users to place, amend, and cancel orders across multiple tickers and product types. This comprehensive tool enhances trading efficiency by managing order books, maintaining trade history, and providing organized, versatile order handling options.
 
 ## Preview
 
