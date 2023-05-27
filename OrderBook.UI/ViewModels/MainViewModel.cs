@@ -1,8 +1,6 @@
 ﻿using OrderBook.API.Services.ApiBridge;
 using OrderBook.Data.Models;
 using OrderBook.UI.Helpers.ErrorHandler;
-using System.Collections.ObjectModel;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace OrderBook.UI.ViewModels;
 

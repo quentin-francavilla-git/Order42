@@ -87,7 +87,6 @@ public partial class XEntryForm : DevExpress.XtraEditors.XtraForm
         await EntryOrderBtnAction(nameof(EnumEntryType.CancelOrder));
     }
 
-
     public async Task EntryOrderBtnAction(string selectedEntryType)
     {
         // Drop Down values
